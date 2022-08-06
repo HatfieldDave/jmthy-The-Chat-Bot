@@ -77,7 +77,9 @@ namespace Capstone.Controllers
                     {
                         UserId = user.UserId,
                         Username = user.Username,
-                        Role = user.Role
+                        Role = user.Role,
+                        Nickname = user.Nickname,
+                        Pronouns = user.Pronouns
                     },
                     Token = token
                 };
