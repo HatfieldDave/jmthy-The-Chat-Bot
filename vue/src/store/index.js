@@ -27,10 +27,6 @@ export default new Vuex.Store({
 	state: {
 		token: currentToken || "",
 		user: currentUser || {}, // If a user is an admin, their user.role will be 'admin'
-		activeUser: {
-			nickname: "",
-			pronouns: "",
-		},
 	},
 	mutations: {
 		SET_AUTH_TOKEN(state, token) {
@@ -48,10 +44,6 @@ export default new Vuex.Store({
 			state.token = "";
 			state.user = {};
 			axios.defaults.headers.common = {};
-		},
-		SAVE_ACTIVE_USER(state, user) {
-			state.activeUser.nickname = user.nickname;
-			state.activeUser.pronouns = user.pronouns;
 		},
 	},
 });
