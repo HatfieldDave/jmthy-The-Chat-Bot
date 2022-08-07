@@ -27,6 +27,19 @@ export default new Vuex.Store({
 	state: {
 		token: currentToken || "",
 		user: currentUser || {}, // If a user is an admin, their user.role will be 'admin'
+		userMessages:[],
+		botMessages: [
+			{
+				userMessage: ["help", "what can i ask you?", "what do you do?"],
+				botResponse: [
+					"I can help you with these things:",
+					"Pathway",
+					"Curriculum",
+					"Motivational Quotes",
+					"Find Open Positions"
+				]
+			}
+		]
 	},
 	mutations: {
 		SET_AUTH_TOKEN(state, token) {
@@ -45,5 +58,8 @@ export default new Vuex.Store({
 			state.user = {};
 			axios.defaults.headers.common = {};
 		},
+		ADD_USER_MESSAGE(state, userMessage){
+			this.state.userMessages.push(userMessage);
+		}
 	},
 });
