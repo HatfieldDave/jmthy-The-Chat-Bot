@@ -22,7 +22,7 @@ namespace Capstone.Controllers
         [HttpPost]
         public ActionResult CatchAndSend(Bot bot)
         {
-            string botResponse = botRoast.ReturnBotResponse(bot);
+            Bot botResponse = botRoast.ReturnBotResponse(bot);
             return Ok(botResponse);
         }
         

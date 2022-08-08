@@ -39,16 +39,17 @@ namespace Capstone.Models
         /// </summary>
         /// <param name="babyBot"></param>
         /// <returns></returns>
-        public string ReturnBotResponse(Bot babyBot)
+        public Bot ReturnBotResponse(Bot babyBot)
         {
             string lowerUserWord = babyBot.Keywords.ToLower();
             List<Bot> botList = ReturnBotList();
-            string botResponse= "I'm sorry I'm still learning how to help with that";
+            Bot botResponse = new Bot();
+            //botResponse.Responses = "I'm sorry I'm still learning how to help with that";
             foreach(Bot bot in botList)
             {
                 if (bot.Keywords.Contains(lowerUserWord))
                 {
-                    botResponse = bot.Responses;
+                    botResponse = bot;
                 } 
             }
             return botResponse;
