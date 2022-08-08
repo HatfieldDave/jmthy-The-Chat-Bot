@@ -8,19 +8,27 @@ using Capstone.Models;
 
 namespace Capstone.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/messaging")]
     [ApiController]
     public class MessagingController : ControllerBase
     {
         Bot botRoast = new Bot();
+        List<Bot> botList;
+        public MessagingController()
+        {
+            botList = botRoast.ReturnBotList();
+        }
 
+        [HttpPost]
+        public ActionResult CatchAndSend(string userword)
+        {
+            string botResponse = botRoast.ReturnBotResponse(userword);
+            return Ok(botResponse);
+        }
+        
+         
       
    
-        Bot newBot = new Bot(1, "hello", "hi");
-        Bot helpBot = new Bot(2, "help", "How can I Help you");
-
-        List<Bot> botResponses = new List<Bot>();
-        botResponses.Add(newBot);
-        botResponses.Add(helpBot);
+        
     }
 }
