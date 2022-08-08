@@ -28,17 +28,17 @@ CREATE TABLE users (
 
 CREATE TABLE pathway (
 	topic_id int IDENTITY(1,1) NOT NULL,
-	topic_q varchar(200) NOT NULL,
-	topic_info varchar(2000) NOT NULL,
-	link(500) NOT NULL
+	topic_q nvarchar(200) NOT NULL,
+	topic_info nvarchar(2000) NOT NULL,
+	link nvarchar(500) NOT NULL
 	CONSTRAINT PK_pathway PRIMARY KEY (topic_id)
 )
 
 CREATE TABLE curriculum (
 	topic_id int IDENTITY(1,1) NOT NULL,
-	topic_q varchar(200) NOT NULL,
-	topic_info varchar(2000) NOT NULL,
-	link(500) NOT NULL
+	topic_q nvarchar(200) NOT NULL,
+	topic_info nvarchar(2000) NOT NULL,
+	link nvarchar(500) NOT NULL
 	CONSTRAINT PK_curriculum PRIMARY KEY (topic_id)
 )
 
