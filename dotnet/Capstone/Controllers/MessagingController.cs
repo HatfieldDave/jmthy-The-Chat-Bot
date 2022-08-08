@@ -20,9 +20,9 @@ namespace Capstone.Controllers
         }
 
         [HttpPost]
-        public ActionResult CatchAndSend(string userword)
+        public ActionResult CatchAndSend(Bot bot)
         {
-            string botResponse = botRoast.ReturnBotResponse(userword);
+            string botResponse = botRoast.ReturnBotResponse(bot);
             return Ok(botResponse);
         }
         

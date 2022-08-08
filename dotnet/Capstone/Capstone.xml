@@ -31,11 +31,11 @@
             </summary>
             <param name="userParam">The new user to create</param>
         </member>
-        <member name="M:Capstone.Models.Bot.ReturnBotResponse(System.String)">
+        <member name="M:Capstone.Models.Bot.ReturnBotResponse(Capstone.Models.Bot)">
             <summary>
             Takes in userword string and checks against existing known keywords to bot and returns correct response.
             </summary>
-            <param name="userword"></param>
+            <param name="babyBot"></param>
             <returns></returns>
         </member>
         <member name="T:Capstone.Models.LoginResponse">

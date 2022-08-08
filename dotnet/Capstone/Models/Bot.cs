@@ -37,11 +37,11 @@ namespace Capstone.Models
         /// <summary>
         /// Takes in userword string and checks against existing known keywords to bot and returns correct response.
         /// </summary>
-        /// <param name="userword"></param>
+        /// <param name="babyBot"></param>
         /// <returns></returns>
-        public string ReturnBotResponse(string userword)
+        public string ReturnBotResponse(Bot babyBot)
         {
-            string lowerUserWord = userword.ToLower();
+            string lowerUserWord = babyBot.Keywords.ToLower();
             List<Bot> botList = ReturnBotList();
             string botResponse= "I'm sorry I'm still learning how to help with that";
             foreach(Bot bot in botList)

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import chatService from "../services/ChatService";
+
 import Messaging from '@/components/Messaging.vue';
 export default {
 	name: "greeting",
@@ -31,15 +31,7 @@ export default {
 		}
 	},
 	methods: {
-		sendInput(){
-			chatService
-			.sendInput(this.messages)
-			.then((response) =>{
-				if(response.status == 200){
-					this.messages.push(response.data)
-				}
-			})
-		}
+	
 		
 	},
 	created() {},
