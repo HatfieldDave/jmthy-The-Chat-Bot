@@ -31,7 +31,7 @@ namespace Capstone.DAO
                 SqlCommand cmd = new SqlCommand(sqlGetTopic, conn);
                 cmd.Parameters.AddWithValue("@topicQ", topicQ);
                 SqlDataReader reader = cmd.ExecuteReader();
-               
+
                 if (reader.HasRows && reader.Read())
                 {
                     returnTopic = GetTopicFromReader(reader);
@@ -41,14 +41,13 @@ namespace Capstone.DAO
             }
         }
         private Topic GetTopicFromReader(SqlDataReader reader)
-        { 
+        {
             Topic t = new Topic()
-                {
+            { 
+                TopicInfo = Convert.ToString(reader["topic_info"])
+            };
 
-                    TopicQ = Convert.ToString(reader["topicQ"])
-                };
-
-                return t;
-        }   
+            return t;
+        }
     }
 }
