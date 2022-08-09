@@ -1,11 +1,9 @@
 <template>
 	<div>
 		<ul>
-			<li v-for="keywords in messages" v-bind:key="keywords.ID">
-				{{ keywords.keywords }}
-			</li>
-			<li v-for="responses in messages" v-bind:key="responses.ID">
-				{{ responses.responses }}
+			<li v-for="TopicQ in messages" v-bind:key="TopicQ.TopicQ">
+				<span v-if="TopicQ.TopicQ"> {{ TopicQ.TopicQ }}</span>
+				<span v-if="TopicQ.topicInfo"> {{ TopicQ.topicInfo }}</span>
 			</li>
 		</ul>
 		<form>
@@ -15,7 +13,7 @@
 				filled
 				label="Label"
 				auto-grow
-				v-model="userMessage.keywords"
+				v-model="userMessage.TopicQ"
 			/>
 			<input
 				type="submit"
@@ -35,30 +33,48 @@ export default {
 	data() {
 		return {
 			userMessage: {
-				ID: 0,
-				keywords: "",
-				responses: "",
+				//ID: 0,
+				TopicQ: "",
+			},
+			botMessage: {
+				//ID: 1,
+				topicInfo: "",
+				link: "",
 			},
 			messageSent: false,
 			messages: [],
 		};
 	},
 	methods: {
-		saveMessage() {
-			this.$store.commit("ADD_USER_MESSAGE", this.userMessage);
-			this.messages.push(this.userMessage);
+		clearUserMessage() {
 			this.userMessage = {
-				ID: this.userMessage.ID++,
-				keywords: "",
-				responses: "",
+				//ID: this.userMessage.ID+=2,
+				TopicQ: "",
 			};
 		},
+		clearBotMessage() {
+			this.botMessage = {
+				//ID: this.botMessage.ID+=2,
+				topicInfo: "",
+			};
+		},
+		saveUserMessage() {
+			this.$store.commit("ADD_USER_MESSAGE", this.userMessage);
+			this.messages.push(this.userMessage);
+		},
+		saveBotMessage() {
+			this.messages.push(this.botMessage);
+		},
 		sendInput() {
-			this.saveMessage();
-			chatService.sendInput(this.messages[0]).then((response) => {
+			this.saveUserMessage();
+			console.log("sending", this.userMessage);
+			chatService.sendInput(this.userMessage).then((response) => {
 				if (response.status == 200) {
-					this.messages.push = response.data;
+					this.botMessage = response.data;
+					this.saveBotMessage();
 				}
+				this.clearUserMessage();
+				this.clearBotMessage();
 			});
 		},
 	},

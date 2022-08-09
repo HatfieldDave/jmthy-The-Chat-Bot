@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Capstone.Models;
+using Capstone.DAO;
 
 namespace Capstone.Controllers
 {
@@ -12,23 +13,24 @@ namespace Capstone.Controllers
     [ApiController]
     public class MessagingController : ControllerBase
     {
-        Bot botRoast = new Bot();
-        List<Bot> botList;
-        public MessagingController()
+        private readonly ITopicDAO topicDAO;
+        public MessagingController(ITopicDAO _topicDAO)
         {
-            botList = botRoast.ReturnBotList();
+            topicDAO = _topicDAO;
         }
-
         [HttpPost]
-        public ActionResult CatchAndSend(Bot bot)
+        public IActionResult GetTopic(Topic topicQ)
         {
-            Bot botResponse = botRoast.ReturnBotResponse(bot);
-            return Ok(botResponse);
+
+            Topic topic = topicDAO.GetTopic(topicQ);
+            if (topicQ != null)
+            {
+                return Ok(topic);
+            }
+            else
+            {
+                return NotFound(topic + "I don't think we teach that here.");
+            }
         }
-        
-         
-      
-   
-        
     }
 }

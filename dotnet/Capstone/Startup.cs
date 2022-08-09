@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Capstone.DAO;
 using Capstone.Security;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace Capstone
 {
@@ -46,11 +48,14 @@ namespace Capstone
 
             // Dependency Injection configuration.
             // Non-testing settings will be pulled from the secure environment when hosted on a server
+
+            
             services.AddSingleton<ITokenGenerator>(sp => new JwtGenerator(Configuration["JwtSecret"]));
             services.AddSingleton<IPasswordHasher>(sp => new PasswordHasher());
 
             string connectionString = Configuration.GetConnectionString("Project");
             services.AddTransient<IUserDAO>(sp => new UserSqlDAO(connectionString));
+            services.AddSingleton<ITopicDAO>(sp => new TopicSQLDAO(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
