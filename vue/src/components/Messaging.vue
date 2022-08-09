@@ -4,9 +4,9 @@
 			<li v-for="keywords in messages" v-bind:key="keywords.ID">
 				{{ keywords.keywords }}
 			</li>
-            <li v-for="responses in messages" v-bind:key="responses.ID">
-                {{ responses.responses }}
-            </li>
+			<li v-for="responses in messages" v-bind:key="responses.ID">
+				{{ responses.responses }}
+			</li>
 		</ul>
 		<form>
 			<input
@@ -37,7 +37,7 @@ export default {
 			userMessage: {
 				ID: 0,
 				keywords: "",
-                responses: '',
+				responses: "",
 			},
 			messageSent: false,
 			messages: [],
@@ -50,17 +50,16 @@ export default {
 			this.userMessage = {
 				ID: this.userMessage.ID++,
 				keywords: "",
-                responses: "",
+				responses: "",
 			};
 		},
 		sendInput() {
-            this.saveMessage();
+			this.saveMessage();
 			chatService.sendInput(this.messages[0]).then((response) => {
 				if (response.status == 200) {
-					this.messages.push=response.data;
+					this.messages.push = response.data;
 				}
 			});
-
 		},
 	},
 };
