@@ -25,8 +25,8 @@ namespace Capstone.Models
         public List<Bot> BotResponses { get; set; } = new List<Bot>();
         public List<Bot> ReturnBotList()
         {
-            Bot newBot = new Bot(1, "hello", "hi");
-            Bot helpBot = new Bot(2, "help", "How can I Help you");
+            Bot newBot = new Bot(10, "hello", "hi");
+            Bot helpBot = new Bot(20, "help", "How can I Help you");
 
             
             BotResponses.Add(newBot);
