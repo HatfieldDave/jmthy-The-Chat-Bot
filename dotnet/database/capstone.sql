@@ -34,14 +34,14 @@ CREATE TABLE topic (
 	CONSTRAINT PK_topic PRIMARY KEY (topic_id)
 )
 
-CREATE TABLE user_message (
-	keyword_id int identity (1,1) NOT NULL,
-	keywords nvarchar (200) NOT NULL,
-	topic_id int NOT NULL,
-	user_id int NOT NULL,
-	CONSTRAINT FK_topic FOREIGN KEY (topic_id) REFERENCES topic(topic_id),
-	CONSTRAINT FK_users FOREIGN KEY (user_id) REFERENCES users(user_id)
-)
+--CREATE TABLE user_message (
+--	keyword_id int identity (1,1) NOT NULL,
+--	keywords nvarchar (200) NOT NULL,
+--	topic_id int NOT NULL,
+--	user_id int NOT NULL,
+--	CONSTRAINT FK_topic FOREIGN KEY (topic_id) REFERENCES topic(topic_id),
+--	CONSTRAINT FK_users FOREIGN KEY (user_id) REFERENCES users(user_id)
+--)
 
 
 --CREATE TABLE security_questions(
@@ -62,7 +62,10 @@ INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns)
 INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin', 'Zada', 'She/Her');
 GO
 
-insert into topic (topic_q, topic_info, link) VALUES  ('help','I"d love to help! Type one of these commands to request help with different topics: "Pathway Help", "Curriculum", "Motivational Quotes", "Find Open Jobs" if you need further assistance please reach out to your Pathway Director:','pathway@techelevator.com');
+INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I"d love to help! Type one of these commands to request help with different topics: "Pathway Help", "Curriculum", "Motivational Quotes", "Find Open Jobs" if you need further assistance please reach out to your Pathway Director:','pathway@techelevator.com');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway','Absolutely! Type one of these commands to request pathway help: [insert commands here]','Maybe link');
+--INSERT INTO topic (topic_q, topic_info, link) VALUES ('Curriculum','','');
+--INSERT INTO topic (topic_q, topic_info, link) VALUES ('Motivational quotes','','');
 INSERT INTO topic(topic_q, topic_info, link) VALUES ('Managing Stress and Imposter Syndrome',
 'Make (and keep to) a schedule While you"re at it, schedule breaks into your day
 Remind yourself you are here to learn Don"t compare yourself to others
@@ -124,6 +127,6 @@ INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
 
 
 
---select t.topic_info from topic t inner join user_message um on t.topic_id = um.topic_id where um.key
+select t.topic_info from topic t where t.topic_q = 'help'
 
-Select * From users
+Select * From user_message
