@@ -1,12 +1,23 @@
 <template>
-	<div>
+	<div class="chat-bot">
+		<header>
+			<img src="@/assets/thisisyeti.png" alt="" />
+			<h1>JMTHY</h1>
+			<button class="dropdown-menu">hammy</button>
+		</header>
+
 		<ul>
+			<li>
+				Hello, good to see you,
+				{{ this.$store.state.user.nickname }}! How can I help you?
+				<span class="msg_time"><i>insert time here</i></span>
+			</li>
 			<li v-for="TopicQ in messages" v-bind:key="TopicQ.TopicQ">
 				<span v-if="TopicQ.TopicQ"> {{ TopicQ.TopicQ }}</span>
 				<span v-if="TopicQ.topicInfo"> {{ TopicQ.topicInfo }}</span>
 			</li>
 		</ul>
-		<form>
+		<form class="text-box">
 			<input
 				type="text"
 				name="Chatbox"
@@ -81,4 +92,16 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+* {
+	display: flex;
+	background-color: coral;
+}
+div {
+	background-color: blue;
+}
+
+.text-box {
+	align-items: flex-end;
+}
+</style>
