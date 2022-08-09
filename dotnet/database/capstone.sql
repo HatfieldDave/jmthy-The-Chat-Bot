@@ -62,15 +62,15 @@ INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns)
 INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin', 'Zada', 'She/Her');
 GO
 
-INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I''d love to help! Type one of these commands to request help with different topics: "Pathway Help", "Curriculum", "Motivational Quotes", "Find Open Jobs" if you need further assistance please reach out to your Pathway Director:','pathway@techelevator.com');
+INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I"d love to help! Type one of these commands to request help with different topics: "Pathway Help", "Curriculum", "Motivational Quotes", "Find Open Jobs" if you need further assistance please reach out to your Pathway Director:','pathway@techelevator.com');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway','Absolutely! Type one of these commands to request pathway help: [insert commands here]','Maybe link');
 --INSERT INTO topic (topic_q, topic_info, link) VALUES ('Curriculum','','');
 --INSERT INTO topic (topic_q, topic_info, link) VALUES ('Motivational quotes','','');
-INSERT INTO topic(topic_q, topic_info, link) VALUES ('Managing Stress and Imposter Syndrome',
+INSERT INTO topic(topic_q, topic_info, link) VALUES ('managing stress and imposter syndrome',
 'Make (and keep to) a schedule While you"re at it, schedule breaks into your day
 Remind yourself you are here to learn Don"t compare yourself to others
 Move your body Drink water Celebrate your wins!','LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Time management','The Pomodoro Technique
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('time management','The Pomodoro Technique
 Step 1 Get a to-do list and a timer.
 Step 2 Set your timer for 25 minutes and focus on a single task from your to-do list until the timer rings.
 Step 3 When your session ends, mark off one pomodoro (one pomodoro = one 25-minute session) and record what you completed.
@@ -81,45 +81,45 @@ Rule 1 Break down complex projects. If a task requires more than four Pomodoros,
 Rule 2 Small tasks go together. Any tasks that will take less than one Pomodoro should be combined with other simple tasks. For example, "write rent check," "set vet appointment," and "read Pomodoro article" could go together in one session.
 Rule 3 Once a pomodoro is set, it must ring. The pomodoro is an indivisible unit of time and cannot be broken, especially not to check incoming emails, team chats, or text messages. Any ideas, tasks, or requests that come up should be taken note of to come back to later.
 ','LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Elevator pitch','Your elevator pitch should be between 30-40 seconds. Add your own unique twist to your pitch or insert a joke related to your sense of humor (as long as it"s appropriate, of course!). Your personality is what makes you YOU - when you"re showcasing your personality, you"re portraying confidence. And confidence is key! If you sound bored or lack enthusiasm when giving your pitch, you"ll lose the attention of your audience quickly. Your elevator pitch isn"t just about what you"re saying, but how you"re saying it, so don"t forget about all of your non-verbal cues. These include eye contact, hand gestures, body language, and facial expressions. Always remember, you’ve got this!
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('elevator pitch','Your elevator pitch should be between 30-40 seconds. Add your own unique twist to your pitch or insert a joke related to your sense of humor (as long as it"s appropriate, of course!). Your personality is what makes you YOU - when you"re showcasing your personality, you"re portraying confidence. And confidence is key! If you sound bored or lack enthusiasm when giving your pitch, you"ll lose the attention of your audience quickly. Your elevator pitch isn"t just about what you"re saying, but how you"re saying it, so don"t forget about all of your non-verbal cues. These include eye contact, hand gestures, body language, and facial expressions. Always remember, you’ve got this!
 ','LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Resume','Your resume should include all of these items, Professional Summary, Name/Contact Information, Technical Skills, Technical Experience, Education and Professional Experience.
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('resume','Your resume should include all of these items, Professional Summary, Name/Contact Information, Technical Skills, Technical Experience, Education and Professional Experience.
 Listing your Capstone Projects, as well as any side projects you"ve worked on, will be an important part of building out your resume.
 ','LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('LinkedIn','LinkedIn serves as your online resume and presence when applying to jobs. While your resume is your "highlight reel", your LinkedIn profile is where you elaborate more on your story. Having a solid LinkedIn Summary will truly help you stick out among other candidates when you"re active on the job search so if recruiters can get a sense of who you are, Why you"re great, What you"re bringing to the table, AND your dazzling personality!',
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('linkedin','LinkedIn serves as your online resume and presence when applying to jobs. While your resume is your "highlight reel", your LinkedIn profile is where you elaborate more on your story. Having a solid LinkedIn Summary will truly help you stick out among other candidates when you"re active on the job search so if recruiters can get a sense of who you are, Why you"re great, What you"re bringing to the table, AND your dazzling personality!',
 'LINKEMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Side Projects','You don"t need some huge project to have something you can talk about. Just having even a simple project can let employers get a look inside your mind. At the end of the day, they’re interested in hearing about how you"re designing the program, what roadblocks you"ve run into, different approaches you might take if you did it again, and where you want to take the project in the future.',
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('side projects','You don"t need some huge project to have something you can talk about. Just having even a simple project can let employers get a look inside your mind. At the end of the day, they’re interested in hearing about how you"re designing the program, what roadblocks you"ve run into, different approaches you might take if you did it again, and where you want to take the project in the future.',
 'LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Networking','Networking is going to be a vital part of your new career in technology. We want you all to feel comfortable and confident when it comes to networking with folks in the tech industry. Because of this, it"s important for you to begin networking sooner than later, so you can build up a quality network of connections in the industry. Remember - it"s not all about who you know... but knowing people will 100% help you in the technology industry!',
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('networking','Networking is going to be a vital part of your new career in technology. We want you all to feel comfortable and confident when it comes to networking with folks in the tech industry. Because of this, it"s important for you to begin networking sooner than later, so you can build up a quality network of connections in the industry. Remember - it"s not all about who you know... but knowing people will 100% help you in the technology industry!',
 'LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Interview Preparation','Interviewing begins the moment you receive a call or email from the recruiter informing you that they"re interested in scheduling an interview. From that moment until the day of your interview, you need to ensure that you"re as prepared as possible. If you go into any interview without a high level of preparation, it will not go well. Preparation is key when interviewing for roles in the tech industry. Remember to research the company you"re meeting with, Bring several copies of your resume to pass out to all interviewers, Check your Appearance, Dress to impress, Look Good!',
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('interview preparation','Interviewing begins the moment you receive a call or email from the recruiter informing you that they"re interested in scheduling an interview. From that moment until the day of your interview, you need to ensure that you"re as prepared as possible. If you go into any interview without a high level of preparation, it will not go well. Preparation is key when interviewing for roles in the tech industry. Remember to research the company you"re meeting with, Bring several copies of your resume to pass out to all interviewers, Check your Appearance, Dress to impress, Look Good!',
 'LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Behavioral Interviews','Behavioral Interviews will be a big part of your job search as you begin applying for a job in technology. Companies aren"t just looking for someone who "checks the boxes" in regard to technical skills, they want someone who is a culture fit for their team and their company as well, which is why they"ll use the behavioral interview and/or phone screen to assess if you"re a culture fit or not.',
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('behavioral interviews','Behavioral Interviews will be a big part of your job search as you begin applying for a job in technology. Companies aren"t just looking for someone who "checks the boxes" in regard to technical skills, they want someone who is a culture fit for their team and their company as well, which is why they"ll use the behavioral interview and/or phone screen to assess if you"re a culture fit or not.',
 'LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Technical Interviews','While most of you likely have experience in general or behavioral interviews, we"re guessing you have yet to encounter a technical interview. The technical interview is very specific to the industry you’re entering and is usually a blend of technical questions, whiteboarding, and/or coding problems.',
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('technical interviews','While most of you likely have experience in general or behavioral interviews, we"re guessing you have yet to encounter a technical interview. The technical interview is very specific to the industry you’re entering and is usually a blend of technical questions, whiteboarding, and/or coding problems.',
 'LINKME');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('After Interviews','The interview doesn"t end once you leave or log off the Zoom call! Make sure you"re taking the time to follow-up accordingly with the company and that you don"t take your foot off the gas with other applications! Always send a thank you email (after each and every interview),
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('after interviews','The interview doesn"t end once you leave or log off the Zoom call! Make sure you"re taking the time to follow-up accordingly with the company and that you don"t take your foot off the gas with other applications! Always send a thank you email (after each and every interview),
 Make it personal. Keep applying until you have a signed offer letter in your hand. Even if you feel really good about an interview, don"t stop applying.',
 'LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Job Search','Job Boards, Search Terms, A Boolean Search is a structured search that uses specific search terms with a mixture of phrases such as AND, OR, or NOT to utilize a search engine to its fullest potential. Job alerts will automatically unearth new jobs that match your preferences (based on your keywords and filters) and notify you daily via email and push notifications so you discover great opportunities as soon as possible.The Two-Pronged Approach allows you to take your job application a step further by getting in front of the right person at a company, Step one: Identify a Contact. Step 2: Send Them a Message or Email.',
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('job search','Job Boards, Search Terms, A Boolean Search is a structured search that uses specific search terms with a mixture of phrases such as AND, OR, or NOT to utilize a search engine to its fullest potential. Job alerts will automatically unearth new jobs that match your preferences (based on your keywords and filters) and notify you daily via email and push notifications so you discover great opportunities as soon as possible.The Two-Pronged Approach allows you to take your job application a step further by getting in front of the right person at a company, Step one: Identify a Contact. Step 2: Send Them a Message or Email.',
 'LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Benefits','Once you receive a job offer, you"ll want to review the benefits package as well. The benefits package will include paid time off (PTO), medical benefits, bonuses, and more. Make sure to review this lesson so you"re familiar with what to expect in a benefits package.',
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('benefits','Once you receive a job offer, you"ll want to review the benefits package as well. The benefits package will include paid time off (PTO), medical benefits, bonuses, and more. Make sure to review this lesson so you"re familiar with what to expect in a benefits package.',
 'LINKMEPLEASE');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('Huntr','Huntr is an incredible job search organizational platform that Tech Elevator provides students access too. Once you begin applying to jobs, it"s easy to lose track of which opportunities you"ve applied to, Huntr makes staying organized in your job search easy! In addition to helping you keep track of your applications and interviews, Huntr allows you track your job goals, and find and apply to jobs using their Job Portal!',
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('huntr','Huntr is an incredible job search organizational platform that Tech Elevator provides students access too. Once you begin applying to jobs, it"s easy to lose track of which opportunities you"ve applied to, Huntr makes staying organized in your job search easy! In addition to helping you keep track of your applications and interviews, Huntr allows you track your job goals, and find and apply to jobs using their Job Portal!',
 'LINKMEPLEASE');
 GO
 
-insert into user_message (keywords, topic_id) values ()
+--INSERT INTO user_message (keywords, topic_id) VALUES ('', '')
 
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
+--INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
 
 
 
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
+--INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
+--INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
+--INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
+--INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
+--INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
 
 
 
