@@ -8,6 +8,6 @@ namespace Capstone.DAO
 {
    public interface ITopicDAO
     {
-        Topic GetTopic(string topicQ);
+        Topic GetTopic(Topic topicQ);
     }
 }

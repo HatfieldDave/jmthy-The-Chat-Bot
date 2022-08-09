@@ -1,12 +1,11 @@
 <template>
 	<div>
 		<ul>
-			<li v-for="keywords in messages" v-bind:key="keywords.ID">
-				{{ keywords.keywords }}
+			<li v-for="TopicQ in messages" v-bind:key="TopicQ.ID">
+			<span v-if="TopicQ.TopicQ" >	{{ TopicQ.TopicQ }}</span>
+			<span v-if="TopicQ.topicInfo" >	{{ TopicQ.topicInfo }}</span>
 			</li>
-            <li v-for="responses in messages" v-bind:key="responses.ID">
-                {{ responses.responses }}
-            </li>
+           
 		</ul>
 		<form>
 			<input
@@ -15,7 +14,7 @@
 				filled
 				label="Label"
 				auto-grow
-				v-model="userMessage.keywords"
+				v-model="userMessage.TopicQ"
 			/>
 			<input
 				type="submit"
@@ -36,29 +35,49 @@ export default {
 		return {
 			userMessage: {
 				ID: 0,
-				keywords: "",
-                responses: '',
+				TopicQ: "",
+			},
+			botMessage:{
+				ID: 1,
+				topicInfo: "",
+				link: "",
 			},
 			messageSent: false,
 			messages: [],
 		};
 	},
 	methods: {
-		saveMessage() {
-			this.$store.commit("ADD_USER_MESSAGE", this.userMessage);
-			this.messages.push(this.userMessage);
+		clearUserMessage(){
 			this.userMessage = {
 				ID: this.userMessage.ID++,
-				keywords: "",
-                responses: "",
+				TopicQ: "",
 			};
 		},
+		clearBotMessage(){
+			this.botMessage = {
+				ID: this.botMessage.ID++,
+				topicInfo: "",
+			};
+		},
+		saveUserMessage() {
+			this.$store.commit("ADD_USER_MESSAGE", this.userMessage);
+			this.messages.push(this.userMessage);
+			
+		},
+		saveBotMessage(){
+			this.messages.push(this.botMessage);
+		},
 		sendInput() {
-            this.saveMessage();
-			chatService.sendInput(this.messages[0]).then((response) => {
+            this.saveUserMessage();
+			console.log("sending", this.userMessage);
+			chatService.sendInput(this.userMessage)
+			.then((response) => {
 				if (response.status == 200) {
-					this.messages.push=response.data;
+					this.botMessage=response.data;
+					this.saveBotMessage();
 				}
+				this.clearUserMessage();
+				this.clearBotMessage()
 			});
 
 		},

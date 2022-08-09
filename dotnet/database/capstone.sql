@@ -62,7 +62,7 @@ INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns)
 INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin', 'Zada', 'She/Her');
 GO
 
-INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I"d love to help! Type one of these commands to request help with different topics: "Pathway Help", "Curriculum", "Motivational Quotes", "Find Open Jobs" if you need further assistance please reach out to your Pathway Director:','pathway@techelevator.com');
+INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I''d love to help! Type one of these commands to request help with different topics: "Pathway Help", "Curriculum", "Motivational Quotes", "Find Open Jobs" if you need further assistance please reach out to your Pathway Director:','pathway@techelevator.com');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway','Absolutely! Type one of these commands to request pathway help: [insert commands here]','Maybe link');
 --INSERT INTO topic (topic_q, topic_info, link) VALUES ('Curriculum','','');
 --INSERT INTO topic (topic_q, topic_info, link) VALUES ('Motivational quotes','','');
