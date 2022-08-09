@@ -8,7 +8,7 @@ using Capstone.Models;
 
 namespace Capstone.DAO
 {
-    public class TopicSQLDAO
+    public class TopicSQLDAO : ITopicDAO
     {
         private readonly string connectionString;
 
