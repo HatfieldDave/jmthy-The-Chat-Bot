@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<ul>
-			<li v-for="TopicQ in messages" v-bind:key="TopicQ.ID">
+			<li v-for="TopicQ in messages" v-bind:key="TopicQ.TopicQ">
 			<span v-if="TopicQ.TopicQ" >	{{ TopicQ.TopicQ }}</span>
 			<span v-if="TopicQ.topicInfo" >	{{ TopicQ.topicInfo }}</span>
 			</li>
@@ -34,11 +34,11 @@ export default {
 	data() {
 		return {
 			userMessage: {
-				ID: 0,
+				//ID: 0,
 				TopicQ: "",
 			},
 			botMessage:{
-				ID: 1,
+				//ID: 1,
 				topicInfo: "",
 				link: "",
 			},
@@ -49,13 +49,13 @@ export default {
 	methods: {
 		clearUserMessage(){
 			this.userMessage = {
-				ID: this.userMessage.ID++,
+				//ID: this.userMessage.ID+=2,
 				TopicQ: "",
 			};
 		},
 		clearBotMessage(){
 			this.botMessage = {
-				ID: this.botMessage.ID++,
+				//ID: this.botMessage.ID+=2,
 				topicInfo: "",
 			};
 		},
