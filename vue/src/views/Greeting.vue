@@ -24,10 +24,8 @@ export default {
 <style scoped>
 * {
 	display: flex;
-	background-color: coral;
 }
 div {
-	background-color: blue;
 }
 
 .text-box {
