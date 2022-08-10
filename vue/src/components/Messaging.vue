@@ -8,13 +8,16 @@
       </li>
       <li v-for="TopicQ in messages" v-bind:key="TopicQ.TopicQ">
         <span class="message" id="user_message" v-if="TopicQ.TopicQ">
-          {{ TopicQ.TopicQ }}</span
-        >
+          {{ TopicQ.TopicQ }}
+          </span>
+          <span class="msg_time" v-if="TopicQ.TopicQ"><i>insert time here</i></span>
+        
         <span class="message" id="bot_message" v-if="TopicQ.topicInfo">
           {{ TopicQ.topicInfo }}
-        <a v-bind:href="TopicQ.link" > Link </a>
-          </span
-        >
+          <a v-bind:href="TopicQ.link" v-show="botMessage.link"> Link </a>
+        </span>
+       <span class="msg_time" v-if="TopicQ.topicInfo"><i>insert time here</i></span>
+        
       </li>
     </ul>
     <form class="text-box">
@@ -55,6 +58,7 @@ export default {
       },
       messageSent: false,
       messages: [],
+
     };
   },
   methods: {
