@@ -30,7 +30,7 @@ CREATE TABLE topic (
 	topic_id int IDENTITY(1,1) NOT NULL,
 	topic_q nvarchar(200) NOT NULL,
 	topic_info nvarchar(2000) NOT NULL,
-	link nvarchar(500) NOT NULL
+	link nvarchar(500) 
 	CONSTRAINT PK_topic PRIMARY KEY (topic_id)
 )
 
@@ -62,6 +62,9 @@ INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns)
 INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin', 'Zada', 'She/Her');
 GO
 
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hello','darkness my old friend. I"m JMTHY. How can I help you today ','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hi','How high?','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hey','Hey friend! I"m JMTHY. What can I help you with','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I"d love to help! Type one of these commands to request help with different topics: "Pathway Help", "Curriculum", "Motivational Quotes", "Find Open Jobs" or head to our website:','https://www.techelevator.com/');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway','Absolutely! Type one of these commands to request help with Pathway: "Managing Stress and Imposter Syndrome", "Time Management", "Elevator Pitch", "Resume", "LinkedIn", "Side Projects", "Networking", "Interview Preparation", "Behavioral Interviews", "Technical Interviews", "After Interviews", "Job Search", "Benefits", "Huntr" or you can get in touch with Pathway here:','pathway@techelevator.com');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('curriculum','Definitely! Type one of these commands to request help with: "Loops", "Arrays", "Logical Branching", "Java", "Maps" or you can reach out to your instructors here:','');
