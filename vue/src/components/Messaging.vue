@@ -11,7 +11,9 @@
           {{ TopicQ.TopicQ }}</span
         >
         <span class="message" id="bot_message" v-if="TopicQ.topicInfo">
-          {{ TopicQ.topicInfo }}</span
+          {{ TopicQ.topicInfo }}
+        <a v-bind:href="TopicQ.link" > Link </a>
+          </span
         >
       </li>
     </ul>
