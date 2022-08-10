@@ -62,10 +62,10 @@ INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns)
 INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin', 'Zada', 'She/Her');
 GO
 
-INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I"d love to help! Type one of these commands to request help with different topics: "Pathway Help", "Curriculum", "Motivational Quotes", "Find Open Jobs" if you need further assistance please reach out to your Pathway Director:','pathway@techelevator.com');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway','Absolutely! Type one of these commands to request pathway help: [insert commands here]','Maybe link');
---INSERT INTO topic (topic_q, topic_info, link) VALUES ('Curriculum','','');
---INSERT INTO topic (topic_q, topic_info, link) VALUES ('Motivational quotes','','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I"d love to help! Type one of these commands to request help with different topics: "Pathway Help", "Curriculum", "Motivational Quotes", "Find Open Jobs" or head to our website:','https://www.techelevator.com/');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway','Absolutely! Type one of these commands to request help with Pathway: "Managing Stress and Imposter Syndrome", "Time Management", "Elevator Pitch", "Resume", "LinkedIn", "Side Projects", "Networking", "Interview Preparation", "Behavioral Interviews", "Technical Interviews", "After Interviews", "Job Search", "Benefits", "Huntr" or you can get in touch with Pathway here:','pathway@techelevator.com');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('curriculum','Definitely! Type one of these commands to request help with: "Loops", "Arrays", "Logical Branching", "Java", "Maps" or you can reach out to your instructors here:','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('motivational quotes','Absolutely, friend! Pick a number 1-3','Change links to null maybe?');
 INSERT INTO topic(topic_q, topic_info, link) VALUES ('managing stress and imposter syndrome',
 'Make (and keep to) a schedule While you"re at it, schedule breaks into your day
 Remind yourself you are here to learn Don"t compare yourself to others
@@ -107,8 +107,71 @@ INSERT INTO topic (topic_q, topic_info, link) VALUES ('benefits','Once you recei
 'LINKMEPLEASE');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('huntr','Huntr is an incredible job search organizational platform that Tech Elevator provides students access too. Once you begin applying to jobs, it"s easy to lose track of which opportunities you"ve applied to, Huntr makes staying organized in your job search easy! In addition to helping you keep track of your applications and interviews, Huntr allows you track your job goals, and find and apply to jobs using their Job Portal!',
 'LINKMEPLEASE');
-GO
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('loops','Loops are a fundamental concept for managing program control flow, but they go hand in hand with arrays. Loops provide a convenient way to write a small amount of code that can iterate through all of the values in an array one by one. To learn more click here:','https://lms.techelevator.com/cohorts/105/blocks/3/content_files/03_Loops_and_Arrays/02-loops.md');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('arrays','Arrays are a special data type found in almost all programming languages. They make it more convenient to work with values in aggregate rather than a series of individual variables. To learn more click here:','https://lms.techelevator.com/cohorts/105/blocks/3/content_files/03_Loops_and_Arrays/01-arrays.md');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('logical branching','As a programmer, you may come across a situation where your program must decide what to do next based on the data available to it. For more info click the link here:','https://lms.techelevator.com/cohorts/105/blocks/3/content_files/02_Logical_Branching/01-introduction.md');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('java','Java? Never heard of her. Sounds kinda lame but maybe this link will help','https://www.youtube.com/watch?v=xvFZjo5PgG0');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('maps','We"re no strangers to love
+You know the rules and so do I
+A full commitment"s what I"m thinking of
+You wouldn"t get this from any other guy
+I just wanna tell you how I"m feeling
+Gotta make you understand
+Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye
+Never gonna tell a lie and hurt you
+We"ve known each other for so long
+Your heart"s been aching but you"re too shy to say it
+Inside we both know what"s been going on
+We know the game and we"re gonna play it
+And if you ask me how I"m feeling
+Don"t tell me you"re too blind to see
+Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye
+Never gonna tell a lie and hurt you
+Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye
+Never gonna tell a lie and hurt you
+Never gonna give, never gonna give
+(Give you up)
+We"ve known each other for so long
+Your heart"s been aching but you"re too shy to say it
+Inside we both know what"s been going on
+We know the game and we"re gonna play it
+I just wanna tell you how I"m feeling
+Gotta make you understand
+Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye
+Never gonna tell a lie and hurt you
+Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye
+Never gonna tell a lie and hurt you
+Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye 
 
+or maybe try this link:','https://www.youtube.com/watch?v=xvFZjo5PgG0');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('1','Life is like a sewer… what you get out of it depends on what you put into it. – Tom Lehrer','https://unsplash.com/photos/7sgPfAcM6_o');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('2','A peacock that rests on his feathers is just another turkey. – Dolly Parton','https://unsplash.com/photos/UONij8U_oVc');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('3','A day without sunshine is like, you know, night. – Steve Martin','https://unsplash.com/photos/6GMq7AGxNbE');
+GO
 --INSERT INTO user_message (keywords, topic_id) VALUES ('', '')
 
 --INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
