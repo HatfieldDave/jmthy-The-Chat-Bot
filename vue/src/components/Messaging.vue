@@ -1,7 +1,7 @@
 <template>
   <div class="chat-bot">
-    <ul>
-      <li>
+    <ul class="text-area">
+      <li class="greeting">
         Hello, good to see you,
         {{ this.$store.state.user.nickname }}! How can I help you?
         <span class="msg_time"><i>insert time here</i></span>
@@ -19,7 +19,7 @@
       <input
         type="text"
         name="Chatbox"
-		placeholder="Talk to Jimothy"
+        placeholder="Talk to Jimothy"
         filled
         label="Label"
         auto-grow
@@ -95,6 +95,12 @@ export default {
 .chat-bot {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 40rem;
+}
+.greeting {
+  display: flex;
+  align-items: flex-end;
 }
 .text-box {
   display: flex;
@@ -104,16 +110,35 @@ export default {
   right: 0rem;
   left: 0rem;
   width: auto;
-
 }
-.text-box input[type="text"]{
-	flex: 1;
+.text-area{
+
+  flex-direction: column;
+	padding-bottom: 1rem;
+}
+span{
+	flex-direction: column;
+}
+.text-box input[type="text"] {
+  flex: 1;
 }
 #user_message {
   border-radius: 20px 20px 5px;
   color: white;
   background-color: green;
+    padding: 1%;
+  border-radius: 0.6rem;
+  text-align: right;
+}
+#bot_message {
+  border-radius: 5px 20px 20px;
+  color: white;
+  background-color: rgb(0, 40, 218);
+  text-align: right;
+  justify-self: right;
   align-content: right;
+    padding: 1%;
+  border-radius: 0.6rem;
 }
 
 li {
