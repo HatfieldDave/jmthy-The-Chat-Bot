@@ -104,6 +104,7 @@ export default {
 }
 .text-box {
   display: flex;
+
   align-items: flex-start;
   position: fixed;
   bottom: 0rem;
@@ -111,13 +112,13 @@ export default {
   left: 0rem;
   width: auto;
 }
-.text-area{
-
+.text-area {
   flex-direction: column;
-	padding-bottom: 1rem;
+  flex-grow: 1;
+  padding-bottom: 1rem;
 }
-span{
-	flex-direction: column;
+span {
+  flex-direction: column;
 }
 .text-box input[type="text"] {
   flex: 1;
@@ -126,7 +127,7 @@ span{
   border-radius: 20px 20px 5px;
   color: white;
   background-color: green;
-    padding: 1%;
+  padding: 1%;
   border-radius: 0.6rem;
   text-align: right;
 }
@@ -134,10 +135,10 @@ span{
   border-radius: 5px 20px 20px;
   color: white;
   background-color: rgb(0, 40, 218);
-  text-align: right;
-  justify-self: right;
-  align-content: right;
-    padding: 1%;
+  text-align: left;
+  justify-self: left;
+  align-content: left;
+  padding: 1%;
   border-radius: 0.6rem;
 }
 

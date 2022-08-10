@@ -21,14 +21,7 @@ export default {
 };
 </script>
 
-<style scoped>
-* {
-	display: flex;
-}
-div {
-}
+<style>
 
-.text-box {
-	align-items: flex-end;
-}
+
 </style>
