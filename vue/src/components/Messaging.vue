@@ -1,22 +1,25 @@
 <template>
   <div class="chat-bot">
-    <ul class="text-area">
-      <li class="greeting">
+    <ul class="messages-area" style="list-style:none">
+      <li class="greeting botMsgBox">
         Hello, good to see you,
         {{ this.$store.state.user.nickname }}! How can I help you?
         <span class="msg_time"><i>insert time here</i></span>
       </li>
-      <li v-for="TopicQ in messages" v-bind:key="TopicQ.TopicQ">
-        <span class="message" id="user_message" v-if="TopicQ.TopicQ">
+      <li v-for="TopicQ in messages" v-bind:key="TopicQ.TopicQ" class="allMessages" >
+        <div class="userMsgContainer">
+          <span class="message userMsgBox" id="user_message" v-if="TopicQ.TopicQ">
           {{ TopicQ.TopicQ }}
           </span>
           <span class="msg_time" v-if="TopicQ.TopicQ"><i>insert time here</i></span>
-        
-        <span class="message" id="bot_message" v-if="TopicQ.topicInfo">
+        </div>
+        <div class="botMsgContainer">
+          <span class="message botMsgBox" id="bot_message" v-if="TopicQ.topicInfo">
           {{ TopicQ.topicInfo }}
           <a v-bind:href="TopicQ.link" v-show="botMessage.link"> Link </a>
-        </span>
+         </span>
        <span class="msg_time" v-if="TopicQ.topicInfo"><i>insert time here</i></span>
+        </div>
         
       </li>
     </ul>
@@ -97,16 +100,21 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .chat-bot {
-  display: flex;
+ display: flex;
   flex-direction: column;
-  width: 100%;
+  flex-grow: 1;
   max-width: 40rem;
+  
+
+ 
+  
 }
 .greeting {
-  display: flex;
+   display: flex;
   align-items: flex-end;
+
 }
 .text-box {
   display: flex;
@@ -116,16 +124,21 @@ export default {
   bottom: 0rem;
   right: 0rem;
   left: 0rem;
-  width: auto;
+  width: auto
+
 }
-.text-area {
+.messages-area {
   flex-direction: column;
-  flex-grow: 1;
+  align-items:stretch;
   padding-bottom: 1rem;
+  align-content: space-between;
+
+  
+  display:flex;
+  
+  
 }
-span {
-  flex-direction: column;
-}
+
 .text-box input[type="text"] {
   flex: 1;
 }
@@ -135,26 +148,37 @@ span {
   background-color: green;
   padding: 1%;
   border-radius: 0.6rem;
-  text-align: right;
+   display: flex;
+  list-style: none;
+  align-items: stretch;
+
 }
 #bot_message {
   border-radius: 5px 20px 20px;
   color: white;
   background-color: rgb(0, 40, 218);
-  text-align: left;
-  justify-self: left;
-  align-content: left;
   padding: 1%;
   border-radius: 0.6rem;
-}
 
-li {
-  display: flex;
+   display: flex;
   list-style: none;
   align-items: stretch;
 }
-
-ul {
-  align-items: stretch;
+.userMsgContainer{
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
+.botMsgContainer{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.allMessagesLi{
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+}
+
 </style>
