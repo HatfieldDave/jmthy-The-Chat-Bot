@@ -64,21 +64,42 @@ namespace Capstone.BotStuff
             //REPLACE ME WHEN I"M AVALIBLE
             string userInput = "pathway";
             List<string> TopicQ = SplitArrayTopicQ(topic.TopicQ);
-            
+            double highestThreshold = 0;
+            List<Threshold> thresholds = new List<Threshold>();
+            //Calculates perc for similarity in each topicQ
             foreach (string topicQ in TopicQ)
             {
-                double distance = levenshtein_Distance.Calculate(userInput, topic.TopicQ);
+                double distance = levenshtein_Distance.Calculate(userInput, topicQ);
                 double totalChar = userInput.Length + topic.TopicQ.Length;
                 double perc = distance / totalChar;
-                double highestThreshold = 0;
-                if (perc >= threshold && threshold > highestThreshold)
+                //add the perc to a list along with the topic id as a Threshold object
+                if (perc >= threshold)
                 {
-                    return topic.TopicInfo;
+                    perc = highestThreshold;
+                    Threshold newThreshold = new Threshold();
+                    newThreshold.ThresholdNum = perc;
+                    newThreshold.id = topic.TopicId;
+                    thresholds.Add(newThreshold);
                 }
-
-
+                
             }
-            return null;
+            //gets the highest percentage
+            foreach (Threshold num in thresholds)
+            {
+                if (num.ThresholdNum > threshold)
+                {
+                    threshold = num.ThresholdNum;
+                }
+              
+            }
+            //does something when it matches 
+            foreach (Threshold num in thresholds)
+            {
+                if (num.ThresholdNum == threshold)
+                {
+                    // maybe call topic by id?
+                }  
+            }
 
 
 
