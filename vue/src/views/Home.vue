@@ -1,8 +1,7 @@
 <template>
 	<div class="home">
-		<h1>Home</h1>
-		<p>Chatbot</p>
-	</div>
+		<h1>Welcome to JMTHY</h1>
+			</div>
 </template>
 
 <script>

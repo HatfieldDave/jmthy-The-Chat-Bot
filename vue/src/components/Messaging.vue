@@ -34,7 +34,6 @@
         v-model="userMessage.TopicQ"
       />
       <input
-       class="btn btn-primary"
         type="submit"
         value="Send"
         v-on:click.prevent="(messageSent = true), sendInput()"
@@ -57,7 +56,7 @@ export default {
       },
       botMessage: {
         //ID: 1,
-        topicInfo: "",
+        BotResponse: "",
         link: "",
       },
       messageSent: false,
@@ -140,6 +139,7 @@ export default {
 .text-box input[type="submit"]{
   height: 5rem;
   width: 5rem;
+  background-color: #8acb88;
 }
 
 
