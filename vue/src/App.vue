@@ -2,7 +2,7 @@
   <div id="app">
     <!-- If you start to get random styling you don't like, remove container from this div -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
         <img class="logo" src="@/assets/thisisyeti.png" alt="" />
         <a class="navbar-brand" href="#">JMTHY</a>
@@ -85,6 +85,14 @@ export default {};
 .navbar{
   grid-area: header;
 }
+.navbar-brand {
+  letter-spacing: 0.5rem;
+  font-weight: 900;
+}
+.nav-item{
+text-align: right
+}
+
 
 @import "./styles/colors.scss";
 

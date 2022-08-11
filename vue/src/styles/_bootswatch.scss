@@ -17,18 +17,18 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,
 
 .bg-primary {
   .dropdown-menu {
-    background-color: $primary;
+    background-color: #8acb88;
 
     .dropdown-item,
     .dropdown-item:focus {
-      color: $navbar-dark-color;
+      color: #8acb88;
     }
 
     .dropdown-item.active,
     .dropdown-item:hover,
     .dropdown-item:focus {
       color: $white;
-      background-color: shade-color($primary, 10%);
+      background-color: #8acb88;
     }
   }
 }
@@ -41,14 +41,14 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,
 
     .dropdown-item,
     .dropdown-item:focus {
-      color: $navbar-dark-color;
+      color: #8acb88;
     }
 
     .dropdown-item.active,
     .dropdown-item:hover,
     .dropdown-item:focus  {
       color: $white;
-      background-color: shade-color($gray-800, 10%);
+      background-color: #8acb88;
     }
   }
 }
