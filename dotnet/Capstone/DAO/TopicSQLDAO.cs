@@ -4,12 +4,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Capstone.Models;
+using Capstone.BotStuff;
 
 
 namespace Capstone.DAO
 {
     public class TopicSQLDAO : ITopicDAO
     {
+        private NLP nlp = new NLP();
         private readonly string connectionString;
 
         private string sqlGetTopic = "select t.topic_q, t.topic_info, t.link from topic t where t.topic_q = @topicQ";
@@ -19,10 +21,11 @@ namespace Capstone.DAO
             connectionString = dbConnectionString;
         }
 
-        public Topic GetTopic(Topic topic)
+        public Topic GetBotMessage(Topic userMessage)
         {
             Topic returnTopic = null;
-            string topicQString = topic.TopicQ;
+            string topicQString = userMessage.TopicQ;
+            string response = nlp.BotLanguageDetection(userMessage);
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
 

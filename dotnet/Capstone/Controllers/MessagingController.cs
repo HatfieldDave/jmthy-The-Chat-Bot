@@ -19,17 +19,17 @@ namespace Capstone.Controllers
             topicDAO = _topicDAO;
         }
         [HttpPost]
-        public IActionResult GetTopic(Topic topicQ)
+        public IActionResult GetTopic(Topic userMessage)
         {
 
-            Topic topic = topicDAO.GetTopic(topicQ);
-            if (topicQ != null)
+            Topic botMessage = topicDAO.GetBotMessage(userMessage);
+            if (userMessage != null)
             {
-                return Ok(topic);
+                return Ok(botMessage);
             }
             else
             {
-                return NotFound(topic + "I don't think we teach that here.");
+                return NotFound(botMessage + "I don't think we teach that here.");
             }
         }
     }
