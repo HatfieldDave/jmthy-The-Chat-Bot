@@ -4,56 +4,85 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Capstone.Models;
-using Capstone.BotStuff;
+
 
 
 namespace Capstone.DAO
 {
     public class TopicSQLDAO : ITopicDAO
     {
-        private NLP nlp = new NLP();
+       
         private readonly string connectionString;
 
-        private string sqlGetTopic = "select t.topic_q, t.topic_info, t.link from topic t where t.topic_q = @topicQ";
+        private string sqlGetTopic = "select  t.topic_info, t.link from topic t where t.topic_id = @topicID";
 
         public TopicSQLDAO(string dbConnectionString)
         {
             connectionString = dbConnectionString;
         }
 
-        public Topic GetBotMessage(Topic userMessage)
+        public List<Topic> GetTopicQList()
         {
-            Topic returnTopic = null;
-            string topicQString = userMessage.TopicQ;
-            string response = nlp.BotLanguageDetection(userMessage);
+            List<Topic> TopicQsToCompare = new List<Topic>();
+            string sql = "select topic_id, topic_q from topic";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Topic topic = GetTopicQFromReader(reader);
+                    TopicQsToCompare.Add(topic);
+                }
+                return TopicQsToCompare;
+            }
+        }
+        public BotMessage GetBotMessagebyTopicID(int topicID)
+        {
+            BotMessage botMessage = null;
+            ;
+            
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
 
                 conn.Open();
 
                 SqlCommand cmd = new SqlCommand(sqlGetTopic, conn);
-                cmd.Parameters.AddWithValue("@topicQ", topicQString);
+                cmd.Parameters.AddWithValue("@topicID", topicID);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.HasRows && reader.Read())
                 {
-                    returnTopic = GetTopicFromReader(reader);
+                    botMessage = GetBotMessageFromReader(reader);
                 }
 
-                return returnTopic;
+                return botMessage;
             }
         }
-        private Topic GetTopicFromReader(SqlDataReader reader)
+        private BotMessage GetBotMessageFromReader(SqlDataReader reader)
         {
-            Topic t = new Topic()
+            BotMessage bm = new BotMessage()
             {
-                TopicQ = Convert.ToString(reader["topic_q"]),
-                TopicInfo = Convert.ToString(reader["topic_info"]),
+                
+                BotResponse = Convert.ToString(reader["topic_info"]),
                 Link = Convert.ToString(reader["link"])
 
             };
 
-            return t;
+            return bm;
         }
+        private Topic GetTopicQFromReader(SqlDataReader reader)
+        {
+            Topic topicQandId = new Topic()
+            {
+                TopicID = Convert.ToInt32(reader["topic_id"]),
+                TopicQList = Convert.ToString(reader["topic_q"]).Split("|").ToList<string>()
+            };
+
+            return topicQandId;
+        }
+
+        
     }
 }

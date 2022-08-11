@@ -65,7 +65,7 @@ GO
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('hello','darkness my old friend. I''m JMTHY. How can I help you today ','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('hi','How high?','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('hola','Que paso, my dude?','');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('hi jmthy | how are you? | wassup | what''s poppin'' | ugh | hey | yello | yo | greetings | good morrow | hey','Hi my friend, I''m JMTHY. John and Matt''s Tiny Helper Yetti. What''s on your mind today?','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hi jmthy | how are you? | wassup | what''s poppin'' | ugh | hey | yello | yo | greetings | good morrow ','Hi my friend, I''m JMTHY. John and Matt''s Tiny Helper Yetti. What''s on your mind today?','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('fuck this | i''m gonna take a toaster bath | this was a mistake | fuck | over it | i''m over this | i''m dumb | make me want to tear my hair out | my soul is dying | i''m gonna lay in the street | i''m quitting | i quit ','Slow down there tiger. Maybe take a step away or a deep breath. If you want, I also have some motivational quotes that might cheer you up.....did I mention they come with an emotional support animal? Just say "Motivational Quotes"','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('i''m feeling sad | what am i doing with my life? | i can''t do this','','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
