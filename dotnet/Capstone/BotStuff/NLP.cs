@@ -8,7 +8,7 @@ namespace Capstone.BotStuff
 {
     public class NLP
     {
-        
+
         ///Calculate the percentage of similarity between 2 strings using the Levenshtein distance
         public double Calculate(string string1, string string2)
         {
@@ -63,21 +63,35 @@ namespace Capstone.BotStuff
             NLP levenshtein_Distance = new NLP();
             //REPLACE ME WHEN I"M AVALIBLE
             string userInput = "pathway";
-            double distance = levenshtein_Distance.Calculate(userInput, topic.TopicQ);
-            double totalChar = userInput.Length + topic.TopicQ.Length;
-            double perc = distance / totalChar;
-            if (perc >= threshold)
+            List<string> TopicQ = SplitArrayTopicQ(topic.TopicQ);
+            
+            foreach (string topicQ in TopicQ)
             {
-                return topic.TopicInfo;
+                double distance = levenshtein_Distance.Calculate(userInput, topic.TopicQ);
+                double totalChar = userInput.Length + topic.TopicQ.Length;
+                double perc = distance / totalChar;
+                double highestThreshold = 0;
+                if (perc >= threshold && threshold > highestThreshold)
+                {
+                    return topic.TopicInfo;
+                }
+
+
             }
-            else
-            {
-                return "I'm sorry I don't think I understand";
-            }
+            return null;
+
 
 
 
 
         }
+        public List<string> SplitArrayTopicQ(string stringToSplit)
+        {
+            return stringToSplit.Split("|").ToList<string>();
+
+        }
+
+
+
     }
 }
