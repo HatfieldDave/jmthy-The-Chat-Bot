@@ -27,13 +27,14 @@
       <input
         type="text"
         name="Chatbox"
-        placeholder="Talk to Jimothy"
+        placeholder="Talk to JMTHY"
         filled
         label="Label"
         auto-grow
         v-model="userMessage.TopicQ"
       />
       <input
+       class="btn btn-primary"
         type="submit"
         value="Send"
         v-on:click.prevent="(messageSent = true), sendInput()"
@@ -104,12 +105,7 @@ export default {
 .chat-bot {
  display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  max-width: 40rem;
-  
-
- 
-  
+  flex-grow: 1;  
 }
 .greeting {
    display: flex;
@@ -118,13 +114,13 @@ export default {
 }
 .text-box {
   display: flex;
-
   align-items: flex-start;
   position: fixed;
   bottom: 0rem;
   right: 0rem;
   left: 0rem;
-  width: auto
+  width: auto;
+  height: 5rem;
 
 }
 .messages-area {
@@ -132,23 +128,28 @@ export default {
   align-items:stretch;
   padding-bottom: 1rem;
   align-content: space-between;
-
-  
   display:flex;
-  
-  
 }
+
 
 .text-box input[type="text"] {
   flex: 1;
+  height: 5rem;  
 }
+
+.text-box input[type="submit"]{
+  height: 5rem;
+  width: 5rem;
+}
+
+
 #user_message {
   border-radius: 20px 20px 5px;
   color: white;
-  background-color: green;
+  background-color: #5bc0de;
   padding: 1%;
   border-radius: 0.6rem;
-   display: flex;
+  display: flex;
   list-style: none;
   align-items: stretch;
 
@@ -156,11 +157,10 @@ export default {
 #bot_message {
   border-radius: 5px 20px 20px;
   color: white;
-  background-color: rgb(0, 40, 218);
+  background-color: #A5A5A5;
   padding: 1%;
   border-radius: 0.6rem;
-
-   display: flex;
+  display: flex;
   list-style: none;
   align-items: stretch;
 }
