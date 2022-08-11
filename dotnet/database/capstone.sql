@@ -64,10 +64,15 @@ GO
 
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('hello','darkness my old friend. I''m JMTHY. How can I help you today ','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('hi','How high?','');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('hey','Hey friend! I''m JMTHY. What can I help you with','');
-INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I''d love to help! Type one of these commands to request help with different topics: "Pathway Help", "Curriculum", "Motivational Quotes", "Find Open Jobs" or head to our website:','https://www.techelevator.com/');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway','Absolutely! Type one of these commands to request help with Pathway: "Managing Stress and Imposter Syndrome", "Time Management", "Elevator Pitch", "Resume", "LinkedIn", "Side Projects", "Networking", "Interview Preparation", "Behavioral Interviews", "Technical Interviews", "After Interviews", "Job Search", "Benefits", "Huntr" or you can get in touch with Pathway here:','pathway@techelevator.com');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('curriculum','Definitely! Type one of these commands to request help with: "Loops", "Arrays", "Logical Branching", "Java", "Maps" or you can reach out to your instructors here:','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hola','Que paso, my dude?','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hi jmthy | how are you? | wassup | what''s poppin'' | ugh | hey | yello | yo | greetings | good morrow | hey','Hi my friend, I''m JMTHY. John and Matt''s Tiny Helper Yetti. What''s on your mind today?','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
+
+
+INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I''d love to help! I can help with a wide variety of Tech Elevator subject topics such as: "Pathway Help" | "Curriculum" | "Motivational Quotes" | "Find Open Jobs" | Are any of these what you need help with?','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('none of those | no | i need help with something else | something else  ','I''m afraid those are the only topics I know about right now. But I have of very tired, hard working, overly caffeinated, and mildly unhinged team of junior developers working as hard as they can to make me live up to everyone''s expectations. If this is an emergency please contact your pathway director via Slack or shoot an email to: ','pathway@techelevator.com');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway | i need help with pathway | can you help me with pathway? | i''m feeling nervous about pathway | what can you tell me about pathway | what about pathway? ','Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : "Managing Stress and Imposter Syndrome" | "Time Management" | "Elevator Pitch" | "Resume" | "LinkedIn" | "Side Projects" | "Networking" | "Interview Preparation" | "Behavioral Interviews" | "Technical Interviews" | "After Interviews" | "Job Search" | "Benefits" | "Huntr" | or you can get in touch with Pathway here:','pathway@techelevator.com');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('curriculum | i need help with curriculum | can you help me with curriculum? | what do you know about coding? | i''m feeling nervous about class | what can you tell me about class topics | what about curriculum? ','If none of these topics are tickling your peach you can always send a slack to your instructor!','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('motivational quotes','Absolutely, friend! Pick a number 1-3','Change links to null maybe?');
 INSERT INTO topic(topic_q, topic_info, link) VALUES ('managing stress and imposter syndrome',
 'Make (and keep to) a schedule While you''re at it, schedule breaks into your day
