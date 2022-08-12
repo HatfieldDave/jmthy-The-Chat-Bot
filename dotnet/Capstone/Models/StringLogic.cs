@@ -10,7 +10,6 @@ namespace Capstone.Models
     {
         public List<Topic> FullTopicList;
         
-        private Levenshtein Vlad = new Levenshtein();
         public StringLogic(List<Topic> fullTopicList, string userText)
         {
             this.FullTopicList = fullTopicList;
