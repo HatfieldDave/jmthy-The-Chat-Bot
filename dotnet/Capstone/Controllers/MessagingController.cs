@@ -14,7 +14,7 @@ namespace Capstone.Controllers
     public class MessagingController : ControllerBase
     {
         private readonly ITopicDAO topicDAO;
-        private List<Topic> FullTopicList;
+        
 
         public MessagingController(ITopicDAO _topicDAO)
         {
@@ -25,7 +25,8 @@ namespace Capstone.Controllers
         [HttpPost]
         public IActionResult GetTopic(UserMessage userMessage)
         {
-            
+            List<Topic>FullTopicList = topicDAO.GetTopicQList();
+
             StringLogic sl = new StringLogic(FullTopicList, userMessage.UserText);
             int topicIdOfHighestThreshold = sl.CalculateTopicIdOfHighestThreshold();
 
@@ -43,7 +44,7 @@ namespace Capstone.Controllers
         }
         private void GetFullTopicList()
         {
-            FullTopicList = topicDAO.GetTopicQList();
+            
         }
     }
 }
