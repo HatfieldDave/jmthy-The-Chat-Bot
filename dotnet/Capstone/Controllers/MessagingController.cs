@@ -25,9 +25,12 @@ namespace Capstone.Controllers
         [HttpPost]
         public IActionResult GetTopic(UserMessage userMessage)
         {
-            List<Topic>FullTopicList = topicDAO.GetTopicQList();
+            List<Topic> FullTopicList = topicDAO.GetTopicQList();
 
             StringLogic sl = new StringLogic(FullTopicList, userMessage.UserText);
+            sl.CalculateTopicThresholds(userMessage.UserText);
+            
+
             int topicIdOfHighestThreshold = sl.CalculateTopicIdOfHighestThreshold();
 
             BotMessage botMessage = topicDAO.GetBotMessagebyTopicID(topicIdOfHighestThreshold);
