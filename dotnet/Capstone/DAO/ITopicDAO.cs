@@ -8,6 +8,9 @@ namespace Capstone.DAO
 {
    public interface ITopicDAO
     {
-        Topic GetBotMessage(Topic topicQ);
+        List<Topic> GetTopicQList();
+        BotMessage GetBotMessagebyTopicID(int topicID);
+
+        
     }
 }

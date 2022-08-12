@@ -51,6 +51,12 @@
             Model of user data to return upon successful login
             </summary>
         </member>
+        <member name="M:Capstone.Models.StringLogic.CalculateTopicThresholds(System.String)">
+            <summary>
+            Lopps over a list of TopicQs in the database and sets t
+            </summary>
+            <param name="userText"></param>
+        </member>
         <member name="T:Capstone.Security.IPasswordHasher">
             <summary>
             Represents a password hasher.
