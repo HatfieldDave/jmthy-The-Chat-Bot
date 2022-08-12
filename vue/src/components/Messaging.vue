@@ -51,8 +51,10 @@ export default {
   data() {
     return {
       userMessage: {
-        //ID: 0,
-        TopicQ: "",
+        "userMessageID": 0,
+        "userText": "string",
+        "topicID": 0,
+        "userID": 0
       },
       botMessage: {
         //ID: 1,
@@ -139,7 +141,7 @@ export default {
 .text-box input[type="submit"]{
   height: 5rem;
   width: 5rem;
-  background-color: #8acb88;
+  background-color: #5bc0de;
 }
 
 
@@ -157,7 +159,7 @@ export default {
 #bot_message {
   border-radius: 5px 20px 20px;
   color: white;
-  background-color: #A5A5A5;
+  background-color: #c5dddb;
   padding: 1%;
   border-radius: 0.6rem;
   display: flex;
