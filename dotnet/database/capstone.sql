@@ -73,7 +73,7 @@ INSERT INTO topic (topic_q, topic_info, link) VALUES ('i''m feeling sad | what a
 INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I''d love to help! I can help with a wide variety of Tech Elevator subject topics such as: "Pathway Help" | "Curriculum" | "Motivational Quotes" | "Find Open Jobs" | Are any of these what you need help with?','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway | i need help with pathway | can you help me with pathway? | i''m feeling nervous about pathway | what can you tell me about pathway | what about pathway? ','Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : "Managing Stress" | "Imposter Syndrome" | "Time Management" | "Elevator Pitch" | "Resume" | "LinkedIn" | "Side Projects" | "Networking" | "Interview Preparation" | "Behavioral Interviews" | "Technical Interviews" | "After Interviews" | "Job Search" | "Benefits" | "Huntr" | or you can get in touch with Pathway here:','pathway@techelevator.com');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('curriculum | i need help with curriculum | can you help me with curriculum? | what do you know about coding? | i''m feeling nervous about class | what can you tell me about class topics | what about curriculum? ','If none of these topics are tickling your peach you can always send a slack to your instructor!','');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('motivational quotes','Absolutely, friend! Pick a number 1-3','Change links to null maybe?');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('motivational quotes','Absolutely, friend! Pick a number 1-3', ' ');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('none of those | no | i need help with something else | something else  ','I''m afraid those are the only topics I know about right now. But I have of very tired, hard working, overly caffeinated, and mildly unhinged team of junior developers working as hard as they can to make me live up to everyone''s expectations. If this is an emergency please contact your pathway director via Slack or shoot an email to: ','pathway@techelevator.com');
 
 
@@ -180,11 +180,22 @@ Never gonna run around and desert you
 Never gonna make you cry
 Never gonna say goodbye 
 
-or maybe try this link:','https://www.youtube.com/watch?v=xvFZjo5PgG0');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('1','Life is like a sewer… what you get out of it depends on what you put into it. – Tom Lehrer','https://unsplash.com/photos/7sgPfAcM6_o');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('2','A peacock that rests on his feathers is just another turkey. – Dolly Parton','https://unsplash.com/photos/UONij8U_oVc');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('3','A day without sunshine is like, you know, night. – Steve Martin','https://unsplash.com/photos/6GMq7AGxNbE');
+or maybe try this link:','https://www.mapquest.com/us/ohio/swaco-408403550');
+
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('1','Life is like a sewer… what you get out of it depends on what you put into it. – Tom Lehrer', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('2','I have spent my years since Princeton, while at law school and in my various professional jobs, not feeling completely a part of the worlds I inhabit. I am always looking over my shoulder wondering if I measure up. - Sonia Sotomayer', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('3','That brain of mine is something more than merely mortal; as time will show. - Ada Lovelace', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('4','To me programming is more than an important practical art. It is also a gigantic undertaking in the foundations of knowledge. - Grace Hopper', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('5','Only the dead fish go with the flow. - Andy Hunt', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('6','Stress acts as an accelerator: it will push you either forward or backward, but you choose which direction. ?Chelsea Erieau', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('7','We gain strength, and courage, and confidence by each experience in which we really stop to look fear in the face....We must do that which we think we cannot. — Eleanor Roosevelt', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('8','You may encounter many defeats, but you must not be defeated. In fact, it may be necessary to encounter the defeats, so you can know who you are, what you can rise from, how you can still come out of it. - Dr. Maya Angelou', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('9','You never have to ask anyone permission to lead. When you want to lead, you lead. - Kamala Harris', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('10','There''s something so special about a woman who dominates in a man''s world. It takes a certain grace, strength, intelligence, fearlessness, and the nerve to never take no as an answer. - Rihanna', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('11','The discussion of representation is one that has been repeated over and over again, and the solution has always been that it''s up to us to support, promote, and create the images that we want to see. — Issa Rae', ' ');
 GO
+
+
 --INSERT INTO user_message (keywords, topic_id) VALUES ('', '')
 
 --INSERT INTO topic (topic_q, topic_info, link) VALUES ('','','');
