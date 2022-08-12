@@ -34,7 +34,7 @@ namespace Capstone.Controllers
             int topicIdOfHighestThreshold = sl.CalculateTopicIdOfHighestThreshold();
 
             BotMessage botMessage = topicDAO.GetBotMessagebyTopicID(topicIdOfHighestThreshold);
-           
+            botMessage.UserText = userMessage.UserText;
             
             if (userMessage != null)
             {
