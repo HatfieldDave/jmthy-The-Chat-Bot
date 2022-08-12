@@ -20,9 +20,7 @@ namespace Capstone.Models
         {
 
         }
-        
         public int TopicId { get; set; }
-       
         public  double HighestThreshold { get; set; }
         public string UserText { get; set; }
 
