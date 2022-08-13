@@ -21,7 +21,7 @@ namespace Capstone.Models
                 double distance = Vlad.Distance(userText, q);
                 double totalChar = userText.Length + q.Length;
                 double threshy = (1 - (distance / totalChar));
-                if (threshy > Threshold)
+                if (threshy > Threshold && threshy > .70)
                 {
                     Threshold = threshy;
                 }

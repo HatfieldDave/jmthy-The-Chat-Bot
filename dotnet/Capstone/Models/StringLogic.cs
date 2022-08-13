@@ -10,7 +10,6 @@ namespace Capstone.Models
     {
         public List<Topic> FullTopicList;
         
-        private Levenshtein Vlad = new Levenshtein();
         public StringLogic(List<Topic> fullTopicList, string userText)
         {
             this.FullTopicList = fullTopicList;
@@ -20,9 +19,7 @@ namespace Capstone.Models
         {
 
         }
-        
         public int TopicId { get; set; }
-       
         public  double HighestThreshold { get; set; }
         public string UserText { get; set; }
 
