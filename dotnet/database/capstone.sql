@@ -153,7 +153,7 @@ INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('encapsulat
 'https://www.w3schools.blog/c-sharp-encapsulation','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoLykQMSo-wpL45YXnKgs8-7e10L8ReSoQCQ&usqp=CAU');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('java','Java? Never heard of her. Sounds kinda lame but maybe this link will help',
 'https://www.youtube.com/watch?v=xvFZjo5PgG0','');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('maps','We''re no strangers to love
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('maps | i need help with maps','We''re no strangers to love
 You know the rules and so do I
 A full commitment''s what I''m thinking of
 You wouldn''t get this from any other guy

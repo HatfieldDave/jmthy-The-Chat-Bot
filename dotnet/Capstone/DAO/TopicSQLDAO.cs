@@ -40,8 +40,8 @@ namespace Capstone.DAO
         }
         public BotMessage GetBotMessagebyTopicID(int topicID)
         {
-            BotMessage botMessage = null;
-            ;
+            BotMessage botMessage = new BotMessage();
+            
             
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
