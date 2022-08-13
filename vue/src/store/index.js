@@ -59,7 +59,7 @@ export default new Vuex.Store({
 			axios.defaults.headers.common = {};
 		},
 		ADD_USER_MESSAGE(state, userMessage){
-			this.state.userMessages.push(userMessage);
+			state.userMessages.push(userMessage);
 		}
 	},
 });

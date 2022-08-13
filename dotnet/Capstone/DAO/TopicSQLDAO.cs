@@ -14,7 +14,7 @@ namespace Capstone.DAO
        
         private readonly string connectionString;
 
-        private string sqlGetTopic = "select  t.topic_info, t.link from topic t where t.topic_id = @topicID";
+        private string sqlGetTopic = "select  t.topic_info, t.info_link, t.img_link from topic t where t.topic_id = @topicID";
 
         public TopicSQLDAO(string dbConnectionString)
         {
@@ -66,8 +66,8 @@ namespace Capstone.DAO
             {
                 
                 BotResponse = Convert.ToString(reader["topic_info"]),
-                Link = Convert.ToString(reader["link"])
-
+                ImgLink = Convert.ToString(reader["img_link"]),
+                InfoLink = Convert.ToString(reader["info_link"])
             };
 
             return bm;
@@ -78,6 +78,7 @@ namespace Capstone.DAO
             {
                 TopicID = Convert.ToInt32(reader["topic_id"]),
                 TopicQList = Convert.ToString(reader["topic_q"]).Split("|").ToList<string>()
+
             };
 
             return topicQandId;
