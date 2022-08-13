@@ -1,46 +1,73 @@
 <template>
-  <div class="chat-bot">
-    <ul class="messages-area" style="list-style:none">
-      <li class="greeting botMsgBox">
-        Hello, good to see you,
-        {{ this.$store.state.user.nickname }}! How can I help you?
-        <span class="msg_time"><i>insert time here</i></span>
-      </li>
-      <li v-for="message in messages" v-bind:key="message.botResponse" class="allMessages" >
-        <div class="userMsgContainer">
-          <span class="message userMsgBox" id="user_message" v-if="message.userText">
-          {{ message.userText }}
-          </span>
-          <span class="msg_time" v-if="message.userText"><i>insert time here</i></span>
-        </div>
-        <div class="botMsgContainer">
-          <span class="message botMsgBox" id="bot_message" v-if="message.botResponse">
-          {{ message.botResponse }}
-          <a v-bind:href="message.link" v-show="botMessage.infoLink"> Link </a>
-          <image-card v-show="botMessage.imgLink" />
-         </span>
-       <span class="msg_time" v-if="message.botResponse"><i>insert time here</i></span>
-        </div>
-        
-      </li>
-    </ul>
-    <form class="text-box">
-      <input
-        type="text"
-        name="Chatbox"
-        placeholder="Talk to JMTHY"
-        filled
-        label="Label"
-        auto-grow
-        v-model="userMessage.userText"
-      />
-      <input
-        type="submit"
-        value="Send"
-        v-on:click.prevent="(messageSent = true), sendInput()"
-      />
-    </form>
-  </div>
+	<div class="chat-bot">
+		<ul class="messages-area" style="list-style: none" ref="messagesContainer">
+			<div class="greetingMsgContainer">
+				<li id="greeting_message">
+					Hello, good to see you,
+					{{ this.$store.state.user.nickname }}! How can I help you?
+				</li>
+				<span class="msg_time"
+					><i>{{ getTime() }}</i></span
+				>
+			</div>
+			<li
+				v-for="message in messages"
+				v-bind:key="message.botResponse"
+				class="allMessages"
+			>
+				<div class="userMsgContainer">
+					<span class="msg_time" v-if="message.userText"
+						><i>{{ getTime() }}</i></span
+					>
+					<span
+						class="message userMsgBox"
+						id="user_message"
+						v-if="message.userText"
+					>
+						{{ message.userText }}
+					</span>
+				</div>
+				<div class="botMsgContainer">
+					<span
+						class="message botMsgBox"
+						id="bot_message"
+						v-if="message.botResponse"
+					>
+						{{ message.botResponse }}
+					</span>
+					<span class="msg_time" v-if="message.botResponse"
+						><i>{{ getTime() }}</i></span
+					>
+				</div>
+				<div>
+					<span id ="link_message" v-if="message.infoLink">
+						<a>
+							For more information Click Here, <a v-bind:href="message.infoLink" v-show="message.infoLink">
+							Link
+						</a>
+						</a>
+						
+					</span>
+				</div>
+			</li>
+		</ul>
+		<form class="text-box">
+			<input
+				type="text"
+				name="Chatbox"
+				placeholder="Talk to JMTHY"
+				filled
+				label="Label"
+				auto-grow
+				v-model="userMessage.userText"
+			/>
+			<input
+				type="submit"
+				value="Send"
+				v-on:click.prevent="(messageSent = true), sendInput()"
+			/>
+		</form>
+	</div>
 </template>
 <script>
 import chatService from "../services/ChatService";
