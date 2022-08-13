@@ -16,7 +16,9 @@ namespace Capstone.Models
 
         public string BotResponse { get; set; } 
 
-        public string Link { get; set; }
+        public string InfoLink { get; set; }
+
+        public string ImgLink { get; set; }
 
         public double SimilarityPercent { get; set; }
 

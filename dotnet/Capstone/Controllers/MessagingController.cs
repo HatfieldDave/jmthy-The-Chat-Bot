@@ -38,7 +38,11 @@ namespace Capstone.Controllers
                     fiteredUserText += userText.Split(buzz);
                 }
             }
-            return fiteredUserText;
+            if(fiteredUserText != "")
+            {
+                return fiteredUserText;
+            }
+            return userText;
         }
 
 
@@ -55,22 +59,30 @@ namespace Capstone.Controllers
             List<Topic> FullTopicList = topicDAO.GetTopicQList();
             string userText = FilterBuzzWords(userMessage.UserText);
             StringLogic sl = new StringLogic(FullTopicList, userText);
-            sl.CalculateTopicThresholds(userMessage.UserText);
+            sl.CalculateTopicThresholds(userText);
 
 
             int topicIdOfHighestThreshold = sl.CalculateTopicIdOfHighestThreshold();
 
             BotMessage botMessage = topicDAO.GetBotMessagebyTopicID(topicIdOfHighestThreshold);
-            botMessage.UserText = userMessage.UserText;
+            botMessage.UserText = userText;
 
-            if (userMessage != null)
+            if (userText != null)
             {
+                if (botMessage == null)
+                {
+
+                    botMessage.BotResponse = "Did you fall asleep on the KeyBoard? I need a little help understanding you.";
+                   
+                }
                 return Ok(botMessage);
             }
             else
             {
+
                 return NotFound("I don't think we teach that here.");
             }
+
         }
     }
 }
