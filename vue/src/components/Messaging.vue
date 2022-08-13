@@ -7,7 +7,6 @@
         {{ this.$store.state.user.nickname }}! How can I help you?
       </li><span class="msg_time"><i>{{ getTime() }}</i></span>
       </div>
-      
       <li
         v-for="message in messages"
         v-bind:key="message.botResponse"
@@ -57,13 +56,10 @@
     </form>
   </div>
 </template>
-
 <script>
 import chatService from "../services/ChatService";
-
 export default {
   name: "Messaging",
-
   data() {
     return {
       userMessage: {
@@ -119,7 +115,6 @@ export default {
   },
 };
 </script>
-
 <style>
 .chat-bot {
   display: flex;
@@ -147,18 +142,15 @@ export default {
   align-content: space-between;
   display: flex;
 }
-
 .text-box input[type="text"] {
   flex: 1;
   height: 5rem;
 }
-
 .text-box input[type="submit"] {
   height: 5rem;
   width: 5rem;
-  background-color: #5bc0de;
+  background-color: #5BC0DE;
 }
-
 #user_message {
   border-radius: 20px 20px 5px;
   color: white;
@@ -176,7 +168,7 @@ export default {
 #bot_message {
   border-radius: 5px 20px 20px;
   color: white;
-  background-color:  #499AB2;
+  background-color: #499AB2;
   padding: 1%;
   border-radius: 0.6rem;
   display: flex;
@@ -188,7 +180,7 @@ export default {
 #greeting_message{
   border-radius: 5px 20px 20px;
   color: white;
-  background-color:  #499AB2;
+  background-color: #499AB2;
   padding: 1%;
   border-radius: 0.6rem;
   display: flex;
