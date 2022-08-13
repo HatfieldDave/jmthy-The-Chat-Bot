@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Capstone.Models
 {
-    public class UserMessage
+    public class UserMessage //all lives in user_message table in DB
     {
         public int UserMessageID { get; set; }
         public string UserText { get; set; }

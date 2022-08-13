@@ -12,11 +12,12 @@ namespace Capstone.Models
 
         }
 
-        public string UserText { get; set; }
 
-        public string BotResponse { get; set; } 
+        public string BotResponse { get; set; } //lives in topicInfo in DB
 
-        public string Link { get; set; }
+        public string InfoLink { get; set; }
+
+        public string ImgLink { get; set; }
 
         public double SimilarityPercent { get; set; }
 
