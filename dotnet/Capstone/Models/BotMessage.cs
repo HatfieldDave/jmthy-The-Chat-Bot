@@ -12,9 +12,9 @@ namespace Capstone.Models
 
         }
 
-        public string UserText { get; set; }
+        public string UserText { get; set; } // lives in user_message table in DB (still need sql query to insert into)
 
-        public string BotResponse { get; set; } 
+        public string BotResponse { get; set; } //lives in topicInfo in DB
 
         public string Link { get; set; }
 

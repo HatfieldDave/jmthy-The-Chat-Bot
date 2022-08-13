@@ -16,7 +16,8 @@
         <div class="botMsgContainer">
           <span class="message botMsgBox" id="bot_message" v-if="message.botResponse">
           {{ message.botResponse }}
-          <a v-bind:href="message.link" v-show="botMessage.link"> Link </a>
+          <a v-bind:href="message.link" v-show="botMessage.infoLink"> Link </a>
+          <image-card v-show="botMessage.imgLink" />
          </span>
        <span class="msg_time" v-if="message.botResponse"><i>insert time here</i></span>
         </div>
@@ -44,9 +45,15 @@
 
 <script>
 import chatService from "../services/ChatService";
+import ImageCard from "../ImageCard.vue";
+import ImageCard from './ImageCard.vue';
 
 export default {
   name: "Messaging",
+  components:{
+    ImageCard
+    ImageCard
+  },
 
   data() {
     return {
@@ -59,7 +66,8 @@ export default {
       botMessage: {
         //ID: 1,
         botResponse: "",
-        link: "",
+        infoLink: "",
+        imgLink:"",
       },
       messageSent: false,
       messages: [],
@@ -77,6 +85,8 @@ export default {
       this.botMessage = {
         //ID: this.botMessage.ID+=2,
         botResponse: "",
+        infoLink: "",
+        imgLink:"https://i.redd.it/hpwchq8av5h91.jpg",
       };
     },
     saveUserMessage() {
