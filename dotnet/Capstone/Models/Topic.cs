@@ -15,11 +15,16 @@ namespace Capstone.Models
 
         public void CalculateThreshold(string userText)
         {
+            Threshold = 0;
             foreach(string q in TopicQList)
             {
                 double distance = Vlad.Distance(userText, q);
                 double totalChar = userText.Length + q.Length;
-                Threshold += (1 - (distance / totalChar));
+                double threshy = (1 - (distance / totalChar));
+                if (threshy > Threshold && threshy > .70)
+                {
+                    Threshold = threshy;
+                }
             }
         }
     }

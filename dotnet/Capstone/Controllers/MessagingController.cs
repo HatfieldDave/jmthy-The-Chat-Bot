@@ -14,37 +14,40 @@ namespace Capstone.Controllers
     public class MessagingController : ControllerBase
     {
         private readonly ITopicDAO topicDAO;
-        
+
 
         public MessagingController(ITopicDAO _topicDAO)
         {
             topicDAO = _topicDAO;
-           
+
         }
         //need to be able to call full topic list with DAO one time inorder to pass it in for String LogicClass
         [HttpPost]
         public IActionResult GetTopic(UserMessage userMessage)
         {
-            List<Topic>FullTopicList = topicDAO.GetTopicQList();
+            List<Topic> FullTopicList = topicDAO.GetTopicQList();
 
             StringLogic sl = new StringLogic(FullTopicList, userMessage.UserText);
+            sl.CalculateTopicThresholds(userMessage.UserText);
+
+
             int topicIdOfHighestThreshold = sl.CalculateTopicIdOfHighestThreshold();
 
             BotMessage botMessage = topicDAO.GetBotMessagebyTopicID(topicIdOfHighestThreshold);
-           
-            
+            botMessage.UserText = userMessage.UserText;
+
             if (userMessage != null)
             {
                 return Ok(botMessage);
             }
             else
             {
-                return NotFound(botMessage + "I don't think we teach that here.");
+                return NotFound("I don't think we teach that here.");
             }
         }
         private void GetFullTopicList()
         {
-            
+
         }
     }
 }

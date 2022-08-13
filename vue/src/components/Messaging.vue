@@ -6,19 +6,19 @@
         {{ this.$store.state.user.nickname }}! How can I help you?
         <span class="msg_time"><i>insert time here</i></span>
       </li>
-      <li v-for="TopicQ in messages" v-bind:key="TopicQ.TopicQ" class="allMessages" >
+      <li v-for="message in messages" v-bind:key="message.botResponse" class="allMessages" >
         <div class="userMsgContainer">
-          <span class="message userMsgBox" id="user_message" v-if="TopicQ.TopicQ">
-          {{ TopicQ.TopicQ }}
+          <span class="message userMsgBox" id="user_message" v-if="message.userText">
+          {{ message.userText }}
           </span>
-          <span class="msg_time" v-if="TopicQ.TopicQ"><i>insert time here</i></span>
+          <span class="msg_time" v-if="message.userText"><i>insert time here</i></span>
         </div>
         <div class="botMsgContainer">
-          <span class="message botMsgBox" id="bot_message" v-if="TopicQ.topicInfo">
-          {{ TopicQ.topicInfo }}
-          <a v-bind:href="TopicQ.link" v-show="botMessage.link"> Link </a>
+          <span class="message botMsgBox" id="bot_message" v-if="message.botResponse">
+          {{ message.botResponse }}
+          <a v-bind:href="message.link" v-show="botMessage.link"> Link </a>
          </span>
-       <span class="msg_time" v-if="TopicQ.topicInfo"><i>insert time here</i></span>
+       <span class="msg_time" v-if="message.botResponse"><i>insert time here</i></span>
         </div>
         
       </li>
@@ -31,7 +31,7 @@
         filled
         label="Label"
         auto-grow
-        v-model="userMessage.TopicQ"
+        v-model="userMessage.userText"
       />
       <input
         type="submit"
@@ -51,14 +51,14 @@ export default {
   data() {
     return {
       userMessage: {
-        "userMessageID": 0,
-        "userText": "string",
-        "topicID": 0,
-        "userID": 0
+       
+        userText: "",
+        
+        
       },
       botMessage: {
         //ID: 1,
-        BotResponse: "",
+        botResponse: "",
         link: "",
         "userText": null,
   "botResponse": "Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : \"Managing Stress\" | \"Imposter Syndrome\" | \"Time Management\" | \"Elevator Pitch\" | \"Resume\" | \"LinkedIn\" | \"Side Projects\" | \"Networking\" | \"Interview Preparation\" | \"Behavioral Interviews\" | \"Technical Interviews\" | \"After Interviews\" | \"Job Search\" | \"Benefits\" | \"Huntr\" | or you can get in touch with Pathway here:",
@@ -73,13 +73,13 @@ export default {
     clearUserMessage() {
       this.userMessage = {
         //ID: this.userMessage.ID+=2,
-        TopicQ: "",
+        userText: "",
       };
     },
     clearBotMessage() {
       this.botMessage = {
         //ID: this.botMessage.ID+=2,
-        topicInfo: "",
+        botResponse: "",
       };
     },
     saveUserMessage() {
