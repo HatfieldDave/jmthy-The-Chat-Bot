@@ -17,13 +17,15 @@ namespace Capstone.Controllers
         public List<string> BuzzWords = new List<string>
         {
 
-            "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "$", "A", "about", "after", "all", "also", "an", "and", "another", "any", "aol", "are", "as", "at", "B", "be", "because", "been", "before", "being",
-            "between", "both", "but", "by", "C", "ca", "came", "can", "co", "com", "come", "could", "D", "did", "do", "does", "E", "each", "edu", "else", "F", "for", "from", "G", "get", "gmail", "got", "H",
-            "had", "has", "have", "he", "her", "here", "him", "himself", "his", "hotmail", "how", "I", "if", "in", "into", "is", "it", "its", "J", "just", "K", "L", "like", "live", "M", "make", "many", "me", "might",
-            "more", "most", "msn", "much", "must", "my", "N", "net", "never", "no", "noemail", "now", "O", "of", "on", "only", "or", "org", "other", "our", "out", "over", "P", "Q", "R", "re", "S", "said", "same", "see",
-            "should", "since", "so", "some", "still", "such", "T", "take", "than", "that", "the", "their", "them", "then", "there", "these", "they", "this", "those", "through", "to", "too", "U", "uk",
-            "under", "up", "use", "V", "vdonotrepl", "very", "W", "want", "was", "way", "we", "well", "were", "what", "when", "where", "which", "while", "who", "will", "with", "would", "X", "Y", "ymail", "you", "your", "Z",
-            "i", "need", "can", "you"
+            //"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "$", "A", "about", "after", "all", "also", "an", "and", "another", "any", "aol", "are", "as", "at", "B", "be", "because", "been", "before", "being",
+            //"between", "both", "but", "by", "C", "ca", "came", "can", "co", "com", "come", "could", "D", "did", "do", "does", "E", "each", "edu", "else", "F", "for", "from", "G", "get", "gmail", "got", "H",
+            //"had", "has", "have", "he", "her", "here", "him", "himself", "his", "hotmail", "how", "I", "if", "in", "into", "is", "it", "its", "J", "just", "K", "L", "like", "live", "M", "make", "many", "me", "might",
+            //"more", "most", "msn", "much", "must", "my", "N", "net", "never", "no", "noemail", "now", "O", "of", "on", "only", "or", "org", "other", "our", "out", "over", "P", "Q", "R", "re", "S", "said", "same", "see",
+            //"should", "since", "so", "some", "still", "such", "T", "take", "than", "that", "the", "their", "them", "then", "there", "these", "they", "this", "those", "through", "to", "too", "U", "uk",
+            //"under", "up", "use", "V", "vdonotrepl", "very", "W", "want", "was", "way", "we", "well", "were", "what", "when", "where", "which", "while", "who", "will", "with", "would", "X", "Y", "ymail", "you", "your", "Z",
+            //"i", "need", "can", "you",
+            
+
         };
 
 
@@ -69,12 +71,6 @@ namespace Capstone.Controllers
 
             if (userText != null)
             {
-                if (botMessage == null)
-                {
-
-                    botMessage.BotResponse = "Did you fall asleep on the KeyBoard? I need a little help understanding you.";
-                   
-                }
                 return Ok(botMessage);
             }
             else
