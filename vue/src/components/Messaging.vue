@@ -1,16 +1,13 @@
 <template>
   <div class="chat-bot">
-    <ul class="messages-area" style="list-style: none" ref="messagesContainer">
+    <ul class="messages-area" style="list-style: none">
       <div class="greetingMsgContainer">
-        <li id="greeting_message">
-          Hello, good to see you,
-          {{ this.$store.state.user.nickname }}! How can I help you?
-        </li>
-        <span class="msg_time"
-          ><i>{{ getTime() }}</i></span
-        >
+      <li  id="greeting_message">
+        Hello, good to see you,
+        {{ this.$store.state.user.nickname }}! How can I help you?
+      </li><span class="msg_time"><i>{{ getTime() }}</i></span>
       </div>
-
+      
       <li
         v-for="message in messages"
         v-bind:key="message.botResponse"
@@ -32,10 +29,9 @@
           <span
             class="message botMsgBox"
             id="bot_message"
-            v-if="message.botResponse"
-          >
+            v-if="message.botResponse">
             {{ message.botResponse }}
-            <a v-bind:href="message.link" v-show="botMessage.link"> Link </a>
+            
           </span>
           <span class="msg_time" v-if="message.botResponse"
             ><i>{{ getTime() }}</i></span
@@ -83,8 +79,8 @@ export default {
     };
   },
   methods: {
-    getTime() {
-      this.time;
+    getTime(){
+      this.time
       let current = new Date();
       let time = current.getHours() + ":" + current.getMinutes();
       return time;
@@ -119,15 +115,6 @@ export default {
         this.clearUserMessage();
         this.clearBotMessage();
       });
-    },
-    scrollToEnd: function () {
-      let content = this.$refs.messagesContainer;
-      content.scrollTop = content.scrollHeight;
-    },
-    updated() {
-      // This will be called when the component updates
-      // try toggling a todo
-      this.scrollToEnd();
     },
   },
 };
@@ -175,7 +162,7 @@ export default {
 #user_message {
   border-radius: 20px 20px 5px;
   color: white;
-  background-color: #8cd3e8;
+  background-color: #8CD3E8;
   padding: 1%;
   border-radius: 0.6rem;
   display: flex;
@@ -184,11 +171,12 @@ export default {
   max-width: 40%;
   margin-bottom: 20px;
   margin-right: 32px;
+  
 }
 #bot_message {
   border-radius: 5px 20px 20px;
   color: white;
-  background-color: #499ab2;
+  background-color:  #499AB2;
   padding: 1%;
   border-radius: 0.6rem;
   display: flex;
@@ -197,10 +185,10 @@ export default {
   max-width: 40%;
   margin-bottom: 20px;
 }
-#greeting_message {
+#greeting_message{
   border-radius: 5px 20px 20px;
   color: white;
-  background-color: #499ab2;
+  background-color:  #499AB2;
   padding: 1%;
   border-radius: 0.6rem;
   display: flex;
@@ -229,8 +217,8 @@ export default {
   flex-direction: row;
   align-self: stretch;
 }
-.msg_time {
-  color: grey;
-  font-size: 14px;
+.msg_time{
+color: grey;
+font-size: 14px;
 }
 </style>
