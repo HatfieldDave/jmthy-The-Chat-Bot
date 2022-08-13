@@ -34,13 +34,20 @@
 						v-if="message.botResponse"
 					>
 						{{ message.botResponse }}
-						<a v-bind:href="message.InfoLink" v-show="botMessage.InfoLink">
-							Link
-						</a>
 					</span>
 					<span class="msg_time" v-if="message.botResponse"
 						><i>{{ getTime() }}</i></span
 					>
+				</div>
+				<div>
+					<span id ="link_message" v-if="message.infoLink">
+						<a>
+							For more information Click Here, <a v-bind:href="message.infoLink" v-show="message.infoLink">
+							Link
+						</a>
+						</a>
+						
+					</span>
 				</div>
 			</li>
 		</ul>
@@ -74,8 +81,8 @@ export default {
 			botMessage: {
 				//ID: 1,
 				botResponse: "",
-				InfoLink: "",
-				ImgLink: "",
+				infoLink: "",
+				imgLink: "",
 			},
 			messageSent: false,
 			messages: [],
@@ -195,6 +202,18 @@ export default {
 	margin-bottom: 20px;
 }
 #greeting_message {
+	border-radius: 5px 20px 20px;
+	color: white;
+	background-color: #499ab2;
+	padding: 1%;
+	border-radius: 0.6rem;
+	display: flex;
+	list-style: none;
+	align-items: stretch;
+	max-width: 40%;
+	margin-bottom: 20px;
+}
+#link_message {
 	border-radius: 5px 20px 20px;
 	color: white;
 	background-color: #499ab2;

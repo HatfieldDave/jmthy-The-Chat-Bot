@@ -12,9 +12,8 @@ namespace Capstone.Models
 
         }
 
-        //public string UserText { get; set; }
 
-        public string BotResponse { get; set; } 
+        public string BotResponse { get; set; } //lives in topicInfo in DB
 
         public string InfoLink { get; set; }
 
