@@ -62,9 +62,39 @@ INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns)
 INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin', 'Zada', 'She/Her');
 GO
 
+--DBV2
+-- greetings
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('hello','darkness my old friend. I''m JMTHY. How can I help you today ','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('hi','How high?','');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('hola','Que paso, my dude?','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hola','Que paso, my friend?','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hi jmthy | wassup','Hi my friend, I''m JMTHY. John and Matt''s Tiny Helper Yetti. What''s on your mind today?','');
+
+-- general help
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('help | advice | guidence','I''d love to help! I can help with a wide variety of Tech Elevator subject topics such as: "Pathway Help" | "Curriculum" | "Motivational Quotes" | "Find Open Jobs" | Are any of these what you need help with?','');
+
+-- general topics 
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway | help with','Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : "Managing Stress" | "Imposter Syndrome" | "Time Management" | "Elevator Pitch" | "Resume" | "LinkedIn" | "Side Projects" | "Networking" | "Interview Preparation" | "Behavioral Interviews" | "Technical Interviews" | "After Interviews" | "Job Search" | "Benefits" | "Huntr" | or you can get in touch with Pathway here:','pathway@techelevator.com');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('curriculum | class | help with ','If none of these topics are tickling your peach you can always send a slack to your instructor!','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('motivational | quotes | help with','Absolutely, friend! Pick a number 1-11','');
+
+-- Not what you wanted NEEDS WORK
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('none ','I''m afraid those are the only topics I know about right now. But I have of very tired, hard working, overly caffeinated, and mildly unhinged team of junior developers working as hard as they can to make me live up to everyone''s expectations. If this is an emergency please contact your pathway director via Slack or shoot an email to:','pathway@techelevator.com');
+
+--take care
+INSERT INTO topic(topic_q, topic_info, link) VALUES ('managing | stress | management',
+'Make (and keep to) a schedule While you''re at it, schedule breaks into your day
+Remind yourself you are here to learn Don''t compare yourself to others
+Move your body Drink water Celebrate your wins!','');
+
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('imposter syndrome | imposter | syndrome',
+'Imposter Syndrome at it''s core is when you don''t give yourself the adequate credit you deserve. | If not properly managed it can be overwhelming, and a hot mess of a mental rollercoaster. | ','');
+
+
+--DB V1
+
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hello','darkness my old friend. I''m JMTHY. How can I help you today ','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hi','How high?','');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('hola','Que paso, my friend?','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('hi jmthy | how are you? | wassup | what''s poppin'' | ugh | hey | yello | yo | greetings | good morrow ','Hi my friend, I''m JMTHY. John and Matt''s Tiny Helper Yetti. What''s on your mind today?','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('fuck this | i''m gonna take a toaster bath | this was a mistake | fuck | over it | i''m over this | i''m dumb | make me want to tear my hair out | my soul is dying | i''m gonna lay in the street | i''m quitting | i quit ','Slow down there tiger. Maybe take a step away or a deep breath. If you want, I also have some motivational quotes that might cheer you up.....did I mention they come with an emotional support animal? Just say "Motivational Quotes"','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('i''m feeling sad | what am i doing with my life? | i can''t do this','','');
@@ -73,8 +103,10 @@ INSERT INTO topic (topic_q, topic_info, link) VALUES ('i''m feeling sad | what a
 INSERT INTO topic (topic_q, topic_info, link) VALUES  ('help','I''d love to help! I can help with a wide variety of Tech Elevator subject topics such as: "Pathway Help" | "Curriculum" | "Motivational Quotes" | "Find Open Jobs" | Are any of these what you need help with?','');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('pathway | i need help with pathway | can you help me with pathway? | i''m feeling nervous about pathway | what can you tell me about pathway | what about pathway? ','Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : "Managing Stress" | "Imposter Syndrome" | "Time Management" | "Elevator Pitch" | "Resume" | "LinkedIn" | "Side Projects" | "Networking" | "Interview Preparation" | "Behavioral Interviews" | "Technical Interviews" | "After Interviews" | "Job Search" | "Benefits" | "Huntr" | or you can get in touch with Pathway here:','pathway@techelevator.com');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('curriculum | i need help with curriculum | can you help me with curriculum? | what do you know about coding? | i''m feeling nervous about class | what can you tell me about class topics | what about curriculum? ','If none of these topics are tickling your peach you can always send a slack to your instructor!','');
-INSERT INTO topic (topic_q, topic_info, link) VALUES ('motivational quotes','Absolutely, friend! Pick a number 1-3', ' ');
+INSERT INTO topic (topic_q, topic_info, link) VALUES ('motivational | quotes','Absolutely, friend! Pick a number 1-11', ' ');
 INSERT INTO topic (topic_q, topic_info, link) VALUES ('none of those | no | i need help with something else | something else  ','I''m afraid those are the only topics I know about right now. But I have of very tired, hard working, overly caffeinated, and mildly unhinged team of junior developers working as hard as they can to make me live up to everyone''s expectations. If this is an emergency please contact your pathway director via Slack or shoot an email to: ','pathway@techelevator.com');
+
+
 
 
 INSERT INTO topic(topic_q, topic_info, link) VALUES ('managing stress',
