@@ -60,7 +60,10 @@ export default {
         //ID: 1,
         BotResponse: "",
         link: "",
-      },
+        "userText": null,
+  "botResponse": "Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : \"Managing Stress\" | \"Imposter Syndrome\" | \"Time Management\" | \"Elevator Pitch\" | \"Resume\" | \"LinkedIn\" | \"Side Projects\" | \"Networking\" | \"Interview Preparation\" | \"Behavioral Interviews\" | \"Technical Interviews\" | \"After Interviews\" | \"Job Search\" | \"Benefits\" | \"Huntr\" | or you can get in touch with Pathway here:",
+  "link": "pathway@techelevator.com",
+  "similarityPercent":
       messageSent: false,
       messages: [],
 
@@ -148,7 +151,7 @@ export default {
 #user_message {
   border-radius: 20px 20px 5px;
   color: white;
-  background-color: #5bc0de;
+  background-color: #8CD3E8;
   padding: 1%;
   border-radius: 0.6rem;
   display: flex;
@@ -159,7 +162,7 @@ export default {
 #bot_message {
   border-radius: 5px 20px 20px;
   color: white;
-  background-color: #c5dddb;
+  background-color: #499AB2;
   padding: 1%;
   border-radius: 0.6rem;
   display: flex;
