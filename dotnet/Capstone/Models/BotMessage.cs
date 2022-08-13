@@ -12,7 +12,7 @@ namespace Capstone.Models
 
         }
 
-        public string UserText { get; set; }
+        //public string UserText { get; set; }
 
         public string BotResponse { get; set; } 
 
