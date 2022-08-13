@@ -51,9 +51,9 @@
         </div>
         <div>
           <span id="image_message" v-if="message.imgLink">
-            <a>
-              <a v-bind:src="message.imgLink" v-show="message.imgLink"> </a>
-            </a>
+            
+              <img v-bind:src="message.imgLink" v-show="message.imgLink" /> 
+            
           </span>
         </div>
       </li>
@@ -221,6 +221,18 @@ export default {
   margin-bottom: 20px;
 }
 #link_message {
+  border-radius: 5px 20px 20px;
+  color: white;
+  background-color: #499ab2;
+  padding: 1%;
+  border-radius: 0.6rem;
+  display: flex;
+  list-style: none;
+  align-items: stretch;
+  max-width: 40%;
+  margin-bottom: 20px;
+}
+#img_message {
   border-radius: 5px 20px 20px;
   color: white;
   background-color: #499ab2;
