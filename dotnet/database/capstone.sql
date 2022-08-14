@@ -38,7 +38,7 @@ CREATE TABLE topic (
 CREATE TABLE user_message (
 	user_message_id int identity (1,1) NOT NULL,
 	user_message nvarchar (500) NOT NULL,
-	topic_id int NOT NULL,
+	topic_id int,
 	user_id int NOT NULL,
 	CONSTRAINT FK_topic FOREIGN KEY (topic_id) REFERENCES topic(topic_id),
 	CONSTRAINT FK_users FOREIGN KEY (user_id) REFERENCES users(user_id)

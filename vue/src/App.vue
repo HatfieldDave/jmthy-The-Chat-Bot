@@ -50,8 +50,15 @@
                 v-if="$store.state.token"
                 >Logout
               </router-link>
-           
             </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                v-bind:to="{ name: 'Greeting' }"
+                v-if="$store.state.token"
+                >Chat 
+              </router-link>
+              </li>
           </ul>
         </div>
       </div>

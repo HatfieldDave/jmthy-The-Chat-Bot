@@ -28,8 +28,15 @@ namespace Capstone.DAO
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(storeUserMessage, conn);
                 cmd.Parameters.AddWithValue("@userMessage", um.UserText);
-                cmd.Parameters.AddWithValue("@topicId", um.TopicID);
                 cmd.Parameters.AddWithValue("@userId", um.UserID);
+                if(um.TopicID > 0)
+                {
+                    cmd.Parameters.AddWithValue("@topicId", um.TopicID);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@topicId", 10000000);
+                }
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
