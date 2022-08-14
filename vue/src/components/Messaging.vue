@@ -85,6 +85,7 @@ export default {
     return {
       userMessage: {
         userText: "",
+        userId: 0,
       },
       botMessage: {
         //ID: 1,
@@ -118,6 +119,7 @@ export default {
       };
     },
     saveUserMessage() {
+      this.userMessage.userId = this.$store.state.user.userId;
       this.$store.commit("ADD_USER_MESSAGE", this.userMessage);
       this.messages.push(this.userMessage);
     },

@@ -57,16 +57,23 @@ namespace Capstone.Controllers
         [HttpPost]
         public IActionResult GetTopic(UserMessage userMessage)
         {
+            //Gets full list of topics to loop through in string comparison
             List<Topic> FullTopicList = topicDAO.GetTopicQList();
-           // string userText = FilterBuzzWords(userMessage.UserText);
+           
+           // Creates new instance of Stringlogic class where string comparison happens
             StringLogic sl = new StringLogic(FullTopicList, userMessage.UserText);
+            //this lethod loops through each topicQ in full topic list and compares it against the user's message
+            // saves the percentage of similarity between them as a property of each topic
             sl.CalculateTopicThresholds(userMessage.UserText);
-
-
+            // this method then loops through them all again to find the topic id that has the highest threshold
             int topicIdOfHighestThreshold = sl.CalculateTopicIdOfHighestThreshold();
-
+            // this then gets the matching bot response with that id from database and saves it into the Botmessage object
             BotMessage botMessage = topicDAO.GetBotMessagebyTopicID(topicIdOfHighestThreshold);
-            
+            // this saves the topic id (found and saved 2 lines above in topicOfHighestThreshold) to an object of the userMessage class
+            // do this so that we can save this UserMessage object into the Database
+            userMessage.TopicID = topicIdOfHighestThreshold;
+            // this saves the userMessage object into the user_message table in the database
+            bool didSheSave = topicDAO.SaveUserMessage(userMessage);
 
             if (userMessage.UserText != null)
             {
