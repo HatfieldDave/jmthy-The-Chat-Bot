@@ -10,7 +10,9 @@ namespace Capstone.DAO
     {
         List<Topic> GetTopicQList();
         BotMessage GetBotMessagebyTopicID(int topicID);
+        bool SaveUserMessage(UserMessage um);
 
-        
+
+
     }
 }

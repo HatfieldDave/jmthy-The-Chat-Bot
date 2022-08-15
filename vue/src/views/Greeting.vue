@@ -7,7 +7,7 @@
 <script>
 import Messaging from "@/components/Messaging.vue";
 export default {
-	name: "greeting",
+	name: "Greeting",
 	components: {
 		Messaging,
 	},

@@ -14,13 +14,34 @@ namespace Capstone.DAO
        
         private readonly string connectionString;
 
-        private string sqlGetTopic = "select  t.topic_info, t.info_link, t.img_link from topic t where t.topic_id = @topicID";
-
+        private string sqlGetTopic = "select  t.topic_info, t.info_link, t.img_link from topic t where t.topic_id = @topicID;";
+        private string storeUserMessage = "INSERT INTO user_message (user_message, topic_id, user_id) VALUES (@userMessage,@topicId,@userId);";
+        
         public TopicSQLDAO(string dbConnectionString)
         {
             connectionString = dbConnectionString;
         }
-
+        public bool SaveUserMessage(UserMessage um)
+        {
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(storeUserMessage, conn);
+                cmd.Parameters.AddWithValue("@userMessage", um.UserText);
+                cmd.Parameters.AddWithValue("@userId", um.UserID);
+                cmd.Parameters.AddWithValue("@topicId", um.TopicID);
+               
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
         public List<Topic> GetTopicQList()
         {
             List<Topic> TopicQsToCompare = new List<Topic>();
@@ -40,8 +61,8 @@ namespace Capstone.DAO
         }
         public BotMessage GetBotMessagebyTopicID(int topicID)
         {
-            BotMessage botMessage = null;
-            ;
+            BotMessage botMessage = new BotMessage();
+            
             
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

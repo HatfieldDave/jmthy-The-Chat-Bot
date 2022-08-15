@@ -51,19 +51,29 @@ INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns)
 GO
 
 --DBV2
+--MUST STAY IN FIRST SLOT *** CATCH ALL ****
+Insert INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('catch-all','So sorry, but I don''t know how to respond to that yet. | I''m still learning all the things I need to know to be the best helper Yetti I can be! | If this is an emergency please slack your ','','')
 -- greetings
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hello','darkness my old friend. I''m JMTHY. How can I help you today ','','');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi','How high?','','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi','How high? | Just kidding. | I''m JMTHY, John and Matt''s Tiny Helper Yetti. What can I do for ya?','','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('what?','Did I stutter?','','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('how much wood','could a wood-chuck,chuck, if a wood-chuck could chuck wood?','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hola','Que paso, my friend?','','');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi jmthy | wassup','Hi my friend, I''m JMTHY. John and Matt''s Tiny Helper Yetti. What''s on your mind today?','','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi jmthy | wassup | greetings | salutations | hi there | top o the mornin | good morrow | what''s poppin'' | what''s good ','Hi my friend, I''m JMTHY. John and Matt''s Tiny Helper Yetti. | What''s on your mind today?','','');
 
 -- general help
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('help | advice | guidence','I''d love to help! I can help with a wide variety of Tech Elevator subject topics such as: "Pathway Help" | "Curriculum" | "Motivational Quotes" | "Find Open Jobs" | Are any of these what you need help with?','','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('help | advice | guidence | can you help me | what can you help with | ','I''d love to help! I can help with a wide variety of Tech Elevator subject topics such as: "Pathway Help" | "Curriculum" | "Motivational Quotes" | "Find Open Jobs" | Are any of these what you need help with?','','');
 
 -- general topics 
+<<<<<<< HEAD
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('pathway','Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : "Managing Stress" | "Imposter Syndrome" | "Time Management" | "Elevator Pitch" | "Resume" | "LinkedIn" | "Side Projects" | "Networking" | "Interview Preparation" | "Behavioral Interviews" | "Technical Interviews" | "After Interviews" | "Job Search" | "Benefits" | "Huntr" | or you can get in touch with Pathway here:','pathway@techelevator.com','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('curriculum | class | help with ','If none of these topics are tickling your peach you can always send a slack to your instructor!','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('motivational | quotes | help with','Absolutely, friend! Pick a number 1-11','','');
+=======
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('pathway | help with pathway','Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : "Managing Stress" | "Imposter Syndrome" | "Time Management" | "Elevator Pitch" | "Resume" | "LinkedIn" | "Side Projects" | "Networking" | "Interview Preparation" | "Behavioral Interviews" | "Technical Interviews" | "After Interviews" | "Job Search" | "Benefits" | "Huntr" | or you can get in touch with Pathway here:','pathway@techelevator.com','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('curriculum | class | help with curriculum','If none of these topics are tickling your peach you can always send a slack to your instructor!','','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('why did i pick this program | show me | motivational quotes | quotes | help with life | I''m struggling | fuck this | toaster bath | lay in the street | I feel unhinged ','You''re going through a tough program, it''s understandable to feel stressed sometimes. Let me see what kind of inspiration I can hit you with.','','');
+>>>>>>> f7e6ea536b67482860df6b9d95b1d515d6a61ff7
 
 -- Not what you wanted NEEDS WORK
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('none ','I''m afraid those are the only topics I know about right now. But I have of very tired, hard working, overly caffeinated, and mildly unhinged team of junior developers working as hard as they can to make me live up to everyone''s expectations. If this is an emergency please contact your pathway director via Slack or shoot an email to:','pathway@techelevator.com','');
@@ -76,10 +86,10 @@ INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi','How h
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hola','Que paso, my friend?','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi jmthy | how are you? | wassup | what''s poppin'' | ugh | hey | yello | yo | greetings | good morrow ','Hi my friend, I''m JMTHY. John and Matt''s Tiny Helper Yetti. What''s on your mind today?','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('fuck this | i''m gonna take a toaster bath | this was a mistake | fuck | over it | i''m over this | i''m dumb | make me want to tear my hair out | my soul is dying | i''m gonna lay in the street | i''m quitting | i quit ','Slow down there tiger. Maybe take a step away or a deep breath. If you want, I also have some motivational quotes that might cheer you up.....did I mention they come with an emotional support animal? Just say "Motivational Quotes"','','');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('i''m feeling sad | what am i doing with my life? | i can''t do this','','','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('i''m feeling sad | what am i doing with my life? | i can''t do this | I''m sad | i''m gonna kill myself | i can''t take this anymore | kill myself | end it all | what''s the point | life is meaningless | i can''t do this anymore','Sometimes I feel the same. When I do, I try to take deep breaths, look at the sky or talk to someone. | If you think what you need is someone to talk to, here''s a number for someone who would love to help you through this: 1-800-950-6264 ','1-800-950-6264','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES  ('help','I''d love to help! I can help with a wide variety of Tech Elevator subject topics such as: "Pathway Help" | "Curriculum" | "Motivational Quotes" | "Find Open Jobs" | Are any of these what you need help with?','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('pathway | i need help with pathway | can you help me with pathway? | i''m feeling nervous about pathway | what can you tell me about pathway | what about pathway? ','Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : "Managing Stress" | "Imposter Syndrome" | "Time Management" | "Elevator Pitch" | "Resume" | "LinkedIn" | "Side Projects" | "Networking" | "Interview Preparation" | "Behavioral Interviews" | "Technical Interviews" | "After Interviews" | "Job Search" | "Benefits" | "Huntr" | or you can get in touch with Pathway here:','pathway@techelevator.com','');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('curriculum | i need help with curriculum | can you help me with curriculum? | what do you know about coding? | i''m feeling nervous about class | what can you tell me about class topics | what about curriculum? ','If none of these topics are tickling your peach you can always send a slack to your instructor!','','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('curriculum | i need help with curriculum | can you help me with curriculum? | what do you know about coding? | i''m feeling nervous about class | what can you tell me about class topics | what about curriculum? ',' If none of these topics are tickling your peach you can always send a slack to your instructor!','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('motivational | quotes','Absolutely, friend! Pick a number 1-11', '','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('none of those | no | i need help with something else | something else  ','I''m afraid those are the only topics I know about right now. But I have of very tired, hard working, overly caffeinated, and mildly unhinged team of junior developers working as hard as they can to make me live up to everyone''s expectations. If this is an emergency please contact your pathway director via Slack or shoot an email to: ','pathway@techelevator.com','');
 
@@ -94,16 +104,16 @@ Move your body Drink water Celebrate your wins!',
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('imposter syndrome',
 'Imposter Syndrome at it''s core is when you don''t give yourself the adequate credit you deserve. | If not properly managed it can be overwhelming, and a hot mess of a mental rollercoaster. | ',
 'https://www.themuse.com/advice/5-different-types-of-imposter-syndrome-and-5-ways-to-battle-each-one','https://www.primarygames.com/arcade/adventure/theimposter/logo200.png');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('time management','The Pomodoro Technique
-Step 1 Get a to-do list and a timer.
-Step 2 Set your timer for 25 minutes and focus on a single task from your to-do list until the timer rings.
-Step 3 When your session ends, mark off one pomodoro (one pomodoro = one 25-minute session) and record what you completed.
-Step 4 Then enjoy a five-minute break.
-Step 5 After four Pomodoros, take a longer, more restorative 15-30 minute break.
-Cirillo Also Cites 3 Rules For The Pomodoro Technique:
-Rule 1 Break down complex projects. If a task requires more than four Pomodoros, it needs to be divided into smaller, actionable steps. Sticking to this rule will help ensure you make clear progress on your projects.
-Rule 2 Small tasks go together. Any tasks that will take less than one Pomodoro should be combined with other simple tasks. For example, "write rent check," "set vet appointment," and "read Pomodoro article" could go together in one session.
-Rule 3 Once a pomodoro is set, it must ring. The pomodoro is an indivisible unit of time and cannot be broken, especially not to check incoming emails, team chats, or text messages. Any ideas, tasks, or requests that come up should be taken note of to come back to later.',
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('time management','The Pomodoro Technique: |
+Step 1 Get a to-do list and a timer. |
+Step 2 Set your timer for 25 minutes and focus on a single task from your to-do list until the timer rings. |
+Step 3 When your session ends, mark off one pomodoro (one pomodoro = one 25-minute session) and record what you completed. |
+Step 4 Then enjoy a five-minute break. |
+Step 5 After four Pomodoros, take a longer, more restorative 15-30 minute break. |
+Cirillo Also Cites 3 Rules For The Pomodoro Technique: |
+Rule 1 Break down complex projects. If a task requires more than four Pomodoros, it needs to be divided into smaller, actionable steps. Sticking to this rule will help ensure you make clear progress on your projects. |
+Rule 2 Small tasks go together. Any tasks that will take less than one Pomodoro should be combined with other simple tasks. For example, "write rent check," "set vet appointment," and "read Pomodoro article" could go together in one session. |
+Rule 3 Once a pomodoro is set, it must ring. | The pomodoro is an indivisible unit of time and cannot be broken, especially not to check incoming emails, team chats, or text messages. Any ideas, tasks, or requests that come up should be taken note of to come back to later.',
 'https://todoist.com/productivity-methods/pomodoro-technique','https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BvbW9kb3JvMy5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH19fQ==');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('elevator pitch','Your elevator pitch should be between 30-40 seconds. Add your own unique twist to your pitch or insert a joke related to your sense of humor (as long as it''s appropriate, of course!). Your personality is what makes you YOU - when you''re showcasing your personality, you''re portraying confidence. And confidence is key! If you sound bored or lack enthusiasm when giving your pitch, you''ll lose the attention of your audience quickly. Your elevator pitch isn''t just about what you''re saying, but how you''re saying it, so don''t forget about all of your non-verbal cues. These include eye contact, hand gestures, body language, and facial expressions. Always remember, you’ve got this!',
 'https://www.thebalancecareers.com/elevator-speech-examples-and-writing-tips-2061976','https://www.thebalancecareers.com/thmb/wJ9LhecfcbJw9RK9juxci5iQgRU=/672x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/elevator-speech-examples-and-writing-tips-2061976_final-5b733b6546e0fb00503084ee.png');
@@ -153,7 +163,7 @@ INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('encapsulat
 'https://www.w3schools.blog/c-sharp-encapsulation','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoLykQMSo-wpL45YXnKgs8-7e10L8ReSoQCQ&usqp=CAU');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('java','Java? Never heard of her. Sounds kinda lame but maybe this link will help',
 'https://www.youtube.com/watch?v=xvFZjo5PgG0','');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('maps','We''re no strangers to love
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('maps | i need help with maps','We''re no strangers to love
 You know the rules and so do I
 A full commitment''s what I''m thinking of
 You wouldn''t get this from any other guy

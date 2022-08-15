@@ -20,7 +20,7 @@ namespace Capstone.Models
 
         }
         public int TopicId { get; set; }
-        public  double HighestThreshold { get; set; }
+        public double HighestThreshold { get; set; } = 0.75;
         public string UserText { get; set; }
 
         /// <summary>
@@ -45,7 +45,15 @@ namespace Capstone.Models
                     TopicId = t.TopicID;
                 }
             }
-            return TopicId;
+            //catch any messages that don't meet minimum threshold value and returns catchall topic ID in DB
+            if(TopicId > 0)
+            {
+                return TopicId;
+            }
+            else
+            {
+                return 1;
+            }
         }
 
 
