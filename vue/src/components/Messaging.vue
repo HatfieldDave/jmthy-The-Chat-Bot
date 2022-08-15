@@ -105,11 +105,7 @@ export default {
         botResponse: "",
         infoLink: "",
         imgLink: "",
-<<<<<<< HEAD
         msgTime: ""
-=======
-       msgTime: ""
->>>>>>> 753a816df7e9768ad8e3e261fe3dd3efeeaaab6c
       },
       messageSent: false,
       messages: [],
@@ -167,7 +163,7 @@ export default {
         this.scrollToEnd();
       });
     },
-    scrollToEnd: function () {
+    scrollToEnd() {
       let content = document.querySelector(
         "li.allMessages:last-child > div:last-child"
       );
