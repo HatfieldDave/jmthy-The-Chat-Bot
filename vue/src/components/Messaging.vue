@@ -61,8 +61,8 @@
             <img
               v-bind:src="message.imgLink"
               v-show="message.imgLink"
-              height="200px"
-              width="250px"
+              
+              
             />
           </span>
           <span class="msg_time" v-if="message.imgLink"
@@ -115,7 +115,7 @@ export default {
       let current = new Date();
       let minutes = current.getMinutes();
       let time = current.getHours() + ":" + minutes;
-      if (minutes.length === 1) {
+      if (String(minutes).length === 1) {
         minutes = String(0 + minutes);
       }
       return time;
@@ -265,7 +265,7 @@ export default {
   border-radius: 0.6rem;
   display: flex;
   list-style: none;
-  max-width: 280px;
+  max-width: 40%;
   margin-bottom: 20px;
 }
 
