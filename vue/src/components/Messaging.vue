@@ -28,16 +28,23 @@
           </span>
         </div>
         <div class="botMsgContainer">
-          <span
+          <ul>
+          <li
             class="message botMsgBox"
             id="bot_message"
-            v-if="message.botResponse"
+            
+            v-for="(string, index) in message.botResponse"
+            v-bind:key="index"
           >
-            {{ message.botResponse }}
+          <span v-if="string">
+            {{string }}
           </span>
-          <span class="msg_time" v-if="message.botResponse"
+         
+          <span class="msg_time" v-if="string" style:""
             ><i>{{ getTime() }}</i></span
-          >
+          > 
+           </li>
+           </ul>       
         </div>
         <div class="linkContainer">
           <span id="link_message" v-if="message.infoLink">
@@ -109,6 +116,11 @@ export default {
     };
   },
   methods: {
+    botResponseStringLoop() {
+      for (let i = 0; i < this.botMessage.botResponse.length; i++) {
+        this.botMessage.botResponse[i];
+      }
+    },
     getTime() {
       this.time;
       let current = new Date();

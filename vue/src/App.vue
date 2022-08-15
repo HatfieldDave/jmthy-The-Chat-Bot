@@ -20,7 +20,7 @@
         <div class="navbar-collapse collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
-              <router-link class="nav-link" v-bind:to="{ name: 'home' }">
+              <router-link class="nav-link" v-bind:to="{ name: 'home' }" >
                 <i class="fas fa-home"></i>
                 <!-- This is a font awesome icon -->
                 Home
