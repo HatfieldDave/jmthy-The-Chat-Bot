@@ -61,8 +61,7 @@
             <img
               v-bind:src="message.imgLink"
               v-show="message.imgLink"
-              
-              
+              max-width="40%"
             />
           </span>
           <span class="msg_time" v-if="message.imgLink"
