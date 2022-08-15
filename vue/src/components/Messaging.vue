@@ -17,7 +17,7 @@
       >
         <div class="userMsgContainer">
           <span class="msg_time" v-if="message.userText"
-            ><i>{{ getTime() }}</i></span
+            ><i>{{ message.userMessage.msgTime }}</i></span
           >
           <span
             class="message userMsgBox"
@@ -98,14 +98,14 @@ export default {
       userMessage: {
         userText: "",
         userId: 0,
-        //msgTime: ""
+        msgTime: ""
       },
       botMessage: {
         //ID: 1,
         botResponse: "",
         infoLink: "",
         imgLink: "",
-       // msgTime: ""
+        msgTime: ""
       },
       messageSent: false,
       messages: [],
