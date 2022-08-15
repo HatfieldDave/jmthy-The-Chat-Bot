@@ -152,11 +152,17 @@ export default {
         }
         this.clearUserMessage();
         this.clearBotMessage();
+        setTimeout(() => this.scrollToEnd(), 100);
+        this.scrollToEnd();
       });
     },
     scrollToEnd: function () {
-      let content = this.$refs.messagesContainer;
-      content.scrollTop = content.scrollHeight;
+      let content = document.querySelector(
+        "li.allMessages:last-child > div:last-child"
+      );
+      //content.scrollTop = content.scrollHeight;
+      console.log(content, content.scrollTop, content.scrollHeight);
+      content.scrollIntoView();
     },
     updated() {
       // This will be called when the component updates
@@ -283,8 +289,8 @@ export default {
   justify-content: flex-start;
   align-items: flex-end;
 }
-.linkContainer{
-	display: flex;
+.linkContainer {
+  display: flex;
   justify-content: flex-start;
   align-items: flex-end;
 }

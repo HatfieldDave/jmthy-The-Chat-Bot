@@ -157,63 +157,7 @@ INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('encapsulat
 'https://www.w3schools.blog/c-sharp-encapsulation','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoLykQMSo-wpL45YXnKgs8-7e10L8ReSoQCQ&usqp=CAU');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('java','Java? Never heard of her. Sounds kinda lame but maybe this link will help',
 'https://www.youtube.com/watch?v=xvFZjo5PgG0','');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('maps | i need help with maps','We''re no strangers to love
-You know the rules and so do I
-A full commitment''s what I''m thinking of
-You wouldn''t get this from any other guy
-I just wanna tell you how I''m feeling
-Gotta make you understand
-Never gonna give you up
-Never gonna let you down
-Never gonna run around and desert you
-Never gonna make you cry
-Never gonna say goodbye
-Never gonna tell a lie and hurt you
-We''ve known each other for so long
-Your heart''s been aching but you''re too shy to say it
-Inside we both know what''s been going on
-We know the game and we''re gonna play it
-And if you ask me how I''m feeling
-Don''t tell me you''re too blind to see
-Never gonna give you up
-Never gonna let you down
-Never gonna run around and desert you
-Never gonna make you cry
-Never gonna say goodbye
-Never gonna tell a lie and hurt you
-Never gonna give you up
-Never gonna let you down
-Never gonna run around and desert you
-Never gonna make you cry
-Never gonna say goodbye
-Never gonna tell a lie and hurt you
-Never gonna give, never gonna give
-(Give you up)
-We''ve known each other for so long
-Your heart''s been aching but you''re too shy to say it
-Inside we both know what''s been going on
-We know the game and we''re gonna play it
-I just wanna tell you how I''m feeling
-Gotta make you understand
-Never gonna give you up
-Never gonna let you down
-Never gonna run around and desert you
-Never gonna make you cry
-Never gonna say goodbye
-Never gonna tell a lie and hurt you
-Never gonna give you up
-Never gonna let you down
-Never gonna run around and desert you
-Never gonna make you cry
-Never gonna say goodbye
-Never gonna tell a lie and hurt you
-Never gonna give you up
-Never gonna let you down
-Never gonna run around and desert you
-Never gonna make you cry
-Never gonna say goodbye 
-
-or maybe try this link:','https://www.mapquest.com/us/ohio/swaco-408403550','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('maps | i need help with maps','<iframe width="560" height="315" src="https://www.youtube.com/embed/xvFZjo5PgG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>','https://www.mapquest.com/us/ohio/swaco-408403550','');
 
 --Quotes
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('1','Life is like a sewer… what you get out of it depends on what you put into it. – Tom Lehrer', '','https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
