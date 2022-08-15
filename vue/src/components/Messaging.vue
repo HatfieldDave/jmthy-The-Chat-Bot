@@ -1,154 +1,169 @@
 <template>
-	<div class="chat-bot">
-		<ul class="messages-area" style="list-style: none" ref="messagesContainer">
-			<div class="greetingMsgContainer">
-				<li id="greeting_message">
-					Hello, good to see you,
-					{{ this.$store.state.user.nickname }}! How can I help you?
-				</li>
-				<span class="msg_time"
-					><i>{{ getTime() }}</i></span
-				>
-			</div>
-			<li
-				v-for="message in messages"
-				v-bind:key="message.botResponse"
-				class="allMessages"
-			>
-				<div class="userMsgContainer">
-					<span class="msg_time" v-if="message.userText"
-						><i>{{ getTime() }}</i></span
-					>
-					<span
-						class="message userMsgBox"
-						id="user_message"
-						v-if="message.userText"
-					>
-						{{ message.userText }}
-					</span>
-				</div>
-				<div class="botMsgContainer">
-					<span
-						class="message botMsgBox"
-						id="bot_message"
-						v-if="message.botResponse"
-					>
-						{{ message.botResponse }}
-					</span>
-					<span class="msg_time" v-if="message.botResponse"
-						><i>{{ getTime() }}</i></span
-					>
-				</div>
-				<div>
-					<span id="link_message" v-if="message.infoLink">
-						<a>
-							For more information Click Here,
-							<a
-								:href="message.infoLink"
-								target="_blank"
-								v-show="message.infoLink"
-							>
-								Link
-							</a>
-						</a>
-					</span>
-				</div>
-				<div>
-					<span id="image_message" v-if="message.imgLink">
-						<img v-bind:src="message.imgLink" v-show="message.imgLink" />
-					</span>
-				</div>
-			</li>
-		</ul>
-		<form class="text-box">
-			<input
-				type="text"
-				name="Chatbox"
-				placeholder="Talk to JMTHY"
-				filled
-				label="Label"
-				auto-grow
-				v-model="userMessage.userText"
-			/>
-			<input
-				type="submit"
-				value="Send"
-				v-on:click.prevent="(messageSent = true), sendInput()"
-			/>
-		</form>
-	</div>
+  <div class="chat-bot">
+    <ul class="messages-area" style="list-style: none" ref="messagesContainer">
+      <div class="greetingMsgContainer">
+        <li id="greeting_message">
+          Hello, good to see you,
+          {{ this.$store.state.user.nickname }}! How can I help you?
+        </li>
+        <span class="msg_time"
+          ><i>{{ getTime() }}</i></span
+        >
+      </div>
+      <li
+        v-for="message in messages"
+        v-bind:key="message.botResponse"
+        class="allMessages"
+      >
+        <div class="userMsgContainer">
+          <span class="msg_time" v-if="message.userText"
+            ><i>{{ getTime() }}</i></span
+          >
+          <span
+            class="message userMsgBox"
+            id="user_message"
+            v-if="message.userText"
+          >
+            {{ message.userText }}
+          </span>
+        </div>
+        <div class="botMsgContainer">
+          <span
+            class="message botMsgBox"
+            id="bot_message"
+            v-if="message.botResponse"
+          >
+            {{ message.botResponse }}
+          </span>
+          <span class="msg_time" v-if="message.botResponse"
+            ><i>{{ getTime() }}</i></span
+          >
+        </div>
+        <div class="linkContainer">
+          <span id="link_message" v-if="message.infoLink">
+            <a>
+              For more information Click Here,
+              <a
+                :href="message.infoLink"
+                target="_blank"
+                v-show="message.infoLink"
+              >
+                Link
+              </a>
+            </a>
+          </span>
+          <span class="msg_time" v-if="message.infoLink"
+            ><i>{{ getTime() }}</i></span
+          >
+        </div>
+        <div class="imgContainer">
+          <span id="image_message" v-if="message.imgLink">
+            <img
+              v-bind:src="message.imgLink"
+              v-show="message.imgLink"
+              height="200px"
+              width="250px"
+            />
+          </span>
+          <span class="msg_time" v-if="message.imgLink"
+            ><i>{{ getTime() }}</i></span
+          >
+        </div>
+      </li>
+    </ul>
+    <form class="text-box">
+      <input
+        type="text"
+        name="Chatbox"
+        placeholder="Talk to JMTHY"
+        filled
+        label="Label"
+        auto-grow
+        v-model="userMessage.userText"
+      />
+      <input
+        type="submit"
+        value="Send"
+        v-on:click.prevent="(messageSent = true), sendInput()"
+      />
+    </form>
+  </div>
 </template>
 <script>
 import chatService from "../services/ChatService";
 export default {
-	name: "Messaging",
-	data() {
-		return {
-			userMessage: {
-				userText: "",
-				userId: 0,
-			},
-			botMessage: {
-				//ID: 1,
-				botResponse: "",
-				infoLink: "",
-				imgLink: "",
-			},
-			messageSent: false,
-			messages: [],
-		};
-	},
-	methods: {
-		getTime() {
-			this.time;
-			let current = new Date();
-			let time = current.getHours() + ":" + current.getMinutes();
-			return time;
-		},
-		clearUserMessage() {
-			this.userMessage = {
-				//ID: this.userMessage.ID+=2,
-				userText: "",
-			};
-		},
-		clearBotMessage() {
-			this.botMessage = {
-				//ID: this.botMessage.ID+=2,
-				botResponse: "",
-				InfoLink: "",
-				ImgLink: "",
-			};
-		},
-		saveUserMessage() {
-			this.userMessage.userId = this.$store.state.user.userId;
-			this.$store.commit("ADD_USER_MESSAGE", this.userMessage);
-			this.messages.push(this.userMessage);
-		},
-		saveBotMessage() {
-			this.messages.push(this.botMessage);
-		},
-		sendInput() {
-			this.saveUserMessage();
-			console.log("sending", this.userMessage);
-			chatService.sendInput(this.userMessage).then((response) => {
-				if (response.status == 200) {
-					this.botMessage = response.data;
-					this.saveBotMessage();
-				}
-				this.clearUserMessage();
-				this.clearBotMessage();
-			});
-		},
-		scrollToEnd: function() {
-			let content = this.$refs.messagesContainer;
-			content.scrollTop = content.scrollHeight;
-		},
-		updated() {
-			// This will be called when the component updates
-			// try toggling a todo
-			this.scrollToEnd();
-		},
-	},
+  name: "Messaging",
+  data() {
+    return {
+      userMessage: {
+        userText: "",
+        userId: 0,
+      },
+      botMessage: {
+        //ID: 1,
+        botResponse: "",
+        infoLink: "",
+        imgLink: "",
+      },
+      messageSent: false,
+      messages: [],
+    };
+  },
+  methods: {
+    getTime() {
+      this.time;
+      let current = new Date();
+      let minutes = current.getMinutes();
+      let time = current.getHours() + ":" + minutes;
+      if (minutes.length === 1) {
+        minutes = String(0 + minutes);
+      }
+      return time;
+    },
+    clearUserMessage() {
+      this.userMessage = {
+        //ID: this.userMessage.ID+=2,
+        userText: "",
+      };
+    },
+    clearBotMessage() {
+      this.botMessage = {
+        //ID: this.botMessage.ID+=2,
+        botResponse: "",
+        InfoLink: "",
+        ImgLink: "",
+      };
+    },
+    saveUserMessage() {
+      this.userMessage.userId = this.$store.state.user.userId;
+      this.$store.commit("ADD_USER_MESSAGE", this.userMessage);
+      this.messages.push(this.userMessage);
+    },
+    saveBotMessage() {
+      this.messages.push(this.botMessage);
+    },
+    sendInput() {
+      this.saveUserMessage();
+      console.log("sending", this.userMessage);
+      chatService.sendInput(this.userMessage).then((response) => {
+        if (response.status == 200) {
+          this.botMessage = response.data;
+          this.saveBotMessage();
+        }
+        this.clearUserMessage();
+        this.clearBotMessage();
+      });
+    },
+    scrollToEnd: function () {
+      let content = this.$refs.messagesContainer;
+      content.scrollTop = content.scrollHeight;
+    },
+    updated() {
+      // This will be called when the component updates
+      // try toggling a todo
+      this.scrollToEnd();
+    },
+  },
 };
 </script>
 <style>
@@ -236,17 +251,16 @@ export default {
 	max-width: 40%;
 	margin-bottom: 20px;
 }
-#img_message {
-	border-radius: 5px 20px 20px;
-	color: white;
-	background-color: #499ab2;
-	padding: 1%;
-	border-radius: 0.6rem;
-	display: flex;
-	list-style: none;
-	align-items: stretch;
-	max-width: 40%;
-	margin-bottom: 20px;
+#image_message {
+  border-radius: 5px 20px 20px;
+  color: white;
+  background-color: #499ab2;
+  padding: 1%;
+  border-radius: 0.6rem;
+  display: flex;
+  list-style: none;
+  max-width: 280px;
+  margin-bottom: 20px;
 }
 
 .userMsgContainer {
@@ -263,6 +277,16 @@ export default {
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-end;
+}
+.imgContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.linkContainer{
+	display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 .allMessagesLi {
 	display: flex;
