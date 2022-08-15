@@ -152,6 +152,7 @@ export default {
         }
         this.clearUserMessage();
         this.clearBotMessage();
+        setTimeout(() => this.scrollToEnd(), 100);
         this.scrollToEnd();
       });
     },
