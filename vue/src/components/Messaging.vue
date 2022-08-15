@@ -152,11 +152,17 @@ export default {
         }
         this.clearUserMessage();
         this.clearBotMessage();
+        setTimeout(() => this.scrollToEnd(), 100);
+        this.scrollToEnd();
       });
     },
     scrollToEnd: function () {
-      let content = this.$refs.messagesContainer;
-      content.scrollTop = content.scrollHeight;
+      let content = document.querySelector(
+        "li.allMessages:last-child > div:last-child"
+      );
+      //content.scrollTop = content.scrollHeight;
+      console.log(content, content.scrollTop, content.scrollHeight);
+      content.scrollIntoView();
     },
     updated() {
       // This will be called when the component updates
@@ -168,88 +174,88 @@ export default {
 </script>
 <style>
 .chat-bot {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 .greeting {
-	display: flex;
-	align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 .text-box {
-	display: flex;
-	align-items: flex-start;
-	position: fixed;
-	bottom: 0rem;
-	right: 0rem;
-	left: 0rem;
-	width: auto;
-	height: 5rem;
+  display: flex;
+  align-items: flex-start;
+  position: fixed;
+  bottom: 0rem;
+  right: 0rem;
+  left: 0rem;
+  width: auto;
+  height: 5rem;
 }
 .messages-area {
-	flex-direction: column;
-	align-items: stretch;
-	padding-bottom: 5rem;
-	align-content: space-between;
-	display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-bottom: 5rem;
+  align-content: space-between;
+  display: flex;
 }
 .text-box input[type="text"] {
-	flex: 1;
-	height: 5rem;
+  flex: 1;
+  height: 5rem;
 }
 .text-box input[type="submit"] {
-	height: 5rem;
-	width: 5rem;
-	background-color: #5bc0de;
+  height: 5rem;
+  width: 5rem;
+  background-color: #5bc0de;
 }
 #user_message {
-	border-radius: 20px 20px 5px;
-	color: white;
-	background-color: #8cd3e8;
-	padding: 1%;
-	border-radius: 0.6rem;
-	display: flex;
-	list-style: none;
-	align-items: stretch;
-	max-width: 40%;
-	margin-bottom: 20px;
-	margin-right: 32px;
+  border-radius: 20px 20px 5px;
+  color: white;
+  background-color: #8cd3e8;
+  padding: 1%;
+  border-radius: 0.6rem;
+  display: flex;
+  list-style: none;
+  align-items: stretch;
+  max-width: 40%;
+  margin-bottom: 20px;
+  margin-right: 32px;
 }
 #bot_message {
-	border-radius: 5px 20px 20px;
-	color: white;
-	background-color: #499ab2;
-	padding: 1%;
-	border-radius: 0.6rem;
-	display: flex;
-	list-style: none;
-	align-items: stretch;
-	max-width: 40%;
-	margin-bottom: 20px;
+  border-radius: 5px 20px 20px;
+  color: white;
+  background-color: #499ab2;
+  padding: 1%;
+  border-radius: 0.6rem;
+  display: flex;
+  list-style: none;
+  align-items: stretch;
+  max-width: 40%;
+  margin-bottom: 20px;
 }
 #greeting_message {
-	border-radius: 5px 20px 20px;
-	color: white;
-	background-color: #499ab2;
-	padding: 1%;
-	border-radius: 0.6rem;
-	display: flex;
-	list-style: none;
-	align-items: stretch;
-	max-width: 40%;
-	margin-bottom: 20px;
+  border-radius: 5px 20px 20px;
+  color: white;
+  background-color: #499ab2;
+  padding: 1%;
+  border-radius: 0.6rem;
+  display: flex;
+  list-style: none;
+  align-items: stretch;
+  max-width: 40%;
+  margin-bottom: 20px;
 }
 #link_message {
-	border-radius: 5px 20px 20px;
-	color: white;
-	background-color: #499ab2;
-	padding: 1%;
-	border-radius: 0.6rem;
-	display: flex;
-	list-style: none;
-	align-items: stretch;
-	max-width: 40%;
-	margin-bottom: 20px;
+  border-radius: 5px 20px 20px;
+  color: white;
+  background-color: #499ab2;
+  padding: 1%;
+  border-radius: 0.6rem;
+  display: flex;
+  list-style: none;
+  align-items: stretch;
+  max-width: 40%;
+  margin-bottom: 20px;
 }
 #image_message {
   border-radius: 5px 20px 20px;
@@ -264,37 +270,37 @@ export default {
 }
 
 .userMsgContainer {
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 .botMsgContainer {
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-end;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 .greetingMsgContainer {
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-end;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 .imgContainer {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
 }
-.linkContainer{
-	display: flex;
+.linkContainer {
+  display: flex;
   justify-content: flex-start;
   align-items: flex-end;
 }
 .allMessagesLi {
-	display: flex;
-	flex-direction: row;
-	align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
 }
 .msg_time {
-	color: grey;
-	font-size: 14px;
+  color: grey;
+  font-size: 14px;
 }
 </style>
