@@ -75,21 +75,12 @@ namespace Capstone.Controllers
             // this saves the userMessage object into the user_message table in the database
             bool didSheSave = topicDAO.SaveUserMessage(userMessage);
 
-            if (userText != null)
+            if (botMessage == null)
             {
-                if (botMessage == null)
-                {
-
-                    botMessage.BotResponse = "Did you fall asleep on the KeyBoard? I need a little help understanding you.";
-                   
-                }
-                return Ok(botMessage);
+                botMessage.BotResponse = "Did you fall asleep on the KeyBoard? I need a little help understanding you.";
+                return NotFound(botMessage);
             }
-            else
-            {
-
-                return NotFound("I don't think we teach that here.");
-            }
+            return Ok(botMessage);
 
         }
     }
