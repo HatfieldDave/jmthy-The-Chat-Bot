@@ -13,7 +13,7 @@ namespace Capstone.Models
         }
 
 
-        public string BotResponse { get; set; } //lives in topicInfo in DB
+        public List<string> BotResponse { get; set; } //lives in topicInfo in DB
 
         public string InfoLink { get; set; }
 
