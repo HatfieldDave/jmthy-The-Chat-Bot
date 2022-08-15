@@ -17,7 +17,7 @@
       >
         <div class="userMsgContainer">
           <span class="msg_time" v-if="message.userText"
-            ><i>{{ message.userMessage.msgTime }}</i></span
+            ><i>{{ getTime() }}</i></span
           >
           <span
             class="message userMsgBox"
@@ -118,7 +118,7 @@ export default {
       }
     },
     getTime() {
-      this.time;
+      //this.time;
       let current = new Date();
       let minutes = current.getMinutes();
       let time = current.getHours() + ":" + minutes;
