@@ -77,7 +77,7 @@ namespace Capstone.Controllers
 
             if (botMessage == null)
             {
-                botMessage.BotResponse = "Did you fall asleep on the KeyBoard? I need a little help understanding you.";
+                botMessage.BotResponse.Add("Did you fall asleep on the KeyBoard? I need a little help understanding you.");
                 return NotFound(botMessage);
             }
             return Ok(botMessage);

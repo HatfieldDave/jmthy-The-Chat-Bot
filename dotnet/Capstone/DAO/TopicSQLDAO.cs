@@ -73,9 +73,9 @@ namespace Capstone.DAO
                 cmd.Parameters.AddWithValue("@topicID", topicID);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows && reader.Read())
+                if (reader.Read())
                 {
-                    botMessage = GetBotMessageFromReader(reader);
+                  botMessage = GetBotMessageFromReader(reader);
                 }
 
                 return botMessage;
@@ -83,13 +83,21 @@ namespace Capstone.DAO
         }
         private BotMessage GetBotMessageFromReader(SqlDataReader reader)
         {
-            BotMessage bm = new BotMessage()
+            string unsplit = Convert.ToString(reader["topic_info"]);
+            BotMessage bm = new BotMessage();
+
+            if (unsplit.Contains("|"))
             {
-                
-                BotResponse = Convert.ToString(reader["topic_info"]),
-                ImgLink = Convert.ToString(reader["img_link"]),
-                InfoLink = Convert.ToString(reader["info_link"])
-            };
+                bm.BotResponse = unsplit.Split("|").ToList<string>();
+            }
+            else
+            {
+                bm.BotResponse = new List<string>();
+                bm.BotResponse.Add(unsplit);
+            }
+            bm.ImgLink = Convert.ToString(reader["img_link"]);
+            bm.InfoLink = Convert.ToString(reader["info_link"]);
+            
 
             return bm;
         }
