@@ -21,7 +21,7 @@ namespace Capstone.Models
 
         public double SimilarityPercent { get; set; }
         
-        //public string
+        public string MsgTime { get; set; }
 
        
     }
