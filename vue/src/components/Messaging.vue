@@ -40,10 +40,12 @@
             {{string }}
           </span>
          
+           </li>
+         
           <span class="msg_time" v-if="string" 
             ><i>{{ getTime() }}</i></span
           > 
-           </li>
+         
            </ul>       
         </div>
         <div class="linkContainer">
@@ -104,12 +106,14 @@ export default {
       userMessage: {
         userText: "",
         userId: 0,
+        //msgTime: ""
       },
       botMessage: {
         //ID: 1,
         botResponse: "",
         infoLink: "",
         imgLink: "",
+       // msgTime: ""
       },
       messageSent: false,
       messages: [],
