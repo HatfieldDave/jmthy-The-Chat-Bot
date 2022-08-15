@@ -20,8 +20,8 @@ namespace Capstone.Models
         public string ImgLink { get; set; }
 
         public double SimilarityPercent { get; set; }
-        
-        public string MsgTime { get; set; }
+
+        public string MsgTime { get; set; } = "";
 
        
     }

@@ -7,7 +7,7 @@
           {{ this.$store.state.user.nickname }}! How can I help you?
         </li>
         <span class="msg_time"
-          ><i>{{ getTime() }}</i></span
+          ><i>{{ getTime }}</i></span
         >
       </div>
       <li
@@ -17,7 +17,7 @@
       >
         <div class="userMsgContainer">
           <span class="msg_time" v-if="message.userText"
-            ><i>{{ message.userMessage.msgTime }}</i></span
+            ><i>{{ getTime}}</i></span
           >
           <span
             class="message userMsgBox"
@@ -36,7 +36,7 @@
             {{string }}
           </span>
           <span class="msg_time">
-            <i>{{getTime()}}</i> 
+            <i>{{getTime}}</i> 
           </span>
              
         </div>
@@ -54,7 +54,7 @@
             </a>
           </span>
           <span class="msg_time" v-if="message.infoLink"
-            ><i>{{ getTime() }}</i></span
+            ><i>{{ getTime}}</i></span
           >
         </div>
         <div class="imgContainer">
@@ -66,7 +66,7 @@
             />
           </span>
           <span class="msg_time" v-if="message.imgLink"
-            ><i>{{ getTime() }}</i></span
+            ><i>{{getTime }}</i></span
           >
         </div>
       </li>
@@ -98,19 +98,16 @@ export default {
       userMessage: {
         userText: "",
         userId: 0,
-        msgTime: ""
+        
       },
       botMessage: {
         //ID: 1,
         botResponse: "",
         infoLink: "",
         imgLink: "",
-<<<<<<< HEAD
-        msgTime: ""
-=======
-       msgTime: ""
->>>>>>> 753a816df7e9768ad8e3e261fe3dd3efeeaaab6c
+        
       },
+      
       messageSent: false,
       messages: [],
     };
@@ -121,16 +118,7 @@ export default {
         this.botMessage.botResponse[i];
       }
     },
-    getTime() {
-      this.time;
-      let current = new Date();
-      let minutes = current.getMinutes();
-      let time = current.getHours() + ":" + minutes;
-      if (String(minutes).length === 1) {
-        minutes = String(0 + minutes);
-      }
-      return time;
-    },
+    
     clearUserMessage() {
       this.userMessage = {
         //ID: this.userMessage.ID+=2,
@@ -146,11 +134,13 @@ export default {
       };
     },
     saveUserMessage() {
+      //this.userMessage.msgTime = this.getTime();
       this.userMessage.userId = this.$store.state.user.userId;
       this.$store.commit("ADD_USER_MESSAGE", this.userMessage);
       this.messages.push(this.userMessage);
     },
     saveBotMessage() {
+      //this.botMessage.msgTime = this.getTime();
       this.messages.push(this.botMessage);
     },
     sendInput() {
@@ -179,6 +169,18 @@ export default {
       // This will be called when the component updates
       // try toggling a todo
       this.scrollToEnd();
+    },
+  },
+  computed:{
+    getTime() {
+      this.time;
+      let current = new Date();
+      let minutes = current.getMinutes();
+      let time = current.getHours() + ":" + minutes;
+      if (String(minutes).length === 1) {
+        minutes = String(0 + minutes);
+      }
+      return time;
     },
   },
 };
