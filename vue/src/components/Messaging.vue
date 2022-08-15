@@ -98,14 +98,14 @@ export default {
       userMessage: {
         userText: "",
         userId: 0,
-        //msgTime: ""
+        msgTime: ""
       },
       botMessage: {
         //ID: 1,
         botResponse: "",
         infoLink: "",
         imgLink: "",
-       // msgTime: ""
+       msgTime: ""
       },
       messageSent: false,
       messages: [],
