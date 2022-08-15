@@ -40,7 +40,7 @@
             {{string }}
           </span>
          
-          <span class="msg_time" v-if="string" style:""
+          <span class="msg_time" v-if="string" 
             ><i>{{ getTime() }}</i></span
           > 
            </li>
