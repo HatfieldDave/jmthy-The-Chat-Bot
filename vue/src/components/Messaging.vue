@@ -27,26 +27,18 @@
             {{ message.userText }}
           </span>
         </div>
-        <div class="botMsgContainer">
-          <ul>
-          <li
-            class="message botMsgBox"
+        <div class="botMsgContainer message botMsgBox"
             id="bot_message"
-            
             v-for="(string, index) in message.botResponse"
             v-bind:key="index"
           >
           <span v-if="string">
             {{string }}
           </span>
-         
-           </li>
-         
-          <span class="msg_time" v-if="string" 
-            ><i>{{ getTime() }}</i></span
-          > 
-         
-           </ul>       
+          <span class="msg_time">
+            <i>{{getTime()}}</i> 
+          </span>
+             
         </div>
         <div class="linkContainer">
           <span id="link_message" v-if="message.infoLink">
@@ -272,15 +264,18 @@ export default {
   max-width: 40%;
   margin-bottom: 20px;
 }
+img{
+  width: 100%;
+}
 #image_message {
-  border-radius: 5px 20px 20px;
+  border-radius: 5px 20px 20px !important;
   color: white;
   background-color: #499ab2;
   padding: 1%;
   border-radius: 0.6rem;
   display: flex;
   list-style: none;
-  max-width: 40%;
+  width: 40%;
   margin-bottom: 20px;
 }
 
