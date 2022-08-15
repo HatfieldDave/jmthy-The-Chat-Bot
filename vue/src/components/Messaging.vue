@@ -157,7 +157,7 @@ export default {
         this.scrollToEnd();
       });
     },
-    scrollToEnd: function () {
+    scrollToEnd() {
       let content = document.querySelector(
         "li.allMessages:last-child > div:last-child"
       );
