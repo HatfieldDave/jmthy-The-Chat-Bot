@@ -65,9 +65,15 @@ INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi jmthy |
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('help | advice | guidence | can you help me | what can you help with | ','I''d love to help! I can help with a wide variety of Tech Elevator subject topics such as: "Pathway Help" | "Curriculum" | "Motivational Quotes" | "Find Open Jobs" | Are any of these what you need help with?','','');
 
 -- general topics 
+<<<<<<< HEAD
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('pathway','Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : "Managing Stress" | "Imposter Syndrome" | "Time Management" | "Elevator Pitch" | "Resume" | "LinkedIn" | "Side Projects" | "Networking" | "Interview Preparation" | "Behavioral Interviews" | "Technical Interviews" | "After Interviews" | "Job Search" | "Benefits" | "Huntr" | or you can get in touch with Pathway here:','pathway@techelevator.com','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('curriculum | class | help with ','If none of these topics are tickling your peach you can always send a slack to your instructor!','','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('motivational | quotes | help with','Absolutely, friend! Pick a number 1-11','','');
+=======
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('pathway | help with pathway','Pathway? I might know a thing or two about that. Would information on any of these topics be helpful? : "Managing Stress" | "Imposter Syndrome" | "Time Management" | "Elevator Pitch" | "Resume" | "LinkedIn" | "Side Projects" | "Networking" | "Interview Preparation" | "Behavioral Interviews" | "Technical Interviews" | "After Interviews" | "Job Search" | "Benefits" | "Huntr" | or you can get in touch with Pathway here:','pathway@techelevator.com','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('curriculum | class | help with curriculum','If none of these topics are tickling your peach you can always send a slack to your instructor!','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('why did i pick this program | show me | motivational quotes | quotes | help with life | I''m struggling | fuck this | toaster bath | lay in the street | I feel unhinged ','You''re going through a tough program, it''s understandable to feel stressed sometimes. Let me see what kind of inspiration I can hit you with.','','');
+>>>>>>> f7e6ea536b67482860df6b9d95b1d515d6a61ff7
 
 -- Not what you wanted NEEDS WORK
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('none ','I''m afraid those are the only topics I know about right now. But I have of very tired, hard working, overly caffeinated, and mildly unhinged team of junior developers working as hard as they can to make me live up to everyone''s expectations. If this is an emergency please contact your pathway director via Slack or shoot an email to:','pathway@techelevator.com','');

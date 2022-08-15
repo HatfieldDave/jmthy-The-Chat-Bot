@@ -79,7 +79,6 @@ namespace Capstone.Controllers
             {
                 botMessage.BotResponse = "Did you fall asleep on the KeyBoard? I need a little help understanding you.";
                 return NotFound(botMessage);
-                 
             }
             return Ok(botMessage);
 
