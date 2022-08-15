@@ -83,21 +83,13 @@ namespace Capstone.DAO
         }
         private BotMessage GetBotMessageFromReader(SqlDataReader reader)
         {
-            string unsplit = Convert.ToString(reader["topic_info"]);
-            BotMessage bm = new BotMessage();
-
-            if (unsplit.Contains("|"))
-            {
-                bm.BotResponse = unsplit.Split("|").ToList<string>();
-            }
-            else
-            {
-                bm.BotResponse = new List<string>();
-                bm.BotResponse.Add(unsplit);
-            }
-            bm.ImgLink = Convert.ToString(reader["img_link"]);
-            bm.InfoLink = Convert.ToString(reader["info_link"]);
             
+            BotMessage bm = new BotMessage()
+            {
+                BotResponse = Convert.ToString(reader["topic_info"]).Split("|").ToList<string>(),
+                ImgLink = Convert.ToString(reader["img_link"]),
+                InfoLink = Convert.ToString(reader["info_link"])
+            };
 
             return bm;
         }
