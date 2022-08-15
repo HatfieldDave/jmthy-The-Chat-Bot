@@ -1,81 +1,93 @@
 <template>
-	<div class="chat-bot">
-		<ul class="messages-area" style="list-style: none" ref="messagesContainer">
-			<div class="greetingMsgContainer">
-				<li id="greeting_message">
-					Hello, good to see you,
-					{{ this.$store.state.user.nickname }}! How can I help you?
-				</li>
-				<span class="msg_time"
-					><i>{{ getTime() }}</i></span
-				>
-			</div>
-			<li
-				v-for="message in messages"
-				v-bind:key="message.botResponse"
-				class="allMessages"
-			>
-				<div class="userMsgContainer">
-					<span class="msg_time" v-if="message.userText"
-						><i>{{ getTime() }}</i></span
-					>
-					<span
-						class="message userMsgBox"
-						id="user_message"
-						v-if="message.userText"
-					>
-						{{ message.userText }}
-					</span>
-				</div>
-				<div class="botMsgContainer">
-					<span
-						class="message botMsgBox"
-						id="bot_message"
-						v-if="message.botResponse"
-					>
-						{{ message.botResponse }}
-					</span>
-					<span class="msg_time" v-if="message.botResponse"
-						><i>{{ getTime() }}</i></span
-					>
-				</div>
-				<div>
-					<span id ="link_message" v-if="message.infoLink">
-						<a>
-							For more information Click Here, <a :href="message.infoLink" target="_blank" v-show="message.infoLink">
-							Link
-						</a>
-						</a>
-					</span>
-				</div>
-				<div>
-          <span id="image_message" v-if="message.imgLink">
-           
-            
-              <img v-bind:src="message.imgLink" v-show="message.imgLink" /> 
-            
+  <div class="chat-bot">
+    <ul class="messages-area" style="list-style: none" ref="messagesContainer">
+      <div class="greetingMsgContainer">
+        <li id="greeting_message">
+          Hello, good to see you,
+          {{ this.$store.state.user.nickname }}! How can I help you?
+        </li>
+        <span class="msg_time"
+          ><i>{{ getTime() }}</i></span
+        >
+      </div>
+      <li
+        v-for="message in messages"
+        v-bind:key="message.botResponse"
+        class="allMessages"
+      >
+        <div class="userMsgContainer">
+          <span class="msg_time" v-if="message.userText"
+            ><i>{{ getTime() }}</i></span
+          >
+          <span
+            class="message userMsgBox"
+            id="user_message"
+            v-if="message.userText"
+          >
+            {{ message.userText }}
           </span>
         </div>
-
-			</li>
-		</ul>
-		<form class="text-box">
-			<input
-				type="text"
-				name="Chatbox"
-				placeholder="Talk to JMTHY"
-				filled
-				label="Label"
-				auto-grow
-				v-model="userMessage.userText"
-			/>
-			<input
-				type="submit"
-				value="Send"
-				v-on:click.prevent="(messageSent = true), sendInput()"
-			/>
-		</form>
-	</div>
+        <div class="botMsgContainer">
+          <span
+            class="message botMsgBox"
+            id="bot_message"
+            v-if="message.botResponse"
+          >
+            {{ message.botResponse }}
+          </span>
+          <span class="msg_time" v-if="message.botResponse"
+            ><i>{{ getTime() }}</i></span
+          >
+        </div>
+        <div class="linkContainer">
+          <span id="link_message" v-if="message.infoLink">
+            <a>
+              For more information Click Here,
+              <a
+                :href="message.infoLink"
+                target="_blank"
+                v-show="message.infoLink"
+              >
+                Link
+              </a>
+            </a>
+          </span>
+          <span class="msg_time" v-if="message.infoLink"
+            ><i>{{ getTime() }}</i></span
+          >
+        </div>
+        <div class="imgContainer">
+          <span id="image_message" v-if="message.imgLink">
+            <img
+              v-bind:src="message.imgLink"
+              v-show="message.imgLink"
+              
+              
+            />
+          </span>
+          <span class="msg_time" v-if="message.imgLink"
+            ><i>{{ getTime() }}</i></span
+          >
+        </div>
+      </li>
+    </ul>
+    <form class="text-box">
+      <input
+        type="text"
+        name="Chatbox"
+        placeholder="Talk to JMTHY"
+        filled
+        label="Label"
+        auto-grow
+        v-model="userMessage.userText"
+      />
+      <input
+        type="submit"
+        value="Send"
+        v-on:click.prevent="(messageSent = true), sendInput()"
+      />
+    </form>
+  </div>
 </template>
 <script>
 import chatService from "../services/ChatService";
@@ -101,7 +113,11 @@ export default {
     getTime() {
       this.time;
       let current = new Date();
-      let time = current.getHours() + ":" + current.getMinutes();
+      let minutes = current.getMinutes();
+      let time = current.getHours() + ":" + minutes;
+      if (String(minutes).length === 1) {
+        minutes = String(0 + minutes);
+      }
       return time;
     },
     clearUserMessage() {
@@ -136,11 +152,17 @@ export default {
         }
         this.clearUserMessage();
         this.clearBotMessage();
+        setTimeout(() => this.scrollToEnd(), 100);
+        this.scrollToEnd();
       });
     },
     scrollToEnd: function () {
-      let content = this.$refs.messagesContainer;
-      content.scrollTop = content.scrollHeight;
+      let content = document.querySelector(
+        "li.allMessages:last-child > div:last-child"
+      );
+      //content.scrollTop = content.scrollHeight;
+      console.log(content, content.scrollTop, content.scrollHeight);
+      content.scrollIntoView();
     },
     updated() {
       // This will be called when the component updates
@@ -235,7 +257,7 @@ export default {
   max-width: 40%;
   margin-bottom: 20px;
 }
-#img_message {
+#image_message {
   border-radius: 5px 20px 20px;
   color: white;
   background-color: #499ab2;
@@ -243,7 +265,6 @@ export default {
   border-radius: 0.6rem;
   display: flex;
   list-style: none;
-  align-items: stretch;
   max-width: 40%;
   margin-bottom: 20px;
 }
@@ -259,6 +280,16 @@ export default {
   align-items: flex-end;
 }
 .greetingMsgContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.imgContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.linkContainer {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
