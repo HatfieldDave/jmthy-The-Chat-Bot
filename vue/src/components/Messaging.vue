@@ -211,6 +211,9 @@ export default {
   align-content: space-between;
   display: flex;
 }
+.botMsgContainer{
+  
+},
 .text-box input[type="text"] {
   flex: 1;
   height: 5rem;
