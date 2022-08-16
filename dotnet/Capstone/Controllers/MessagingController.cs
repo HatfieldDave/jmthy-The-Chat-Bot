@@ -64,7 +64,7 @@ namespace Capstone.Controllers
             StringLogic sl = new StringLogic(FullTopicList, userMessage.UserText);
             //this lethod loops through each topicQ in full topic list and compares it against the user's message
             // saves the percentage of similarity between them as a property of each topic
-            sl.CalculateTopicThresholds(userMessage.UserText);
+            sl.CalculateTopicThresholds(userMessage.UserText.ToLower());
             // this method then loops through them all again to find the topic id that has the highest threshold
             int topicIdOfHighestThreshold = sl.CalculateTopicIdOfHighestThreshold();
             // this then gets the matching bot response with that id from database and saves it into the Botmessage object
