@@ -4,7 +4,7 @@
 
     <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
-        <img class="logo" src="@/assets/Untitled_Artwork.png" alt="" />
+        <img class="logo" src="@/assets/Untitled_Artwork.png" alt="" v-on:click="$router.push('home')"/>
         <a class="navbar-brand" href="#">JMTHY</a>
         <button
           class="navbar-toggler"

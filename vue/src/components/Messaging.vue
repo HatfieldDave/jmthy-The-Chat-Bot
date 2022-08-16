@@ -33,7 +33,7 @@
         <div
           class="botMsgContainer message botMsgBox"
           v-for="(string, index) in message.botResponse"
-          v-bind:key="index"
+          v-bind:key="index" 
         >
           <span v-if="string" id="bot_message">
             {{ string }}
@@ -271,6 +271,7 @@ export default {
 }
 img {
   width: 100%;
+  border-radius: 0.6rem;
 }
 #image_message {
   border-radius: 5px 20px 20px !important;
@@ -303,6 +304,8 @@ img {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  max-width: 50%;
+  
 }
 .linkContainer {
   display: flex;
