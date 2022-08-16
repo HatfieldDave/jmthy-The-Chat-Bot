@@ -32,19 +32,17 @@
 
         <div
           class="botMsgContainer message botMsgBox"
-          id="bot_message"
           v-for="(string, index) in message.botResponse"
           v-bind:key="index"
         >
-          <span v-if="string">
+          <span v-if="string" id="bot_message">
             {{ string }}
           </span>
-
           <span class="msg_time"
-            ><i>{{ message.msgTime }}</i></span
-          >
+          ><i>{{ message.msgTime }}</i></span>
         </div>
-
+        
+        
         <div class="linkContainer">
           <span id="link_message" v-if="message.infoLink">
             <a>
