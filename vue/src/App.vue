@@ -17,7 +17,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse" id="navbarColor01">
+        <div class="navbar-collapse collapse" id="navbarColor01" :key="$route.path">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
               <router-link class="nav-link" v-bind:to="{ name: 'home' }" >

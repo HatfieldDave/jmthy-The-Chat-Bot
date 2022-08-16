@@ -98,12 +98,14 @@ export default {
 			userMessage: {
 				userText: "",
 				userId: 0,
+				msgTime: ""
 			},
 			botMessage: {
 				//ID: 1,
 				botResponse: "",
 				infoLink: "",
 				imgLink: "",
+				msgTime: "",
 			},
 
 			messageSent: false,
@@ -111,11 +113,6 @@ export default {
 		};
 	},
 	methods: {
-		botResponseStringLoop() {
-			for (let i = 0; i < this.botMessage.botResponse.length; i++) {
-				this.botMessage.botResponse[i];
-			}
-		},
 
 		clearUserMessage() {
 			this.userMessage = {
