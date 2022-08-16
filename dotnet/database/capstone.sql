@@ -223,10 +223,10 @@ Never gonna say goodbye ',
 
 
 --- Staff
-INSERT INTO topic (topic_q, topic_id, info_link, img_link) VALUES ('brian | java blue | java instructor blue | instructor for java blue | ', '','https://www.youtube.com/watch?v=1pduL7ecmjg');
-INSERT INTO topic (topic_q, topic_id, info_link, img_link) VALUES ('steve', '','','https://www.youtube.com/watch?v=fQPe4RigYmg&t=51s');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('matt','','https://www.youtube.com/watch?v=H_0Hm8KZlk0','');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('john','','','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('brian | java blue | java instructor blue | instructor for java blue | ', 'Did you know Brian has a punk band?','https://www.youtube.com/watch?v=1pduL7ecmjg', '');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('steve | coach | java green | java green instructor | instructor for java green', 'I dont know much about Steve, to be honest he frightens me','https://www.youtube.com/watch?v=fQPe4RigYmg&t=51s','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('matt | matt eland | batman |','Matt is awesome','https://www.youtube.com/watch?v=H_0Hm8KZlk0','');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('john | john fulton | sweet sweet angel','John is awesome','https://www.youtube.com/watch?v=4CVbuBwbDIM','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('','','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('','','','');
 
