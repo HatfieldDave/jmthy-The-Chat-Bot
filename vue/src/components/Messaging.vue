@@ -17,7 +17,7 @@
 			>
 				<div class="userMsgContainer">
 					<span class="msg_time" v-if="message.userText"
-						><i>{{ getTime() }}</i></span
+						><i>{{ message.msgTime}}</i></span
 					>
 					<span
 						class="message userMsgBox"
@@ -37,7 +37,7 @@
 						{{ string }}
 					</span>
 					<span class="msg_time">
-						<i>{{ getTime() }}</i>
+						<i>{{ message.msgTime }}</i>
 					</span>
 				</div>
 				<div class="linkContainer">
@@ -54,7 +54,7 @@
 						</a>
 					</span>
 					<span class="msg_time" v-if="message.infoLink"
-						><i>{{ getTime() }}</i></span
+						><i>{{ message.msgTime }}</i></span
 					>
 				</div>
 				<div class="imgContainer">
@@ -66,7 +66,7 @@
 						/>
 					</span>
 					<span class="msg_time" v-if="message.imgLink"
-						><i>{{ getTime() }}</i></span
+						><i>{{ message.msgTime}}</i></span
 					>
 				</div>
 			</li>
@@ -138,13 +138,13 @@ export default {
 			};
 		},
 		saveUserMessage() {
-			//this.userMessage.msgTime = this.getTime();
+			this.userMessage.msgTime = new Date().toLocaleTimeString();
 			this.userMessage.userId = this.$store.state.user.userId;
 			this.$store.commit("ADD_USER_MESSAGE", this.userMessage);
 			this.messages.push(this.userMessage);
 		},
 		saveBotMessage() {
-			//this.botMessage.msgTime = this.getTime();
+			this.botMessage.msgTime = new Date().toLocaleTimeString();
 			this.messages.push(this.botMessage);
 		},
 		sendInput() {
