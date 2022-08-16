@@ -50,11 +50,23 @@ INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns)
 INSERT INTO users (username, password_hash, salt, user_role, nickname, pronouns) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin', 'Zada', 'She/Her');
 GO
 
---DBV2
+--DBV2 ***********************************************************************************************************************************************************************************
 --MUST STAY IN FIRST SLOT *** CATCH ALL ****
 Insert INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('catch-all','So sorry, but I don''t know how to respond to that yet. | I''m still learning all the things I need to know to be the best helper Yetti I can be! | If this is an emergency please slack your ','','')
-
-
+--Quotes
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','Life is like a sewer… what you get out of it depends on what you put into it. – Tom Lehrer', '','https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','I have spent my years since Princeton, while at law school and in my various professional jobs, not feeling completely a part of the worlds I inhabit. I am always looking over my shoulder wondering if I measure up. - Sonia Sotomayer', '','https://d.newsweek.com/en/full/2053462/baby-elephant.webp?w=790&f=edf627a8d66c423b84bedfccdaf51f6d');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','That brain of mine is something more than merely mortal; as time will show. - Ada Lovelace', '','https://images.unsplash.com/photo-1583524505974-6facd53f4597?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','To me programming is more than an important practical art. It is also a gigantic undertaking in the foundations of knowledge. - Grace Hopper', '','https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','Only the dead fish go with the flow. - Andy Hunt', '','https://images.unsplash.com/photo-1516703995331-215d1188db0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','Stress acts as an accelerator: it will push you either forward or backward, but you choose which direction. ?Chelsea Erieau', '','https://images.unsplash.com/photo-1556582305-528bffcf7af0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','We gain strength, and courage, and confidence by each experience in which we really stop to look fear in the face....We must do that which we think we cannot. — Eleanor Roosevelt', '','https://images.unsplash.com/photo-1607923432848-62f872d16daf?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','You may encounter many defeats, but you must not be defeated. In fact, it may be necessary to encounter the defeats, so you can know who you are, what you can rise from, how you can still come out of it. - Dr. Maya Angelou', '','https://i.redd.it/hpwchq8av5h91.jpg');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','You never have to ask anyone permission to lead. When you want to lead, you lead. - Kamala Harris', '','https://www.rd.com/wp-content/uploads/2021/04/GettyImages-139677758-scaled.jpg?resize=2048,1362');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','There''s something so special about a woman who dominates in a man''s world. It takes a certain grace, strength, intelligence, fearlessness, and the nerve to never take no as an answer. - Rihanna', '','https://external-preview.redd.it/1SmbA7Mc1ZRSTIXMacxsq1uduh6f9-Z3BMAloelzHU8.jpg?auto=webp&s=cb97640ee660d84ce74eca5925267bc989d1630d');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','The discussion of representation is one that has been repeated over and over again, and the solution has always been that it''s up to us to support, promote, and create the images that we want to see. — Issa Rae', '','https://www.corneliustoday.com/wp-content/uploads/2020/05/hqdefault.jpg');
+GO
+--*****************************************************************************************************************************************************************************************
 --Greetings
 --INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('','','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hello','darkness my old friend. I''m JMTHY. How can I help you today ','','');
@@ -138,7 +150,7 @@ INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('polymorphi
 'https://www.w3schools.com/cs/cs_polymorphism.php','https://i.postimg.cc/qq8YJdnQ/Polymorphism-in-C-1.png');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('encapsulation','Encapsulation describes the idea of bundling data and methods that work on that data within one unit, like a class. This concept is also often used to hide the internal representation, or state of an object from the outside. This is called information hiding.',
 'https://www.w3schools.blog/c-sharp-encapsulation','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoLykQMSo-wpL45YXnKgs8-7e10L8ReSoQCQ&usqp=CAU');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('java','Java? Never heard of her. Sounds kinda lame but maybe this link will help',
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('java | help with java | can you tell me about java |','Java? Never heard of her. Sounds kinda lame but maybe this link will help',
 'https://www.youtube.com/watch?v=xvFZjo5PgG0','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('maps | i need help with maps','We''re no strangers to love
 You know the rules and so do I
@@ -198,19 +210,7 @@ Never gonna say goodbye
 
 or maybe try this link:','https://www.mapquest.com/us/ohio/swaco-408403550','');
 
---Quotes
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','Life is like a sewer… what you get out of it depends on what you put into it. – Tom Lehrer', '','https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','I have spent my years since Princeton, while at law school and in my various professional jobs, not feeling completely a part of the worlds I inhabit. I am always looking over my shoulder wondering if I measure up. - Sonia Sotomayer', '','https://d.newsweek.com/en/full/2053462/baby-elephant.webp?w=790&f=edf627a8d66c423b84bedfccdaf51f6d');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','That brain of mine is something more than merely mortal; as time will show. - Ada Lovelace', '','https://images.unsplash.com/photo-1583524505974-6facd53f4597?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','To me programming is more than an important practical art. It is also a gigantic undertaking in the foundations of knowledge. - Grace Hopper', '','https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','Only the dead fish go with the flow. - Andy Hunt', '','https://images.unsplash.com/photo-1516703995331-215d1188db0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','Stress acts as an accelerator: it will push you either forward or backward, but you choose which direction. ?Chelsea Erieau', '','https://images.unsplash.com/photo-1556582305-528bffcf7af0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','We gain strength, and courage, and confidence by each experience in which we really stop to look fear in the face....We must do that which we think we cannot. — Eleanor Roosevelt', '','https://images.unsplash.com/photo-1607923432848-62f872d16daf?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','You may encounter many defeats, but you must not be defeated. In fact, it may be necessary to encounter the defeats, so you can know who you are, what you can rise from, how you can still come out of it. - Dr. Maya Angelou', '','https://i.redd.it/hpwchq8av5h91.jpg');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','You never have to ask anyone permission to lead. When you want to lead, you lead. - Kamala Harris', '','https://www.rd.com/wp-content/uploads/2021/04/GettyImages-139677758-scaled.jpg?resize=2048,1362');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','There''s something so special about a woman who dominates in a man''s world. It takes a certain grace, strength, intelligence, fearlessness, and the nerve to never take no as an answer. - Rihanna', '','https://external-preview.redd.it/1SmbA7Mc1ZRSTIXMacxsq1uduh6f9-Z3BMAloelzHU8.jpg?auto=webp&s=cb97640ee660d84ce74eca5925267bc989d1630d');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('quotes','The discussion of representation is one that has been repeated over and over again, and the solution has always been that it''s up to us to support, promote, and create the images that we want to see. — Issa Rae', '','https://www.corneliustoday.com/wp-content/uploads/2020/05/hqdefault.jpg');
-GO
+
 
 --- Login Messages
 
