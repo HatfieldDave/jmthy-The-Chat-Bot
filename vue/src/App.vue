@@ -75,10 +75,12 @@ export default {};
      Any valid CSS or SCSS is allowable here. See https://sass-lang.com/documentation/style-rules for info on SCSS -->
 <style lang="scss">
 #app {
+  height:100vh;
 	display:grid;
   grid-template-areas: 
   "header"
   "body";
+  grid-template-rows: 1fr 10fr;
 }
 .logo {
 	width: 50px;
