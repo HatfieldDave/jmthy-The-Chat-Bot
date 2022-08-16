@@ -1,4 +1,5 @@
 <template>
+<div id=fullPageContainer>
   <div class="chat-bot">
     <ul class="messages-area" style="list-style: none" ref="messagesContainer">
       <div class="greetingMsgContainer">
@@ -77,7 +78,8 @@
 
       </li>
     </ul>
-    <form class="text-box">
+    </div>
+    <form class="text-box" id="">
       <input
         type="text"
         name="Chatbox"
@@ -186,6 +188,7 @@ export default {
 </script>
 <style>
 .chat-bot {
+  grid-row: "chat";
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -195,14 +198,14 @@ export default {
   align-items: flex-end;
 }
 .text-box {
-  display: flex;
-  align-items: flex-start;
-  position: fixed;
-  bottom: 0rem;
-  right: 0rem;
-  left: 0rem;
-  width: auto;
-  height: 5rem;
+      grid-row: "form";
+      display: flex;
+    position: fixed;
+    bottom: 0rem;
+    width: 100%;
+    height: 5rem;
+    align-content: flex-end;
+    flex-grow: 1;
 }
 .messages-area {
   flex-direction: column;
@@ -212,12 +215,12 @@ export default {
   display: flex;
 }
 .botMsgContainer{
-  
-},
-.text-box input[type="text"] {
-  flex: 1;
-  height: 5rem;
+  align-content: space-between;
 }
+ .text-box input[type="text"] {
+ flex: 1;
+  height: 5rem;
+ }
 .text-box input[type="submit"] {
   height: 5rem;
   width: 5rem;
@@ -320,5 +323,11 @@ img {
 .msg_time {
   color: grey;
   font-size: 14px;
+}
+#fullPageContainer{
+  display: grid;
+  grid-template-columns: 
+  "chat"
+  "form";
 }
 </style>

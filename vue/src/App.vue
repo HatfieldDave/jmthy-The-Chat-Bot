@@ -4,7 +4,7 @@
 
     <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
-        <img class="logo" src="@/assets/thisisyeti.png" alt="" />
+        <img class="logo" src="@/assets/Untitled_Artwork.png" alt="" />
         <a class="navbar-brand" href="#">JMTHY</a>
         <button
           class="navbar-toggler"
@@ -87,8 +87,7 @@ export default {};
 }
 .body{
   grid-area: body;
-  display: flex;
-  flex-grow:1;
+  
  
 }
 .navbar{
