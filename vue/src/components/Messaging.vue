@@ -1,5 +1,4 @@
 <template>
-<div id=fullPageContainer>
   <div class="chat-bot">
     <ul class="messages-area" style="list-style: none" ref="messagesContainer">
       <div class="greetingMsgContainer">
@@ -17,8 +16,8 @@
         v-bind:key="message.botResponse"
         class="allMessages"
       >
-        <div class="userMsgContainer" v-show="message.userText">
-          <span class="msg_time" 
+        <div class="userMsgContainer">
+          <span class="msg_time" v-if="message.userText"
             ><i>{{ message.msgTime }}</i></span
           >
 
@@ -30,19 +29,23 @@
             {{ message.userText }}
           </span>
         </div>
-       
-        <div class="botMsgContainer" v-show="message.botResponse"  v-for="(string, index) in message.botResponse"
-          v-bind:key="index">
-       
-        <div class="message botMsgBox" id="bot_message">
+
+        <div
+          class="botMsgContainer message botMsgBox"
+          id="bot_message"
+          v-for="(string, index) in message.botResponse"
+          v-bind:key="index"
+        >
           <span v-if="string">
             {{ string }}
           </span>
-        </div>
-        <span class="msg_time"><i>{{ message.msgTime }}</i></span>
-        
 
-        <div class="linkContainer" v-show="index == (message.botResponse.length-1)">
+          <span class="msg_time"
+            ><i>{{ message.msgTime }}</i></span
+          >
+        </div>
+
+        <div class="linkContainer">
           <span id="link_message" v-if="message.infoLink">
             <a>
               For more information Click Here,
@@ -74,12 +77,9 @@
             ><i>{{ message.msgTime }}</i></span
           >
         </div>
-        </div>
-
       </li>
     </ul>
-    </div>
-    <form class="text-box" id="">
+    <form class="text-box">
       <input
         type="text"
         name="Chatbox"
@@ -188,7 +188,6 @@ export default {
 </script>
 <style>
 .chat-bot {
-  grid-row: "chat";
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -198,14 +197,14 @@ export default {
   align-items: flex-end;
 }
 .text-box {
-      grid-row: "form";
-      display: flex;
-    position: fixed;
-    bottom: 0rem;
-    width: 100%;
-    height: 5rem;
-    align-content: flex-end;
-    flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  position: fixed;
+  bottom: 0rem;
+  right: 0rem;
+  left: 0rem;
+  width: auto;
+  height: 5rem;
 }
 .messages-area {
   flex-direction: column;
@@ -214,13 +213,10 @@ export default {
   align-content: space-between;
   display: flex;
 }
-.botMsgContainer{
-  align-content: space-between;
-}
- .text-box input[type="text"] {
- flex: 1;
+.text-box input[type="text"] {
+  flex: 1;
   height: 5rem;
- }
+}
 .text-box input[type="submit"] {
   height: 5rem;
   width: 5rem;
@@ -323,11 +319,5 @@ img {
 .msg_time {
   color: grey;
   font-size: 14px;
-}
-#fullPageContainer{
-  display: grid;
-  grid-template-columns: 
-  "chat"
-  "form";
 }
 </style>
