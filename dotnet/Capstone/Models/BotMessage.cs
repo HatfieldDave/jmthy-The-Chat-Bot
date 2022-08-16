@@ -7,11 +7,6 @@ namespace Capstone.Models
 {
     public class BotMessage
     { 
-        public BotMessage()
-        {
-
-        }
-
 
         public List<string> BotResponse { get; set; } //lives in topicInfo in DB
 
