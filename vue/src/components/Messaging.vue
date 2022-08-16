@@ -270,7 +270,8 @@ export default {
 	margin-bottom: 20px;
 }
 img {
-	width: 100%;
+  width: 100%;
+  border-radius: 0.6rem;
 }
 #image_message {
 	border-radius: 5px 20px 20px !important;
@@ -300,10 +301,11 @@ img {
 	align-items: flex-end;
 }
 .imgContainer {
-	display: flex;
-	justify-content: flex-start;
-	align-items: flex-end;
-	max-width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  max-width: 50%;
+  
 }
 .linkContainer {
 	display: flex;

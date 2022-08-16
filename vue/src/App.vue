@@ -2,73 +2,69 @@
 	<div id="app">
 		<!-- If you start to get random styling you don't like, remove container from this div -->
 
-		<nav class="navbar navbar-dark bg-primary">
-			<div class="container-fluid">
-				<img class="logo" src="@/assets/JMTHY.png" alt="" />
-				<a class="navbar-brand" href="#">JMTHY</a>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-toggle="collapse"
-					data-target="#navbarColor01"
-					aria-controls="navbarColor01"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div
-					class="navbar-collapse collapse"
-					id="navbarColor01"
-					:key="$route.path"
-				>
-					<ul class="navbar-nav me-auto">
-						<li class="nav-item">
-							<router-link class="nav-link" v-bind:to="{ name: 'home' }">
-								<i class="fas fa-home"></i>
-								<!-- This is a font awesome icon -->
-								Home
-							</router-link>
-							<span class="visually-hidden">(current)</span>
-						</li>
-						<li class="nav-item">
-							<router-link
-								class="nav-link"
-								v-bind:to="{ name: 'register' }"
-								v-if="!$store.state.token"
-								>Register</router-link
-							>
-						</li>
-						<li class="nav-item">
-							<router-link
-								class="nav-link"
-								v-bind:to="{ name: 'login' }"
-								v-if="!$store.state.token"
-								>Login
-							</router-link>
-						</li>
-						<li class="nav-item">
-							<router-link
-								class="nav-link"
-								v-bind:to="{ name: 'logout' }"
-								v-if="$store.state.token"
-								>Logout
-							</router-link>
-						</li>
-						<li class="nav-item">
-							<router-link
-								class="nav-link"
-								v-bind:to="{ name: 'Greeting' }"
-								v-if="$store.state.token"
-								>Chat
-							</router-link>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<router-view class="body" />
-	</div>
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container-fluid">
+        <img class="logo" src="@/assets/Untitled_Artwork.png" alt="" v-on:click="$router.push('home')"/>
+        <a class="navbar-brand" href="#">JMTHY</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarColor01" :key="$route.path">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <router-link class="nav-link" v-bind:to="{ name: 'home' }" >
+                <i class="fas fa-home"></i>
+                <!-- This is a font awesome icon -->
+                Home
+              </router-link>
+              <span class="visually-hidden">(current)</span>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                v-bind:to="{ name: 'register' }"
+                v-if="!$store.state.token"
+                >Register</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                v-bind:to="{ name: 'login' }"
+                v-if="!$store.state.token"
+                >Login
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                v-bind:to="{ name: 'logout' }"
+                v-if="$store.state.token"
+                >Logout
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link
+                class="nav-link"
+                v-bind:to="{ name: 'Greeting' }"
+                v-if="$store.state.token"
+                >Chat 
+              </router-link>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <router-view class="body" />
+  </div>
 </template>
 
 <script>
