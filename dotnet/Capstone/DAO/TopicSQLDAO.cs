@@ -68,10 +68,10 @@ namespace Capstone.DAO
         {
             BotMessage botMessage = new BotMessage();
             int newId;
-            if (topicID >= 41 && topicID <= 51)
+            if (topicID >=2 && topicID <= 12)
             {
                 Random random = new Random();
-                newId = random.Next(41, 51);
+                newId = random.Next(2, 12);
                 topicID = newId;
             }
            

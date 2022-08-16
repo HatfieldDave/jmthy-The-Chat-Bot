@@ -11,7 +11,6 @@ namespace Capstone.Models
         public string UserText { get; set; }
         public int TopicID { get; set; }
         public int UserID { get; set; } 
-
         public string MsgTime { get; set; }
 
         //needs to have the method that takes a user text- determines 
