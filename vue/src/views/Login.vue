@@ -85,3 +85,8 @@ export default {
   },
 };
 </script>
+<style>
+#login{
+  display: flex;
+}
+</style>

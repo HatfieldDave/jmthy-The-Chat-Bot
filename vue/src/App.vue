@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <!-- If you start to get random styling you don't like, remove container from this div -->
+	<div id="app">
+		<!-- If you start to get random styling you don't like, remove container from this div -->
 
     <nav class="navbar navbar-dark bg-primary">
       <div class="container-fluid">
@@ -75,32 +75,29 @@ export default {};
      Any valid CSS or SCSS is allowable here. See https://sass-lang.com/documentation/style-rules for info on SCSS -->
 <style lang="scss">
 #app {
-  height:100vh;
-	display:grid;
-  grid-template-areas: 
-  "header"
-  "body";
-  grid-template-rows: 1fr 10fr;
+	height: 100vh;
+	display: grid;
+	grid-template-areas:
+		"header"
+		"body";
+	grid-template-rows: 1fr 10fr;
 }
 .logo {
-	width: 50px;
+	width: 100px;
 }
-.body{
-  grid-area: body;
-  
- 
+.body {
+	grid-area: body;
 }
-.navbar{
-  grid-area: header;
+.navbar {
+	grid-area: header;
 }
 .navbar-brand {
-  letter-spacing: 0.5rem;
-  font-weight: 900;
+	letter-spacing: 0.5rem;
+	font-weight: 900;
 }
-.nav-item{
-text-align: right
+.nav-item {
+	text-align: right;
 }
-
 
 @import "./styles/colors.scss";
 
