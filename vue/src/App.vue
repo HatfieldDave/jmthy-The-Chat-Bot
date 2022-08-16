@@ -80,6 +80,7 @@ export default {};
   grid-template-areas: 
   "header"
   "body";
+  grid-template-rows: 1fr 10fr;
 }
 .logo {
 	width: 50px;
