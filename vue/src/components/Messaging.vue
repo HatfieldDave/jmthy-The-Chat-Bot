@@ -29,18 +29,21 @@
             {{ message.userText }}
           </span>
         </div>
-       
-        <div class="botMsgContainer" v-show="message.botResponse" >
-       
-        <div class="message botMsgBox" id="bot_message"  v-for="(string, index) in message.botResponse" v-bind:key="index">
-          <span v-if="string">
+
+        <div
+          class="botMsgContainer message botMsgBox"
+          v-for="(string, index) in message.botResponse"
+          v-bind:key="index"
+        >
+          <span v-if="string" id="bot_message">
             {{ string }}
           </span>
+          <span class="msg_time"
+          ><i>{{ message.msgTime }}</i></span>
         </div>
-        <span class="msg_time"><i>{{ message.msgTime }}</i></span>
         
-
-        <div class="linkContainer" v-show="message.infoLink">
+        
+        <div class="linkContainer">
           <span id="link_message" v-if="message.infoLink">
             <a>
               For more information Click Here,
@@ -72,7 +75,7 @@
             ><i>{{ message.msgTime }}</i></span
           >
         </div>
-        </div>
+        
 
       </li>
     </ul>
