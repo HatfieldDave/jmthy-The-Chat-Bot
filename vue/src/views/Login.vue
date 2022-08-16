@@ -1,6 +1,6 @@
 <template>
-  <div id="login" class="text-center">
-    <form class="form-signin" @submit.prevent="login">
+  <div class="form-signin text-center" id="fullPage">
+    <form class="form-signin" id="login" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
@@ -86,7 +86,22 @@ export default {
 };
 </script>
 <style>
+#fullPage{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes login{
+  
+}
 #login{
   display: flex;
+  flex-direction:column;
+ width: 400px;
+ height: 500px;
+ background-color: cornflowerblue;
+ align-items: center;
+ justify-content: center;
 }
 </style>
