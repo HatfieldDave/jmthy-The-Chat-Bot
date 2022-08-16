@@ -7,7 +7,7 @@
 					{{ this.$store.state.user.nickname }}! How can I help you?
 				</li>
 				<span class="msg_time"
-					><i>{{ getTime }}</i></span
+					><i>{{ getTime() }}</i></span
 				>
 			</div>
 			<li
@@ -17,7 +17,7 @@
 			>
 				<div class="userMsgContainer">
 					<span class="msg_time" v-if="message.userText"
-						><i>{{ getTime }}</i></span
+						><i>{{ getTime() }}</i></span
 					>
 					<span
 						class="message userMsgBox"
@@ -37,7 +37,7 @@
 						{{ string }}
 					</span>
 					<span class="msg_time">
-						<i>{{ getTime }}</i>
+						<i>{{ getTime() }}</i>
 					</span>
 				</div>
 				<div class="linkContainer">
@@ -54,7 +54,7 @@
 						</a>
 					</span>
 					<span class="msg_time" v-if="message.infoLink"
-						><i>{{ getTime }}</i></span
+						><i>{{ getTime() }}</i></span
 					>
 				</div>
 				<div class="imgContainer">
@@ -66,7 +66,7 @@
 						/>
 					</span>
 					<span class="msg_time" v-if="message.imgLink"
-						><i>{{ getTime }}</i></span
+						><i>{{ getTime() }}</i></span
 					>
 				</div>
 			</li>
@@ -113,7 +113,16 @@ export default {
 		};
 	},
 	methods: {
-
+		getTime() {
+			this.time;
+			let current = new Date();
+			let minutes = current.getMinutes();
+			let time = current.getHours() + ":" + minutes;
+			if (String(minutes).length === 1) {
+				minutes = String(0 + minutes);
+			}
+			return time;
+		},
 		clearUserMessage() {
 			this.userMessage = {
 				//ID: this.userMessage.ID+=2,
@@ -166,18 +175,7 @@ export default {
 			this.scrollToEnd();
 		},
 	},
-	computed: {
-		getTime() {
-			this.time;
-			let current = new Date();
-			let minutes = current.getMinutes();
-			let time = current.getHours() + ":" + minutes;
-			if (String(minutes).length === 1) {
-				minutes = String(0 + minutes);
-			}
-			return time;
-		},
-	},
+	
 };
 </script>
 <style>
