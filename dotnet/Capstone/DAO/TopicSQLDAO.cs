@@ -71,7 +71,7 @@ namespace Capstone.DAO
             if (topicID >=2 && topicID <= 12)
             {
                 Random random = new Random();
-                newId = random.Next(41, 51);
+                newId = random.Next(2, 12);
                 topicID = newId;
             }
            
