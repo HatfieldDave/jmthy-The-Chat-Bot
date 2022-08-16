@@ -54,6 +54,7 @@ GO
 --MUST STAY IN FIRST SLOT *** CATCH ALL ****
 Insert INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('catch-all','So sorry, but I don''t know how to respond to that yet. | I''m still learning all the things I need to know to be the best helper Yetti I can be! | If this is an emergency please slack your ','','')
 
+
 --Greetings
 --INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('','','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hello','darkness my old friend. I''m JMTHY. How can I help you today ','','');
