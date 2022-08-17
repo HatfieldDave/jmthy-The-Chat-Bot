@@ -192,10 +192,10 @@ export default {
 }
 
 #jmthy_head {
-	max-width: 40%;
-	position: absolute;
-	top: 50%; /* or whatever */
-	left: 30%; /* or whatever, position according to taste */
+	max-width: 30%;
+	position: fixed;
+	top: 15%; /* or whatever */
+	left: 36%; /* or whatever, position according to taste */
 	opacity: 0.1; /* Firefox, Chrome, Safari, Opera, IE >= 9 (preview) */
 	filter: alpha(opacity=50); /* for <= IE 8 */
 	display: flex;
@@ -271,6 +271,7 @@ export default {
 	align-items: stretch;
 	max-width: 40%;
 	margin-bottom: 20px;
+	margin-top: 20px;
 }
 #link_message {
 	border-radius: 5px 20px 20px;
