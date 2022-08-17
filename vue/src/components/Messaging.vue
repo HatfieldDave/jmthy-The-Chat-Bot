@@ -10,7 +10,7 @@
 					I help you?
 				</li>
 				<span class="msg_time"
-					><i>{{ getTime() }}</i></span
+					><i>{{ this.time }}</i></span
 				>
 			</div>
 
