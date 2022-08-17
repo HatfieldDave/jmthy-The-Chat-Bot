@@ -5,16 +5,24 @@
 <label for="botPortal" id="lPortal">Talk to JMTHY</label>
     <input
       type="button"
-      id="botPortal"
+      id='botPortal'
       placeholder="Talk to JMTHY"
       v-on:click="$router.push('greeting')"
     />
+    
 	</div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+
+      
+
+    }
+  
+};
 </script>
 
 <style>
@@ -25,12 +33,18 @@ export default {};
   align-items: center;
 }
 #botPortal {
-  background: url("https://i.imgur.com/7stJCAO.gif");
+  background: url("https://i.imgur.com/VJ9oCbR.png");
   border: none;
   width: 200px;
   height: 150px;
 }
-#botPortalCont{
+#botPortal:hover {
+background: url("https://i.imgur.com/7stJCAO.gif");
+border: none;
+  width: 200px;
+  height: 150px;
+}
+.botPortalCont{
 background-repeat: no-repeat;
   object-fit: cover;
   flex-direction: column;
