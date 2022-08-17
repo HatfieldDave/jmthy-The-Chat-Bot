@@ -120,6 +120,7 @@ export default {
 
 			messageSent: false,
 			messages: [],
+			time: new Date().toLocaleTimeString(),
 		};
 	},
 	methods: {
