@@ -68,7 +68,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+   
+};
 </script>
 
 <!-- Application-Wide Styles go here. 
