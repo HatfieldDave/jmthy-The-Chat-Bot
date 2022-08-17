@@ -10,7 +10,7 @@
 					alt=""
 					v-on:click="$router.push('home')"
 				/>
-				<a class="navbar-brand" href="#">JMTHY</a>
+				<a class="navbar-brand" id="jmthy" href="#">JMTHY</a>
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -100,6 +100,9 @@ export default {};
 .navbar {
 	grid-area: header;
 }
+#jmthy{
+	font-family: "Friendly Smiley", monospace;
+}
 .navbar-brand {
 	letter-spacing: 0.5rem;
 	font-weight: 900;
@@ -115,4 +118,5 @@ export default {};
 
 // Your custom styles go below this point
 //@import "_bootswatch.scss";
+@import url("https://www.fontspace.com/friendly-smiley-font-f65855");
 </style>
