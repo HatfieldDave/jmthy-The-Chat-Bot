@@ -292,20 +292,21 @@ export default {
 <style lang="scss">
 @keyframes yoYeti { 
   0% {
-    bottom: -200px;
+    bottom: -600px;
   }
 
   100% {
-    bottom: 0;
+    bottom: -200px;
   }
 }
 #yeti{
-	width: 200px;
-	height: 200px;
+	width: 600px;
+	height: 600px;
 	background-color: cornflowerblue;
+	border-radius: 50%;
 	position:fixed;
-	left:50px;
-	bottom: 0px;
+	left:-50px;
+	bottom: -200px;
 	animation: yoYeti 5s 1;
 
 }
@@ -331,7 +332,7 @@ export default {
   justify-content: center;
 	align-items: center;
   padding-top: 10%;
-  background-color: darkgreen;
+  
 }
 #formlogin {
 	display: flex;
