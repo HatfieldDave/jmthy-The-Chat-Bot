@@ -23,7 +23,7 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
+      path: "/chat",
       name: "Greeting",
       component: Greeting
     },
@@ -36,7 +36,7 @@ const router = new Router({
       },
     },
     {
-      path: "/login",
+      path: "/",
       name: "login",
       component: Login,
       meta: {

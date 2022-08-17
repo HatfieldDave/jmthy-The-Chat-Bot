@@ -178,6 +178,7 @@ export default {
 			//content.scrollTop = content.scrollHeight;
 			console.log(content, content.scrollTop, content.scrollHeight);
 			content.scrollIntoView();
+			
 		},
 		updated() {
 			// This will be called when the component updates

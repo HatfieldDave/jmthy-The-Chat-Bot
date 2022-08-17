@@ -201,7 +201,7 @@
 		<div class="snow"></div>
 		
     <div id="ihatevue">
-		<form id="formlogin" class="form-signin" @submit.prevent="login">
+		<form id="formlogin" class="form-signin" @submit.prevent="login" v-show="readyToLogin">
 			<h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
 			<div class="alert alert-danger" role="alert" v-if="invalidCredentials">
 				Invalid username and password!
@@ -218,7 +218,7 @@
 			>
 				Thank you for registering, please sign in.
 			</div>
-			<div class="form-group">
+			<div class="form-group" v-show="readyToLogin">
 				<input
 					type="text"
 					id="username"
@@ -246,6 +246,15 @@
 		</form>
 	</div>
 	<div id="yeti"></div>
+	<div id="speech-bubble" v-show="!readyToLogin">
+		<p>Hi! Welcome back! Are you new here?</p>
+		<label for="yes-btn">
+		<input type="button" value="Yep!" id="yes-btn" v-on:click.prevent="goToRegister()" />
+		</label>
+		<label for="no-btn">
+		<input type="button" value="Nope!" id="no-btn" v-on:click.prevent="fadeOut('speech-bubble')" />
+		</label>
+	</div>
   </div>
 </template>
 
@@ -263,9 +272,28 @@ export default {
 			},
 			invalidCredentials: false,
 			networkError: false,
+			readyToLogin: false,
 		};
 	},
 	methods: {
+		fadeIn(id){
+			let element = document.getElementById(id);
+			element.classList.add("fadeIn")
+			
+			
+		},
+		fadeOut(id){
+			let element = document.getElementById(id);
+			element.classList.add("fadeOut");
+			this.readyToLogin =!this.readyToLogin;
+			
+		},
+		setLogin(){
+			this.readyToLogin = !this.readyToLogin;
+		},
+		goToRegister(){
+			this.$router.push('/register');
+		},
 		login() {
 			authService
 				.login(this.user)
@@ -290,6 +318,42 @@ export default {
 };
 </script>
 <style lang="scss">
+#speech-bubble{
+	background-color: aliceblue;
+	width: 300px;
+	height: 150px;
+	bottom: 200px;
+	left: 600px;
+	position: fixed;
+	animation: yoYeti 5s 1;
+	
+}
+.fadeIn{
+	animation: fadeIn 3s 1;
+}
+.fadeOut{
+	animation: fadeOut 3s 1;
+}
+
+@keyframes fadeOut{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+	
+}
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+	
+}
+
 @keyframes yoYeti { 
   0% {
     bottom: -600px;
@@ -302,12 +366,12 @@ export default {
 #yeti{
 	width: 600px;
 	height: 600px;
-	background-color: cornflowerblue;
+	background:url('https://i.postimg.cc/FRyc68HD/cute-yeti-monster.gif') ;
 	border-radius: 50%;
 	position:fixed;
 	left:-50px;
-	bottom: -200px;
-	animation: yoYeti 5s 1;
+	bottom: -150px;
+	
 
 }
 @keyframes fadeIn { 
