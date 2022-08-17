@@ -199,7 +199,7 @@
 		<div class="snow"></div>
 		<div class="snow"></div>
 		<div class="snow"></div>
-		<div class="snow"></div>
+		
     <div id="ihatevue">
 		<form id="formlogin" class="form-signin" @submit.prevent="login">
 			<h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -245,6 +245,7 @@
 			<button class="btn btn-primary" type="submit">Sign in</button>
 		</form>
 	</div>
+	<div id="yeti"></div>
   </div>
 </template>
 
@@ -289,11 +290,40 @@ export default {
 };
 </script>
 <style lang="scss">
+@keyframes yoYeti { 
+  0% {
+    bottom: -200px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+#yeti{
+	width: 200px;
+	height: 200px;
+	background-color: cornflowerblue;
+	position:fixed;
+	left:50px;
+	bottom: 0px;
+	animation: yoYeti 5s 1;
+
+}
+@keyframes fadeIn { 
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 #login {
 	height: auto;
 	background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 	overflow: hidden;
 	filter: drop-shadow(0 0 10px white);
+	
 }
 #ihatevue{
 	display: flex;
@@ -301,6 +331,7 @@ export default {
   justify-content: center;
 	align-items: center;
   padding-top: 10%;
+  background-color: darkgreen;
 }
 #formlogin {
 	display: flex;
@@ -311,6 +342,7 @@ export default {
 	border-radius: 5rem;
 	align-items: center;
 	justify-content: center;
+	animation: fadeIn 5s 1;
 }
 
 @function random_range($min, $max) {
@@ -320,14 +352,14 @@ export default {
 }
 
 .snow {
-	$total: 30;
+	$total: 200;
 	position: absolute;
 	width: 10px;
 	height: 10px;
 	background: white;
 	border-radius: 50%;
 
-	@for $i from 1 through $total {
+	@for $i from 0 through $total {
 		$random-x: random(1000000) * 0.0001vw;
 		$random-offset: random_range(-100000, 100000) * 0.0001vw;
 		$random-x-end: $random-x + $random-offset;
