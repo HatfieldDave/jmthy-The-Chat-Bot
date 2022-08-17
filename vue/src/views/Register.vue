@@ -201,7 +201,7 @@
 		<div class="snow"></div>
 		<div class="snow"></div>
 		<div id="ihatevue">
-		<form id="form" class="form-register" @submit.prevent="register">
+		<form id="formregister" class="form-register" @submit.prevent="register">
 			<h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
 			<div class="alert alert-danger" role="alert" v-if="registrationErrors">
 				{{ registrationErrorMsg }}
@@ -333,21 +333,21 @@ export default {
 	filter: drop-shadow(0 0 10px white);
 }
 #ihatevue{
+	padding-top: 3%;
 	display: flex;
 	flex-direction: row;
   justify-content: center;
 	align-items: center;
 }
-#form {
+#formregister {
 	display: flex;
 	flex-direction: column;
 	width: 400px;
-	height: 300px;
+	height: 500px;
 	background-color: #8cd3e8;
 	border-radius: 5rem;
 	align-items: center;
 	justify-content: center;
-	position: sticky;
 }
 
 @function random_range($min, $max) {

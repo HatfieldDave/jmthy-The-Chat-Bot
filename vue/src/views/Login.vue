@@ -201,7 +201,7 @@
 		<div class="snow"></div>
 		<div class="snow"></div>
     <div id="ihatevue">
-		<form id="form" class="form-signin" @submit.prevent="login">
+		<form id="formlogin" class="form-signin" @submit.prevent="login">
 			<h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
 			<div class="alert alert-danger" role="alert" v-if="invalidCredentials">
 				Invalid username and password!
@@ -300,8 +300,9 @@ export default {
 	flex-direction: row;
   justify-content: center;
 	align-items: center;
+  padding-top: 10%;
 }
-#form {
+#formlogin {
 	display: flex;
 	flex-direction: column;
 	width: 400px;
@@ -310,7 +311,6 @@ export default {
 	border-radius: 5rem;
 	align-items: center;
 	justify-content: center;
-	position: sticky;
 }
 
 @function random_range($min, $max) {
