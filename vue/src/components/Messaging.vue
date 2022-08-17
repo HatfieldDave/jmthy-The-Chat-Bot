@@ -1,5 +1,8 @@
 <template>
 	<div class="chat-bot">
+		<div id="Jmthy">
+			<img id="jmthy_head" src="@/assets/JMTHY head.png" alt="" />
+		</div>
 		<ul class="messages-area" style="list-style: none" ref="messagesContainer">
 			<div class="greetingMsgContainer">
 				<li id="greeting_message">
@@ -185,6 +188,18 @@ export default {
 };
 </script>
 <style>
+#Jmthy {
+}
+
+#jmthy_head {
+	max-width: 30%;
+	position: fixed;
+	top: 15%; /* or whatever */
+	left: 36%; /* or whatever, position according to taste */
+	opacity: 0.1; /* Firefox, Chrome, Safari, Opera, IE >= 9 (preview) */
+	filter: alpha(opacity=50); /* for <= IE 8 */
+	display: flex;
+}
 .chat-bot {
 	display: flex;
 	flex-direction: column;
@@ -256,6 +271,7 @@ export default {
 	align-items: stretch;
 	max-width: 40%;
 	margin-bottom: 20px;
+	margin-top: 20px;
 }
 #link_message {
 	border-radius: 5px 20px 20px;
@@ -270,8 +286,8 @@ export default {
 	margin-bottom: 20px;
 }
 img {
-  width: 100%;
-  border-radius: 0.6rem;
+	width: 100%;
+	border-radius: 0.6rem;
 }
 #image_message {
 	border-radius: 5px 20px 20px !important;
@@ -301,11 +317,10 @@ img {
 	align-items: flex-end;
 }
 .imgContainer {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  max-width: 50%;
-  
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	max-width: 50%;
 }
 .linkContainer {
 	display: flex;
