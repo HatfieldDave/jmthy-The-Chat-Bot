@@ -320,12 +320,12 @@ export default {
 <style lang="scss">
 #speech-bubble{
 	background-color: aliceblue;
-	width: 300px;
-	height: 150px;
+	width: 500px;
+	height: 300px;
 	bottom: 200px;
 	left: 600px;
 	position: fixed;
-	animation: yoYeti 5s 1;
+	animation: fadeIn 5s 1;
 	
 }
 .fadeIn{
