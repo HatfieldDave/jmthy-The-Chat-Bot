@@ -247,8 +247,9 @@
 	</div>
 	<div id="yeti"></div>
 	<div id="speech-bubble" v-show="!readyToLogin">
-		<div>
-		<p>Hi! Welcome back! Are you new here?</p>
+		
+		<span>Hi! Welcome back! Are you new here?</span>
+		<div id="btns">
 		<label for="yes-btn">
 		<input class="btn btn-primary" type="button" value="Yep!" id="yes-btn" v-on:click.prevent="goToRegister()" />
 		</label>
@@ -256,6 +257,7 @@
 		<input type="button" class="btn btn-warning" value="Nope!" id="no-btn" v-on:click.prevent="fadeOut('speech-bubble')" />
 		</label>
 		</div>
+		
 	</div>
   </div>
 </template>
@@ -328,24 +330,26 @@ export default {
 	height: 400px;
 	bottom: 200px;
 	left: 400px;
+	margin-top: 10px;
 	position: fixed;
 	animation: fadeIn 5s 1;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	align-content: space-between;
+	
 }
-#speech-bubble .btn{
-	flex-grow: 1;
+#speech-bubble span{
+	margin-top:100px;
+	font-size: 15pt;
+	margin-bottom: 40px;
 }
-#speech-bubble div{
-	margin-bottom: 100px;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-content: space-between;
+#yes-btn{
+	width: 150px;
+	margin-right: 20px;	
+}
+#no-btn{
+	width: 150px;	
+	margin-right: 10px;
 }
 .fadeIn{
 	animation: fadeIn 3s 1;
