@@ -357,7 +357,7 @@ export default {
 }
 
 .snow {
-	$total: 30;
+	$total: 200;
 	position: absolute;
 	width: 10px;
 	height: 10px;
