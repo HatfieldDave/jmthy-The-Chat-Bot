@@ -1,14 +1,9 @@
 <template>
   <div class="home">
     <h1>Welcome to JMTHY</h1>
-    <div class="glow-on-hover">
-      <label for="botPortal" id="lPortal">Talk to JMTHY</label>
-      <input
-        type="button"
-        id="botPortal"
-        placeholder="Talk to JMTHY"
-        v-on:click="$router.push('greeting')"
-      />
+    <div class="glow-on-hover" v-on:click="$router.push('greeting')">
+      <a type="button" id="botPortal" />
+      <a class="talk">Talk to JMTHY</a>
     </div>
     <ul class="readColumns">
       <a>
@@ -44,6 +39,38 @@ export default {
 </script>
 
 <style>
+.talk {
+  
+  border-radius: 10px;
+  float: right;
+  margin-top: 3.5rem;
+  margin-right: 30%;
+  font-size: 30px;
+  border-radius: 10px;
+}
+.talk:hover {
+  background-image: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  background-size: 800% 800%;
+  -webkit-text-fill-color: transparent;
+  animation: glowing 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+ background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+  z-index: -1;
+}
 .home {
   display: flex;
   flex-direction: column;
@@ -64,7 +91,6 @@ export default {
   margin: 20px;
 }
 .readColumns > a:hover {
-  border: 4px solid cornflowerblue;
   border-radius: 10px;
   width: 400px;
   height: 550px;
@@ -100,7 +126,7 @@ export default {
   border: none;
   width: 105px;
   height: 140px;
-  margin-left: 8rem;
+  margin-left: 2rem;
 }
 #botPortal:hover {
   background-repeat: no-repeat;
@@ -108,7 +134,7 @@ export default {
   border: none;
   width: 105px;
   height: 140px;
-  margin-left: 8rem;
+  margin-left: 2rem;
 }
 #lPortal {
   color: aqua;
