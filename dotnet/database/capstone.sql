@@ -69,7 +69,7 @@ GO
 --*****************************************************************************************************************************************************************************************
 --Greetings
 --INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('','','','');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hello','...darkness my old friend. I''m JMTHY. How can I help you today ','','https://i.postimg.cc/9XsvcfYh/3-cute-yeti-monster.png');
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hello','...darkness my old friend. I''m JMTHY. How can I help you today ','','https://i.postimg.cc/0NcfRmbf/1-gimthy.gif');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi | hey', 'Hi there! What can I help you with?', '', 'https://i.postimg.cc/qRsp2CL2/1-cute-yeti-monster.png')
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hola','Que paso, my friend?','','https://i.postimg.cc/9XsvcfYh/3-cute-yeti-monster.png');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi jmthy | how are you? | what wassup | what''s poppin'' | ugh | hey | yello | yo | greetings | good morrow ','Hi my friend, I''m JMTHY. John and Matt''s Tiny Helper Yetti. What''s on your mind today?','','https://i.postimg.cc/qRsp2CL2/1-cute-yeti-monster.png');
