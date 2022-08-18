@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .talk {
   border-radius: 10px;
   float: right;
@@ -130,7 +130,7 @@ export default {
   margin-top: 0rem;
   margin-left: 1.6rem;
 }
-body {
+.home {
   background-image: url("../assets/gifs/snowy-mountain.gif");
   background-size: 100%;
 }
