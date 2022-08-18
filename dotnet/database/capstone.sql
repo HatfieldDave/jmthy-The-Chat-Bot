@@ -70,7 +70,7 @@ GO
 --Greetings
 --INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('','','','');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hello','...darkness my old friend. I''m JMTHY. How can I help you today ','','https://i.postimg.cc/0NcfRmbf/1-gimthy.gif');
-INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi | hey', 'Hi there! What can I help you with?', '', 'https://i.postimg.cc/0NcfRmbf/1-gimthy.gif')
+INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi | hey | hello jmthy', 'Hi there! What can I help you with?', '', 'https://i.postimg.cc/0NcfRmbf/1-gimthy.gif')
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hola','Que paso, my friend?','','https://i.postimg.cc/ZnBW0n6k/Thumbs-Up-Gimthy.gif');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('hi jmthy | how are you? | what wassup | what''s poppin'' | ugh | hey | yello | yo | greetings | good morrow ','Hi my friend, I''m JMTHY. John and Matt''s Tiny Helper Yetti. What''s on your mind today?','','https://i.postimg.cc/0NcfRmbf/1-gimthy.gif');
 INSERT INTO topic (topic_q, topic_info, info_link, img_link) VALUES ('fuck this | i''m gonna take a toaster bath | this was a mistake | fuck | over it | i''m over this | i''m dumb | make me want to tear my hair out | my soul is dying | i''m gonna lay in the street | i''m quitting | i quit ','Slow down there tiger. Maybe take a step away or a deep breath. If you want, I also have some motivational quotes that might cheer you up.....did I mention they come with an emotional support animal? Just say "Motivational Quotes"','','https://i.postimg.cc/T3xFTV3M/CryGmthy.gif');
