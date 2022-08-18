@@ -247,13 +247,17 @@
 	</div>
 	<div id="yeti"></div>
 	<div id="speech-bubble" v-show="!readyToLogin">
-		<p>Hi! Welcome back! Are you new here?</p>
+		
+		<span>Hi! Welcome back! Are you new here?</span>
+		<div id="btns">
 		<label for="yes-btn">
-		<input type="button" value="Yep!" id="yes-btn" v-on:click.prevent="goToRegister()" />
+		<input class="btn btn-primary" type="button" value="Yep!" id="yes-btn" v-on:click.prevent="goToRegister()" />
 		</label>
 		<label for="no-btn">
-		<input type="button" value="Nope!" id="no-btn" v-on:click.prevent="fadeOut('speech-bubble')" />
+		<input type="button" class="btn btn-warning" value="Nope!" id="no-btn" v-on:click.prevent="fadeOut('speech-bubble')" />
 		</label>
+		</div>
+		
 	</div>
   </div>
 </template>
@@ -319,14 +323,33 @@ export default {
 </script>
 <style lang="scss">
 #speech-bubble{
-	background-color: aliceblue;
-	width: 500px;
-	height: 300px;
+	background-image:url('../assets/SpeechBubble.png');
+	background-position: center;
+	background-size: cover;
+	width: 600px;
+	height: 400px;
 	bottom: 200px;
-	left: 600px;
+	left: 400px;
+	margin-top: 10px;
 	position: fixed;
 	animation: fadeIn 5s 1;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	
+}
+#speech-bubble span{
+	margin-top:100px;
+	font-size: 15pt;
+	margin-bottom: 40px;
+}
+#yes-btn{
+	width: 150px;
+	margin-right: 20px;	
+}
+#no-btn{
+	width: 150px;	
+	margin-right: 10px;
 }
 .fadeIn{
 	animation: fadeIn 3s 1;
@@ -366,7 +389,7 @@ export default {
 #yeti{
 	width: 600px;
 	height: 600px;
-	background:url('https://i.postimg.cc/FRyc68HD/cute-yeti-monster.gif') ;
+	background:url('https://i.postimg.cc/9FSzx0MR/PingPong.gif') ;
 	border-radius: 50%;
 	position:fixed;
 	left:-50px;

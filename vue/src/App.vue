@@ -10,7 +10,7 @@
 					alt=""
 					v-on:click="$router.push('home')"
 				/>
-				<a class="navbar-brand" id="jmthy" href="#">JMTHY</a>
+				<img class="navbar-brand" id="jmthy" src="@/assets/Font.png" alt=""/>
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -101,7 +101,7 @@ export default {};
 	grid-area: header;
 }
 #jmthy{
-	font-family: "Friendly Smiley", monospace;
+	max-width: 15%;
 }
 .navbar-brand {
 	letter-spacing: 0.5rem;

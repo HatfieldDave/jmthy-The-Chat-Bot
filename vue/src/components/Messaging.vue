@@ -10,7 +10,7 @@
 					I help you?
 				</li>
 				<span class="msg_time"
-					><i>{{ getTime() }}</i></span
+					><i>{{ this.time }}</i></span
 				>
 			</div>
 
@@ -120,6 +120,7 @@ export default {
 
 			messageSent: false,
 			messages: [],
+			time: new Date().toLocaleTimeString(),
 		};
 	},
 	methods: {
