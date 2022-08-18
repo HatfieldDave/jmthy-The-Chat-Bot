@@ -9,7 +9,7 @@
       <a>
         <div>Pathway</div>
         <li class="ThumbsUp" />
-        <div>pathway stuff</div>
+        <div>Gives you interview tips</div>
         <li class="ThumbsUp" />
         <div>more pathway stuff</div>
         <li class="ThumbsUp" />
@@ -48,7 +48,7 @@ export default {
   font-size: 30px;
   border-radius: 10px;
 }
-.talk:hover {
+.talk {
   background-image: linear-gradient(
     45deg,
     #ff0000,
@@ -81,9 +81,11 @@ color: transparent;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+ 
 }
 .readColumns > a {
   border: 2px solid black;
+   background: cornflowerblue;
   align-content: center;
   border-radius: 10px;
   width: 258px;
@@ -120,7 +122,9 @@ color: transparent;
   margin-top: 0rem;
   margin-left: 1.6rem;
 }
-
+body{
+  background: black;
+}
 #botPortal {
   background: url("https://i.imgur.com/pPHJVSF.png");
   border: none;
