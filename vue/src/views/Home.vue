@@ -1,34 +1,40 @@
 <template>
   <div class="home">
-    <h1>Welcome to JMTHY</h1>
     <div class="glow-on-hover" v-on:click="$router.push('greeting')">
       <a type="button" id="botPortal" />
       <a class="talk">Talk to JMTHY</a>
     </div>
     <ul class="readColumns">
-      <a>
-        <div>Pathway</div>
+      <a class="Pathway">
+        <div class="title">Pathway</div>
         <li class="ThumbsUp" />
         <div>Gives you interview tips</div>
         <li class="ThumbsUp" />
-        <div>more pathway stuff</div>
+        <div>Gives you Job Search Advice</div>
         <li class="ThumbsUp" />
-        <div>even more pathway stuff</div>
+        <div>Gives you resume suggestions</div>
       </a>
-      <a>
-        <div>Curriculum</div>
+      <a class="Curriculum">
+        <div class="title">Curriculum</div>
         <li class="ThumbsUp" />
-        <div>curriculum stuff</div>
+        <div>Helps With C#</div>
         <li class="ThumbsUp" />
-        <div>more curriculum stuff</div>
+        <div>Helps With SQL</div>
         <li class="ThumbsUp" />
-        <div>even more curriculum stuff</div>
+        <div>Helps with Vue.js</div>
       </a>
-      <a>
-        <div>Motivation</div>
+      <a class="Motivation">
+        <div class="title">Motivation</div>
+        <li class="ThumbsUp" />
+        <div>Gives you Emotional Support</div>
+        <li class="ThumbsUp" />
+        <div>Cares about you!</div>
+        <li class="ThumbsUp" />
+        <div>Wants you to succeed</div>
+
       </a>
     </ul>
-    <div></div>
+    
   </div>
 </template>
 
@@ -39,15 +45,18 @@ export default {
 </script>
 
 <style scoped>
-
 .talk {
-  
   border-radius: 10px;
   float: right;
   margin-top: 3.5rem;
   margin-right: 30%;
   font-size: 30px;
   border-radius: 10px;
+}
+.title{
+  text-align: center;
+}
+.talk {
   background-image: linear-gradient(
     45deg,
     #ff0000,
@@ -65,9 +74,9 @@ export default {
   animation: glowing 20s linear infinite;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
- background-clip: text;
--webkit-background-clip: text;
-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   z-index: -1;
 }
 .home {
@@ -75,16 +84,16 @@ color: transparent;
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
+  align-content: space-between;
 }
 .readColumns {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
- 
 }
 .readColumns > a {
   border: 2px solid black;
-   background: cornflowerblue;
+  background: cornflowerblue;
   align-content: center;
   border-radius: 10px;
   width: 258px;
@@ -92,14 +101,14 @@ color: transparent;
   margin: 20px;
 }
 .readColumns > a:hover {
+  border: 2px solid white;
   border-radius: 10px;
-  width: 400px;
+  width: 258px;
   height: 550px;
   margin: 20px;
 }
 .readColumns > a > div {
   font-size: 20px;
-
   text-align: left;
   justify-content: space-evenly;
   margin-left: 3.9rem;
@@ -121,10 +130,9 @@ color: transparent;
   margin-top: 0rem;
   margin-left: 1.6rem;
 }
-body{
- background-attachment: fixed;
- background-image: url('../assets/gifs/snowy-mountain.gif');
-	overflow: hidden;
+.home {
+  background-image: url("../assets/gifs/snowy-mountain.gif");
+  background-size: 100%;
 }
 #botPortal {
   background: url("https://i.imgur.com/pPHJVSF.png");
@@ -132,6 +140,23 @@ body{
   width: 105px;
   height: 140px;
   margin-left: 2rem;
+}
+.jimmothy {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 420px;
+  height: auto;
+  flex-grow: 1;
+  align-items: center;
+}
+#curriculum {
+  margin-bottom: 5rem;
+  display: block;
+  width: 420px;
+  height: auto;
+  position: relative;
+  align-content: center;
 }
 #botPortal:hover {
   background-repeat: no-repeat;

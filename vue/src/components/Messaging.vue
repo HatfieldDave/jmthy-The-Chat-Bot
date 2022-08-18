@@ -252,7 +252,7 @@ export default {
 #bot_message {
 	border-radius: 5px 20px 20px;
 	color: white;
-	background-color: #1d90b3;
+	background-color: #3790ac;
 	padding: 1%;
 	border-radius: 0.6rem;
 	display: flex;
