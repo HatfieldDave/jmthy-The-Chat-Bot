@@ -38,7 +38,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
 .talk {
   
   border-radius: 10px;
@@ -47,8 +48,6 @@ export default {
   margin-right: 30%;
   font-size: 30px;
   border-radius: 10px;
-}
-.talk {
   background-image: linear-gradient(
     45deg,
     #ff0000,
@@ -123,7 +122,9 @@ color: transparent;
   margin-left: 1.6rem;
 }
 body{
-  background: black;
+ background-attachment: fixed;
+ background-image: url('../assets/gifs/snowy-mountain.gif');
+	overflow: hidden;
 }
 #botPortal {
   background: url("https://i.imgur.com/pPHJVSF.png");
@@ -235,4 +236,4 @@ body{
     background-position: 0 0;
   }
 }
-</style>
+</style>>
