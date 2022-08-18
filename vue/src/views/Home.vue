@@ -261,4 +261,4 @@ export default {
     background-position: 0 0;
   }
 }
-</style>
+</style>>
