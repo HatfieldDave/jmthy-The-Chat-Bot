@@ -326,6 +326,16 @@ export default {
 </script>
 
 <style lang="scss">
+@keyframes fadeIn { 
+  0% {
+    opacity: 0;
+  }
+  
+
+  100% {
+    opacity: 1;
+  }
+}
 #register {
 	height: auto;
 	background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
@@ -348,6 +358,7 @@ export default {
 	border-radius: 5rem;
 	align-items: center;
 	justify-content: center;
+	animation: fadeIn 5s 1 ease-in-out;
 }
 
 @function random_range($min, $max) {
