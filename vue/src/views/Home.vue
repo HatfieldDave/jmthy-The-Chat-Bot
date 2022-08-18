@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h1>Welcome to JMTHY</h1>
     <div class="glow-on-hover" v-on:click="$router.push('greeting')">
       <a type="button" id="botPortal" />
       <a class="talk">Talk to JMTHY</a>
@@ -26,6 +25,13 @@
       </a>
       <a class="Motivation">
         <div class="title">Motivation</div>
+        <li class="ThumbsUp" />
+        <div>Gives you Emotional Support</div>
+        <li class="ThumbsUp" />
+        <div>Cares about you!</div>
+        <li class="ThumbsUp" />
+        <div>Wants you to succeed</div>
+
       </a>
     </ul>
     
@@ -125,7 +131,8 @@ export default {
   margin-left: 1.6rem;
 }
 body {
-  background: black;
+  background-image: url("../assets/gifs/snowy-mountain.gif");
+  background-size: 100%;
 }
 #botPortal {
   background: url("https://i.imgur.com/pPHJVSF.png");
